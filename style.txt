@@ -109,11 +109,27 @@ $np-white:											#fff;
 		.lia-quilt-column-single.lia-quilt-column-right{
 			line-height: 40px;
 		}
+		.user-navigation-parent-dropdown-combine {
+			float: right;
+		}
+		.user-navigation-user-profile {
+			display: none;
+		}
+		.lia-header-nav-component-widget .private-notes-link:before {
+			content: "\f0e0";
+		}
+		.lia-header-nav-component-widget .lia-notification-feed-page-link:before {
+			content: "\f0f3";
+		}
+		.lia-header-nav-component-widget .private-notes-link {
+			display: inline-block;
+			padding: 15px 0px;
+		}
 
 	}
+	
 }
 
-/* Search Component */
 
 .lia-quilt.header-banner-cum-search{
 	color:$np-white;
@@ -387,30 +403,5 @@ $np-white:											#fff;
 				}
 			}
 		}
-	}
-}
-
-.lia-component-custom-grz-blog-section{
-	.lia-panel-content{
-			.blog-card{
-				.content-section-top{
-					height: 200px;
-					width: 100%;
-					margin-bottom: 24px;
-					
-				}
-				.content-section-bottom{
-
-				}
-				&.blog-card-1{
-					border:1px solid red;
-				}
-				&.blog-card-2{
-					border:1px solid green;
-				}
-				&.blog-card-3{
-					border:1px solid black;
-				}
-			}	
 	}
 }
