@@ -1,4 +1,5 @@
 .body{
+background-color:#eee;
 font-size:18px;
 font_weight:20;
 }
