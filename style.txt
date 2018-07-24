@@ -5,6 +5,7 @@
 
 $li-hero-community-bg:          #B20053;
 $np-purple: 										#3839C7;
+$np-deep-purple: 								#1e4a93;
 $np-gray: 											#f6f6f6;
 $np-deep-gray:									#686868;
 
@@ -68,8 +69,19 @@ $np-white:											#fff;
 .text-content-left{
 	text-align: left;
 }
+.text-content-justify{
+	text-align: justify;
+}
 
 
+/* layot */
+.lia-quilt-row-top-row-full-width{
+	> .lia-quilt-column{
+		padding-left: 30px;
+		padding-right: 30px;
+
+	}
+}
 
 /* Header Section */
 .lia-quilt.header-wrapper{
@@ -294,6 +306,9 @@ $np-white:											#fff;
 		color:$text-color;
 		transition: all 0.5s ease-in-out;
 		cursor: pointer;
+		.cat-icon{
+			max-width: 30px;
+		}
 		&:hover,
 		&.active{
 			background-color: $np-deep-blue;
@@ -403,5 +418,49 @@ $np-white:											#fff;
 				}
 			}
 		}
+	}
+}
+
+
+/* Blog Section - HOMPAGE*/
+.lia-panel.lia-component-custom-grz-blog-section{
+	background-color: $np-deep-purple;
+	padding: 20px 0;
+	.lia-panel-heading-bar{
+		background-color: inherit;
+		color: #fff;
+	}
+	.lia-quilt-column.blog-card{
+		background-color: $np-white;
+		.content-section-top.content-section {
+	    width: 100%;
+	    height: 150px;
+	   	/*margin-bottom: 24px;*/
+	   /*	background-size: 100%;*/
+	    background-size: cover;
+	    background-repeat: no-repeat;
+	    background-position: center;
+		}
+		.content-section-bottom.content-section{
+			padding: 20px;
+		}
+		&.blog-card-1 {
+			border-bottom: 5px solid #4faaff;
+			.content-section-top{
+				background-image: url("/html/assets/blog-1.jpg");
+			}
+		} 
+		&.blog-card-2 {
+			border-bottom:  5px solid #ededed;
+			.content-section-top{
+				background-image: url("/html/assets/blog-2.jpg");
+			}
+		} 
+		&.blog-card-3 {
+			border-bottom:  5px solid #ededed;
+			.content-section-top{
+				background-image: url("/html/assets/blog-3.jpg");
+			}
+		} 
 	}
 }
