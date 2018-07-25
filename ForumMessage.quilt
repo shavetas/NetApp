@@ -1,0 +1,26 @@
+<quilt layout="forum-message" nestable="false" disableTopCssClass="false">
+  <add to="netapp-options-row">
+    <component id="menu"/>
+  </add>
+  <add to="main-right">
+    <component id="message-view.widget.author-username" wrapper="lia-message-author-with-avatar"/>
+    <component id="user-name"/>
+    <component id="subject"/>
+    <component id="post-date-last-edited"/>
+    <component id="labels"/>
+    <component id="body"/>
+    <component id="third-party-source"/>
+    <component id="source-device"/>
+    <component id="media-snippet"/>
+    <component id="tags"/>
+  </add>
+  <add to="footer-center">
+    <component id="actions"/>
+    <component id="accepted-solutions-button"/>
+    <component id="modbar-toggle"/>
+    <component id="modbar"/>
+  </add>
+  <add to="main-left">
+    <component id="author-avatar"/>
+  </add>
+</quilt>
