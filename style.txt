@@ -74,7 +74,7 @@ $np-white:											#fff;
 }
 
 /* User Notification */
-/*
+
 .user_notifications{
   display: inline-block;
   float: right;
@@ -147,10 +147,10 @@ $np-white:											#fff;
               width: 40px;
             }
           }
-          /*.notifi_decription{
+          .notifi_decription{
             padding-left: 10px;
             padding-top:20px;
-          }*/
+          }
         }
         li{
           border-bottom: 1px solid #e8e8e8;
@@ -185,7 +185,7 @@ $np-white:											#fff;
       }
     }
   }
-}*/
+}
 
 /* layot */
 .lia-quilt-layout-home-full-width-2-column-main{
@@ -220,7 +220,11 @@ $np-white:											#fff;
 		.top-links.header-section{
 			padding: 0 20px;
 			li{
-			  padding: 0 20px;
+			  padding: 0 15px;
+			  font-size: 16px;
+			  a{
+			  	color: $text-color;
+			  }
 			}
 		}
 		.icon {
@@ -262,7 +266,8 @@ $np-white:											#fff;
 
 .lia-quilt.header-banner-cum-search{
 	color:$np-white;
-	background-color: $np-purple;
+	/*background-color: $np-purple;*/
+	background-image: url("/html/assets/banner.png");
 
 	.lia-quilt-column-alley.lia-quilt-column-alley-single{
 		background-color: transparent;
@@ -278,7 +283,59 @@ $np-white:											#fff;
 	}
 	.banner-sub-title{
 		padding: 10px 0;
-		font-size: 16px;
+		font-size: 20px;
+		a{
+			color: #4faaff;
+		}
+	}
+	.header-search-section-wrpper{
+		max-width: 680px;
+    margin: 0 auto;
+    border: 5px solid $np-light-gray;
+    background-color: $np-white;
+    color: $text-color;
+    width: 100%;
+    font-size: 0;
+    .net-app-section{
+    	font-size: 16px;
+    	&.header-search-filter{
+ 				max-width: 100px;
+ 				text-align: center;
+ 				width: 100%;
+ 				select{
+ 					width: 100%;
+ 					height: 33px;
+ 					border: none;
+ 					padding: 5px;
+ 				}
+
+    	}
+	   	&.header-search-field{
+					max-width: calc(100% - 100px);
+					text-align: center;
+					font-size: 0;
+					width: 100%;
+					.net-app-section{
+						max-width: calc(100% - 40px);
+						font-size: 16px;
+						width: 100%;
+						input{
+							height: 33px;
+							border: none;
+							width: 100%;
+							padding: 5px;
+						}
+					}
+					.search-icon.net-app-section{
+						max-width: 40px;
+						padding: 4px  0;
+						img{
+							height: 15px;
+						}
+					}
+
+	   	}
+    }
 	}
 	.SearchForm{
 		max-width: 680px;
@@ -367,8 +424,14 @@ $np-white:											#fff;
 }
 
 /* Custom Thread Component */
-
 .lia-custom-component{
+	.lia-panel-heading-bar-wrapper .lia-panel-heading-bar{
+		border-bottom: none;
+	}
+	.lia-panel-content-wrapper .lia-panel-content{
+		padding-left: 0;
+		padding-right: 0;
+	}
 	.thread-wrapper-section{
 		color: $text-color;
 		.thread-wrapper {
@@ -405,7 +468,10 @@ $np-white:											#fff;
 					  font-size: 0;
 					  .net-app-section{
 					  	font-size: 13px;
-					  	width: 100%;
+					  	width: 50%;
+					  	&.thread-meta-data-right .thread-meta-data{
+					  		margin-left: 10px;
+					  	}
 					  }
 					}
 		    }
