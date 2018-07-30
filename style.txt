@@ -654,7 +654,7 @@ $np-white:                      #fff;
   }
 }
 
-/* Message Main Section */
+/* Message Main Section **/
 .lia-quilt-column-main-content{
   .lia-panel-message{
     border:0;
