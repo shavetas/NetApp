@@ -771,13 +771,14 @@ $np-white:											#fff;
 /* Blog Section - HOMPAGE*/
 .lia-panel.lia-component-custom-grz-blog-section{
 
-	background-color: transparent;
+ background-color: transparent;
 	padding: 20px 0;
 	.lia-panel-heading-bar{
 		background-color: inherit;
 		color: #fff;
 	}
-	.lia-quilt-column.blog-card{
+	
+  .lia-quilt-column.blog-card{
 		background-color: $np-white;
 		.content-section-top.content-section {
 	    width: 100%;
@@ -810,4 +811,72 @@ $np-white:											#fff;
 			}
 		} 
 	}
+}
+
+/* Message Main Section **/
+.lia-quilt-column-main-content{
+  .lia-panel-message{
+    border:0;
+    box-shadow:none;
+    .lia-quilt-row-header{
+      .lia-component-message-view-widget-action-menu{
+        top:0;
+        right:0;
+      }
+      .lia-component-message-view-widget-subject{
+          display: block;
+          text-transform: capitalize;
+      }
+    }
+    .lia-component-message-view-widget-tags{
+      .lia-panel-heading-bar-wrapper{
+        display: none;
+      }
+      .lia-panel-content {
+          padding: 0;
+      }
+      .add-tag-link{
+        float:left;
+      }
+    }
+    .lia-component-me-too, .lia-component-quick-reply-button{
+      display:inline-block;
+    }
+    .lia-action-reply.reply-action-link{
+      background: transparent;
+      border: 0;
+      text-align: left;
+      text-transform: uppercase;
+      padding-left: 0;
+      padding: 0;
+      color: #0F4F7E;
+    }
+    .KudosButton{
+      .kudos-count-link{
+        color: #5d5d5d;
+        font-size: 12px;
+      }
+      .kudos-link{
+        background-color: transparent;
+        color: #5d5d5d;
+        border: 0;
+        padding: 5px 0;
+      }
+    }
+    .lia-component-messages-stat-thread-replies-count{
+      float: right;
+      padding: 6px 12px;
+      color: black;
+      .lia-message-stats-count{
+        font-size:12px;
+      }
+    }
+  }
+  .lia-component-topic-message{
+    .lia-quilt-forum-message{
+      .lia-quilt-row-main, .lia-quilt-row-footer{
+          padding-left: 130px;
+      }
+    }
+  }
 }
