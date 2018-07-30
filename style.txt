@@ -770,6 +770,7 @@ $np-white:											#fff;
 
 /* Blog Section - HOMPAGE*/
 .lia-panel.lia-component-custom-grz-blog-section{
+
 	background-color: transparent;
 	padding: 20px 0;
 	.lia-panel-heading-bar{
