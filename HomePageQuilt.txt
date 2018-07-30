@@ -1,0 +1,12 @@
+<quilt layout="netapp-homepage" nestable="false" disableTopCssClass="false">
+  <add to="side-content">
+    <component id="kudos.widget.authors-leaderboard"/>
+    <component id="community.widget.admin-links"/>
+  </add>
+  <add to="main-content">
+    <component id="common.widget.announcement"/>
+    <component id="custom-featured-content"/>
+    <component id="recent-activity"/>
+    <component id="forums.widget.unanswered-topics-taplet"/>
+  </add>
+</quilt>
