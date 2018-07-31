@@ -79,6 +79,27 @@ $np-white:											#fff;
 	float: left;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+
 /* Header Right */
 .UserNavigation{
 	.user-navigation-settings-drop-down-inner .lia-list-standard{
@@ -105,6 +126,18 @@ $np-white:											#fff;
 		background-color: $np-deep-purple;
 	}
 }
+.lia-top-quilt {
+	> .lia-quilt-row-main,
+	 .lia-quilt-column-main-top-content,
+	 .lia-quilt-column-main-bottom-content
+	{
+		max-width: 1170px;
+		margin-left: auto;
+		margin-right: auto;
+		float: none;
+	}
+}
+
 
 
 /* Header Section */
@@ -258,9 +291,6 @@ $np-white:											#fff;
 	}
 }
 
-
-
-
 /* Footer Section */
 
 .footer-card-wrapper{
@@ -268,6 +298,8 @@ $np-white:											#fff;
 	margin-top: 30px;
 	.footer-card{
 		font-size: 0;
+		margin-top: 10px;
+		margin-bottom: 10px;
 		.net-app-section{
 			width: 60%;
 			font-size: 16px;
@@ -330,6 +362,25 @@ $np-white:											#fff;
 		} 
 	}
 }
+
+.footer-wrapper{
+	.lia-quilt-column-alley-single .lia-quilt-header-content-wrapper{
+		overflow: hidden;
+		.copy-right.net-app-section{
+			span{
+				margin-right:10px; 
+			}
+			span.separtor {
+		    border-left: 1px solid #c4c4c4;
+		    line-height: 1;
+			}
+			span.social-icon .fa{
+				color: #747474;
+			} 
+		}
+	}
+}
+
 
 
 /* Common Commponent Css */
@@ -686,6 +737,8 @@ $np-white:											#fff;
 	
   .lia-quilt-column.blog-card{
 		background-color: $np-white;
+		margin-top: 10px;
+		margin-bottom: 10px;
 		.content-section-top.content-section {
 	    width: 100%;
 	    height: 150px;
