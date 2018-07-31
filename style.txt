@@ -762,6 +762,12 @@ $np-white:											#fff;
       .add-tag-link{
         float:left;
       }
+      .lia-tag-list-item
+      {
+	      padding: 5px 10px;
+	    	background-color: #f6f6f6;
+	    	text-transform: capitalize;
+	    }
     }
     .lia-component-me-too, .lia-component-quick-reply-button{
       display:inline-block;
@@ -896,12 +902,10 @@ $np-white:											#fff;
 		}	
   }
 }
-.lia-tag-list-item{
-	margin-right:10px;
-}
 
 
-/* User Notification -- Shaveta */
+
+/* User Notification -- Shaveta- */
 
 .user_notifications {
   display: inline-block;
