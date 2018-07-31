@@ -10,6 +10,7 @@ $np-gray: 											#f6f6f6;
 $np-deep-gray:									#686868;
 
 $np-deep-blue: 									#173e77;
+$np-light-blue: 								#146CAC;
 $text-color:                    #454545;
 $text-link-color:               #0067c5;
 $lia-pannel-highlight-color:    #0067c5;
@@ -808,10 +809,30 @@ $np-white:											#fff;
 	  .lia-quilt-column-header-left-avatar{
 			text-align: center;
 			padding-right: 0;  
+			width:40px;
 				.lia-message-author-avatar{
 					padding-right:0;
 				}
 		  }
+		  .lia-message-author-with-avatar:before {
+			  content: "By";
+			}
+			.lia-message-post-date.lia-component-post-date{
+				position: relative;
+   	 		padding-left: 25px;
+				:before {
+			    background-image: url(/html/assets/cal.png);
+			    width: 20px;
+			    height: 20px;
+			    position: absolute;
+			    top: 12px;
+			    left: 15px;
+			    transform: translate(-50%, -50%);
+			    background-position: center;
+			    background-repeat: no-repeat;
+			    content: "";
+				}
+			}
     }
 		.lia-message-body{
 			margin-bottom:0;
@@ -838,6 +859,9 @@ $np-white:											#fff;
     .lia-component-me-too, .lia-component-quick-reply-button{
       display:inline-block;
     }
+    .lia-panel-feedback-banner-safe{
+    	padding: 8px;
+    }
     .lia-action-reply.reply-action-link{
       background: transparent;
       border: 0;
@@ -845,22 +869,23 @@ $np-white:											#fff;
       text-transform: uppercase;
       padding-left: 0;
       padding: 0;
-      color: #146CAC;
+      color: $np-light-blue;
       min-width: 70px;
     }
 	.lia-action-reply.reply-action-link:active:focus{
 		background:transparent;
 		border:0;
-		color: #146CAC;
+		color: $np-light-blue;
 	}
 	.lia-component-me-too .lia-button-secondary{
 		min-width:70px;
 		padding:5px 15px;
-		border-color: #146CAC;
+		border-color: $np-light-blue;
 		color: #146CAC;
 		background:transparent;
-		&:active:focus{
-			background:transparent;
+		&:active:focus:hover{
+			background-color: $np-light-blue;
+    	color: white;
 		}
 	}
     .KudosButton{
@@ -1110,4 +1135,45 @@ $np-white:											#fff;
   .lia-header-nav-component-widget .private-notes-link {
     padding: 5px 0 0;
   }
+}
+@media screen and (max-width:991px){
+	.lia-quilt-column-left.lia-quilt-column-main-content{
+		.lia-panel-message .lia-quilt-row-header{
+			.lia-quilt-column-header-left-avatar{
+				float:left;
+			}
+			.lia-quilt-column-header-left{
+				float:left;
+				padding-left: 15px;
+			}
+		}
+		.lia-quilt-column-footer-right{
+			margin-top: 10px;
+			.lia-button{
+				float:left;
+			}
+			.lia-component-messages-stat-thread-replies-count{
+				float:left;
+			}
+		}
+	}
+}
+@media screen and (max-width:640px){
+	.lia-component-topic-message{
+    .lia-quilt-forum-message{
+		.lia-quilt-row-main, .lia-quilt-row-footer{
+          padding-left: 0;
+		}
+    }
+  }
+}
+@media screen and (max-width:420px){
+.lia-message-state-indicator{
+		&:before{
+			content:none;
+		}
+		&:after{
+			content:none;
+		}
+	}
 }
