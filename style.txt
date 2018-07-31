@@ -366,6 +366,18 @@ $np-white:											#fff;
 .footer-wrapper{
 	.lia-quilt-column-alley-single .lia-quilt-header-content-wrapper{
 		overflow: hidden;
+		.copy-right.net-app-section{
+			span{
+				margin-right:10px; 
+			}
+			span.separtor {
+		    border-left: 1px solid red;
+		    line-height: 1;
+			}
+			span.social-icon .fa{
+				color: #747474;
+			} 
+		}
 	}
 }
 
