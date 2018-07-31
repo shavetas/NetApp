@@ -803,11 +803,14 @@ $np-white:											#fff;
 	}
 }
 
-/* Message Main Section */
+/* Message Main Section **/
 .lia-quilt-column-main-content{
   .lia-panel-message{
     border:0;
     box-shadow:none;
+    .lia-message-view-display{
+    	box-shadow: none;
+    }
     .lia-quilt-row-header{
       .lia-component-message-view-widget-action-menu{
         top:0;
@@ -920,14 +923,46 @@ $np-white:											#fff;
   }
   .lia-component-reply-list{
 		.lia-linear-display-message-view{
-			border-top: 1px solid #eee;
 			border-bottom: 1px solid #eee;
 			.lia-message-view-display{
 				margin: 15px 0px;
-				box-shadow:none;
 				.lia-component-message-view-widget-tags{
 					display:none;
 				}
+			}
+			.lia-quilt-column-header-left{
+				.lia-quilt-column-alley-inner{
+					padding-top:10px;
+					.lia-component-message-view-widget-subject{
+						display:none;
+					}
+				}
+			}
+			.lia-quilt-row-main{
+				padding-top: 10px;
+			}
+		}
+		.lia-accepted-solution{
+			padding: 20px;
+			background-color: #f6f6f6;
+			border-left: 5px solid #448602;
+			.lia-message-state-indicator{
+					color: #448602;
+					&:before{
+						top: 20px;
+				    content: "\f058";
+				    position: absolute;
+				    right: 187px;
+				    font-size: 21px;
+				    font-family: FontAwesome;
+					}
+					&:after{
+						content: 'Accepted Solution';
+				    position: absolute;
+				    top: 25px;
+				    right: 60px;
+				    font-weight: bold;
+					}
 			}
 		}	
   }
