@@ -1070,3 +1070,44 @@ $np-white:											#fff;
     padding: 5px 0 0;
   }
 }
+@media screen and (max-width:991px){
+	.lia-quilt-column-left.lia-quilt-column-main-content{
+		.lia-panel-message .lia-quilt-row-header{
+			.lia-quilt-column-header-left-avatar{
+				float:left;
+			}
+			.lia-quilt-column-header-left{
+				float:left;
+				padding-left: 15px;
+			}
+		}
+		.lia-quilt-column-footer-right{
+			margin-top: 10px;
+			.lia-button{
+				float:left;
+			}
+			.lia-component-messages-stat-thread-replies-count{
+				float:left;
+			}
+		}
+	}
+}
+@media screen and (max-width:640px){
+	.lia-component-topic-message{
+    .lia-quilt-forum-message{
+		.lia-quilt-row-main, .lia-quilt-row-footer{
+          padding-left: 0;
+		}
+    }
+  }
+}
+@media screen and (max-width:420px){
+.lia-message-state-indicator{
+		&:before{
+			content:none;
+		}
+		&:after{
+			content:none;
+		}
+	}
+}
