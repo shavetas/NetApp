@@ -120,6 +120,10 @@ $np-white:											#fff;
 	  > .lia-quilt-column {
 			padding-left: 30px;
 			padding-right: 30px;
+			@media screen and (max-width: 991px){
+		    padding-left: 0;
+		    padding-right: 0;
+			}
 		}
 	}
 	.lia-quilt-row-bottom-row-full-width{
@@ -137,6 +141,17 @@ $np-white:											#fff;
 		float: none;
 	}
 }
+.lia-quilt-column-side-content{
+	padding-left: 0;
+	.lia-quilt-column-alley.lia-quilt-column-alley-right{
+		padding-right: 15px;
+		@media screen and (max-width: 991px){
+	    padding-left: 15px;
+	    padding-right: 15px;
+		}
+	}
+}
+
 
 
 
@@ -965,7 +980,7 @@ $np-white:											#fff;
 						top: 20px;
 				    content: "\f058";
 				    position: absolute;
-				    right: 187px;
+				    right: 192px;
 				    font-size: 21px;
 				    font-family: FontAwesome;
 					}
@@ -973,7 +988,7 @@ $np-white:											#fff;
 						content: 'Accepted Solution';
 				    position: absolute;
 				    top: 25px;
-				    right: 60px;
+				    right: 66px;
 				    font-weight: bold;
 					}
 			}
@@ -1124,7 +1139,9 @@ $np-white:											#fff;
   }
 }
 @media screen and (max-width:991px){
-	.lia-quilt-column-left.lia-quilt-column-main-content{
+	#lia-body .lia-quilt-column-left.lia-quilt-column-main-content{
+                 padding-left:15px;
+                 padding-right:15px;
 		.lia-panel-message .lia-quilt-row-header{
 			.lia-quilt-column-header-left-avatar{
 				float:left;
