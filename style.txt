@@ -865,7 +865,7 @@ $np-white:											#fff;
 		border:0;
 		color: #146CAC;
 	}
-	.lia-component-me-too .lia-panel-message .lia-button-secondary{
+	.lia-component-me-too .lia-button-secondary{
 		min-width:70px;
 		padding:5px 15px;
 		border-color: #146CAC;
