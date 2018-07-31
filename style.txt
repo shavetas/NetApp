@@ -78,118 +78,17 @@ $np-white:											#fff;
 	float: left;
 }
 
-/* User Notification */
-
-.user_notifications{
-  display: inline-block;
-  float: right;
-  padding: 15px 0;
-  margin: 0 20px 0 0px;
-  min-width: 17px;
-  cursor: pointer;
-  .Notification-wrapper{
-    position: static;
-    .Notification-count-container{
-      position: relative;
-      right: 0;
-      .notification-icon{
-        svg:not(:root).svg-inline--fa{
-          overflow: visible;
-          font-size: 20px;
-          color: #747474;
-        }
-      }
-      .notification-count{
-        position: absolute;
-        border-radius: 100%;
-        background-color: #0097D7;
-        color: #fff;
-        top: -8px;
-        padding: 3px 6px;
-        left: 11px;
-        font-size: 10px;
-        font-weight: bold;
-        line-height: normal;
-      }
-    }
-    .notification-popup-container.active{
-      display:block;
-    }
-    .notification-popup-container{
-      display:none;
-      position: absolute;
-      right: 8px;
-      top: 48px;
-      z-index: 2;
-      box-shadow: 0px 5px 20px -2px rgba(0, 0, 0, 0.5);
-      background-color: #fff;
-      &:before{
-        content: "";
-        border: 12px solid;
-        border-color: transparent transparent #0096d6;
-        position: absolute;
-        top: -22px;
-        right: 9px;
-        z-index: 99;
-      }
-      .notify-head {
-        background-color: #0096d6;
-        padding: 10px;
-        color: #fff;
-        .read-all {
-          font-size: 12px;
-          line-height: 25px;
-        }
-      }
-      ul#scroller {
-        max-height: 277px;
-      }
-      .notification-list{
-        li[data-notification-type="badge"]{
-          .avatar_notification{
-            > img{
-              height: 40px;
-              width: 40px;
-            }
-          }
-          .notifi_decription{
-            padding-left: 10px;
-            padding-top:20px;
-          }
-        }
-        li{
-          border-bottom: 1px solid #e8e8e8;
-          padding: 10px;
-          &:after{
-            content:"";
-            display:block;
-            clear:both;
-          }
-          .avatar_notification {
-            display: inline-block;
-            float: left;
-            > img {
-              border-radius: 50%;
-              height: 40px;
-              object-fit: cover;
-              width: 40px;
-              max-width: none;
-              box-shadow: 0 0 1px 0 #c4c4c4 inset, 0 0 1px 0 #c4c4c4;
-            }
-          }
-          .notifi_decription {
-            padding-left: 10px;
-            display: inline-block;
-            float: left;
-            width: 89%;
-            .date {
-              color: #666;
-            }
-          }
-        }
-      }
-    }
-  }
+/* Header Right */
+.UserNavigation{
+	.user-navigation-settings-drop-down-inner .lia-list-standard{
+		top: 50px;
+		right: 0;
+		left: unset;
+		.lia-component-notificationfeed-widget-indicator,
+		.lia-component-notes-widget-summary-modern{
+			display: none;
+		}
+	}
 }
 
 /* layot */
@@ -637,6 +536,16 @@ $np-white:											#fff;
 				box-shadow: 4px 0px 0px -3px rgba(196,196,196,0.5),
 										0px 4px 0px -3px rgba(196,196,196,0.5),
 									  0px 0px 3px -3px rgba(196,196,196,0.5);
+				&:nth-child(5){
+					box-shadow: 4px 0px 0px -3px rgba(196, 196, 196, 0),
+											0px 4px 0px -3px rgba(196, 196, 196, 0.5), 
+											0px 0px 3px -3px rgba(196, 196, 196, 0.5);
+				}	
+				&:nth-child(n+6){
+					box-shadow: 4px 0px 0px -3px rgba(196, 196, 196, 0.5), 
+											0px 4px 0px -3px rgba(196, 196, 196, 0),
+											0px 0px 3px -3px rgba(196, 196, 196, 0.5);
+				}
 				.text-content-center.card-content{
 					position: relative;
 					min-height: 80px;
@@ -803,7 +712,7 @@ $np-white:											#fff;
 	}
 }
 
-/* Message Main Section **/
+/* ForumTopic Message Main Section **/
 .lia-quilt-column-main-content{
   .lia-panel-message{
     border:0;
@@ -859,8 +768,9 @@ $np-white:											#fff;
       padding-left: 0;
       padding: 0;
       color: #146CAC;
+      min-width: 70px;
     }
-	.lia-panel-message .lia-action-reply.reply-action-link:active:focus{
+	.lia-action-reply.reply-action-link:active:focus{
 		background:transparent;
 		border:0;
 		color: #146CAC;
@@ -897,14 +807,27 @@ $np-white:											#fff;
       float: right;
       padding: 6px 12px;
       color: black;
+      position: relative;
       .lia-message-stats-count{
-		color: #5d5d5d;
+				color: #5d5d5d;
         font-size:12px;
-		display:inline-block;
+				display:inline-block;
       }
-	  .lia-message-stats-label{
-		display:inline-block;  
-	  }
+		  .lia-message-stats-label{
+				display:inline-block;  
+		  }
+		  &:before{
+		  	background-image: url(/html/assets/reply.png);
+		    content: '';
+		    width: 20px;
+		    height: 20px;
+		    position: absolute;
+		    top: 17px;
+		    right: 62px;
+		    transform: translate(-50%, -50%);
+		    background-position: center;
+		    background-repeat: no-repeat;
+		  }
     }
 	.lia-quilt-row-footer{
 		background-color:transparent;
@@ -917,7 +840,7 @@ $np-white:											#fff;
   .lia-component-topic-message{
     .lia-quilt-forum-message{
 		.lia-quilt-row-main, .lia-quilt-row-footer{
-          padding-left: 75px;
+          padding-left: 55px;
 		}
     }
   }
@@ -944,7 +867,7 @@ $np-white:											#fff;
 		}
 		.lia-accepted-solution{
 			padding: 20px;
-			background-color: #f6f6f6;
+			background-color: $np-gray;
 			border-left: 5px solid #448602;
 			.lia-message-state-indicator{
 					color: #448602;
@@ -966,4 +889,266 @@ $np-white:											#fff;
 			}
 		}	
   }
+}
+.lia-tag-list-item{
+	margin-right:10px;
+}
+
+
+/* User Notification -- Shaveta 
+
+.user_notifications{
+  display: inline-block;
+  float: right;
+  padding: 15px 0;
+  margin: 0 20px 0 0px;
+  min-width: 17px;
+  cursor: pointer;
+  .Notification-wrapper{
+    position: static;
+    .Notification-count-container{
+      position: relative;
+      right: 0;
+      .notification-icon{
+        svg:not(:root).svg-inline--fa{
+          overflow: visible;
+          font-size: 20px;
+          color: #747474;
+        }
+      }
+      .notification-count{
+        position: absolute;
+        border-radius: 100%;
+        background-color: #0097D7;
+        color: #fff;
+        top: -8px;
+        padding: 3px 6px;
+        left: 11px;
+        font-size: 10px;
+        font-weight: bold;
+        line-height: normal;
+      }
+    }
+    .notification-popup-container.active{
+      display:block;
+    }
+    .notification-popup-container{
+      display:none;
+      position: absolute;
+      right: 8px;
+      top: 48px;
+      z-index: 2;
+      box-shadow: 0px 5px 20px -2px rgba(0, 0, 0, 0.5);
+      background-color: #fff;
+      &:before{
+        content: "";
+        border: 12px solid;
+        border-color: transparent transparent #0096d6;
+        position: absolute;
+        top: -22px;
+        right: 9px;
+        z-index: 99;
+      }
+      .notify-head {
+        background-color: #0096d6;
+        padding: 10px;
+        color: #fff;
+        .read-all {
+          font-size: 12px;
+          line-height: 25px;
+        }
+      }
+      ul#scroller {
+        max-height: 277px;
+      }
+      .list_view_all{
+      	padding: 10px;
+      }
+      .notification-list{
+        li[data-notification-type="badge"]{
+          .avatar_notification{
+            > img{
+              height: 35px;
+              width: 35px;
+            }
+          }
+          .notifi_decription{
+            padding-left: 10px;
+          }
+        }
+        li{
+          border-bottom: 1px solid #e8e8e8;
+          padding: 10px;
+          &:after{
+            content:"";
+            display:block;
+            clear:both;
+          }
+          .avatar_notification {
+            display: inline-block;
+            float: left;
+            > img {
+              border-radius: 50%;
+              height: 40px;
+              object-fit: cover;
+              width: 40px;
+              max-width: none;
+              box-shadow: 0 0 1px 0 #c4c4c4 inset, 0 0 1px 0 #c4c4c4;
+            }
+          }
+          .notifi_decription {
+            padding-left: 10px;
+            display: inline-block;
+            float: left;
+            width: 89%;
+            .date {
+              color: #666;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+*/
+
+
+.user_notifications {
+  display: inline-block;
+  float: left;
+  padding: 1px 0;
+  margin: 0 20px 0 0px;
+  min-width: 17px;
+  cursor: pointer;
+  position:relative;
+}
+.user_notifications .Notification-wrapper {
+  position: static;
+  padding:10px;
+}
+.user_notifications .Notification-wrapper .Notification-count-container {
+  position: relative;
+  right: 0;
+  line-height:24px;
+}
+.user_notifications .Notification-wrapper .Notification-count-container .notification-icon svg:not(:root).svg-inline--fa {
+  overflow: visible;
+  font-size: 20px;
+  color: #747474;
+}
+.user_notifications .Notification-wrapper .Notification-count-container .notification-count {
+  position: absolute;
+  border-radius: 100%;
+  background-color: #0097d7;
+  color: #fff;
+  top: -8px;
+  padding: 3px 6px;
+  left: 11px;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: normal;
+}
+.user_notifications .Notification-wrapper .notification-popup-container.active {
+  display: block;
+}
+.lia-quilt.header-wrapper .lia-quilt-header-content-wrapper .lia-header-nav-component-widget .private-notes-link{
+  padding:5px 0 0;
+}
+.user_notifications .Notification-wrapper .notification-popup-container {
+  display: none;
+  position: absolute;
+  right: -5px;
+  top: 50px;
+  z-index: 2;
+  box-shadow: 0px 5px 20px -2px rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  width: 400px;
+}
+.user_notifications .Notification-wrapper .notification-popup-container:before {
+  content: "";
+  border: 12px solid;
+  border-color: transparent transparent #0096d6;
+  position: absolute;
+  top: -22px;
+  right: 9px;
+  z-index: 99;
+}
+.user_notifications .Notification-wrapper .notification-popup-container .notify-head {
+  background-color: #0096d6;
+  padding: 10px;
+  color: #fff;
+  text-align: left;
+}
+.user_notifications .Notification-wrapper .notification-popup-container .notify-head .read-all {
+  font-size: 12px;
+ 
+}
+.user_notifications .Notification-wrapper .notification-popup-container ul#scroller {
+  max-height: 277px;
+text-align:left;
+}
+.user_notifications .Notification-wrapper .notification-popup-container .notification-list li[data-notification-type="badge"] .avatar_notification > img {
+  height: 30px;
+  width: 30px;
+}
+.user_notifications .Notification-wrapper .notification-popup-container .notification-list li {
+  border-bottom: 1px solid #e8e8e8;
+  padding: 10px;
+}
+.user_notifications .Notification-wrapper .notification-popup-container .notification-list li:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.user_notifications .Notification-wrapper .notification-popup-container .notification-list li .avatar_notification {
+  display: inline-block;
+  float: left;
+}
+.user_notifications .Notification-wrapper .notification-popup-container .notification-list li .avatar_notification > img {
+  border-radius: 50%;
+  height: 40px;
+  object-fit: cover;
+  width: 40px;
+  max-width: none;
+  box-shadow: 0 0 1px 0 #c4c4c4 inset, 0 0 1px 0 #c4c4c4;
+}
+.user_notifications .Notification-wrapper .notification-popup-container .notification-list li .notifi_decription {
+  padding-left: 10px;
+  display: inline-block;
+  width: 89%;
+  text-align: left;
+}
+.user_notifications .Notification-wrapper .notification-popup-container .notification-list li .notifi_decription .date {
+  color: #666;
+}
+.lia-quilt.header-wrapper .lia-quilt-header-content-wrapper .user-navigation-parent-dropdown-combine.user-navigation-combine-notification-feed {
+    display: none;
+}
+.UserNavigation.lia-component-common-widget-user-navigation-combine {
+    display: inline-block;
+}
+.user-navigation-parent-dropdown.user-navigation-parent-dropdown-combine{
+padding-top:5px;
+}
+.lia-quilt.header-wrapper .lia-quilt-header-content-wrapper .lia-quilt-column-single.lia-quilt-column-right{
+width:auto;
+float:right;
+}
+.lia-quilt.header-wrapper .lia-quilt-header-content-wrapper{
+overflow:visible;
+}
+.user_notifications .Notification-wrapper .notification-popup-container ul {
+  padding-left: 0;
+  list-style: none;
+}
+.user_notifications .Notification-wrapper .notification-popup-container .list_view_all {
+    background-color: #E6E9E9;
+    padding: 2px 10px 4px;
+    text-align: right;
+}
+.user_notifications .Notification-wrapper .notification-popup-container .list_view_all a {
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
 }
