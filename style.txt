@@ -84,6 +84,8 @@ $np-white:											#fff;
   border-radius: 0;
   font-weight: 500;
   text-transform: uppercase;
+  line-height: 15px;
+  font-size: 12px;
 }
 
 
@@ -138,7 +140,7 @@ $np-white:											#fff;
 		background-color: $np-deep-purple;
 	}
 }
-.lia-top-quilt {
+.lia-body .lia-top-quilt {
 	> .lia-quilt-row-main,
 	 .lia-quilt-column-main-top-content,
 	 .lia-quilt-column-main-bottom-content
@@ -148,21 +150,27 @@ $np-white:											#fff;
 		margin-right: auto;
 		float: none;
 		background-color: transparent !important;
+		padding-left: 0;
+		padding-right: 0;
+		.lia-quilt-row.lia-quilt-column.lia-quilt-column-single{
+			padding: 0;
+		}
+		.lia-quilt-column-main-content{
+			padding-left: 0;
+		}
 	}
-}
-.lia-quilt-column-side-content{
-	padding-left: 0;
-	.lia-quilt-column-alley.lia-quilt-column-alley-right{
-		padding-right: 15px;
-		@media screen and (max-width: 991px){
-	    padding-left: 15px;
-	    padding-right: 15px;
+	.lia-quilt-row-main .lia-quilt-column-side-content{
+		padding-left: 0;
+		padding-right: 0;
+		.lia-quilt-column-alley.lia-quilt-column-alley-right{
+			padding-right: 15px;
+			@media screen and (max-width: 991px){
+		    padding-left: 15px;
+		    padding-right: 15px;
+			}
 		}
 	}
 }
-
-
-
 
 /* Header Section */
 
@@ -588,9 +596,13 @@ $np-white:											#fff;
 	margin-top: 24px;
 	.lia-panel-heading-bar-wrapper{
 		margin-bottom: 10px;
-		.lia-panel-heading-bar.net-app-section{
+		.lia-panel-heading-bar{
 			width: 100%;
-			max-width: calc(100% - 115px);
+			.lia-panel-heading-bar-title.net-app-section{
+				width: 100%;
+				line-height: 15px;
+				max-width: calc(100% - 84px);
+			}
 		}
 	}
 	.category-card{
