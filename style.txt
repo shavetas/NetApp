@@ -142,7 +142,9 @@ $np-white:											#fff;
 	}
 }
 .lia-quilt-column-side-content{
+	padding-left: 0;
 	.lia-quilt-column-alley.lia-quilt-column-alley-right{
+		padding-right: 15px;
 		@media screen and (max-width: 991px){
 	    padding-left: 15px;
 	    padding-right: 15px;
