@@ -74,10 +74,18 @@ $np-white:											#fff;
 	text-align: justify;
 }
 
-.lia-quilt-column-cs-5{
-	width: 20%;
+.lia-quilt-column-cs-4{
+	width: 25%;
 	float: left;
 }
+
+.lia-button.lia-button-more {
+  border: 1px solid $text-link-color;
+  border-radius: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
 
 /* width */
 ::-webkit-scrollbar {
@@ -139,6 +147,7 @@ $np-white:											#fff;
 		margin-left: auto;
 		margin-right: auto;
 		float: none;
+		background-color: transparent !important;
 	}
 }
 .lia-quilt-column-side-content{
@@ -156,6 +165,20 @@ $np-white:											#fff;
 
 
 /* Header Section */
+
+.lia-quilt.top-hat-wrapper {
+    background-color: $np-deep-gray;
+    display: block;
+    .top-links-wrapper{
+    	width:100%;
+    	line-height: 2;
+    }
+		a{
+			color: $np-white;
+		}    
+}
+
+
 .lia-quilt.header-wrapper{
 	
 	background-color: $np-gray;
@@ -562,6 +585,14 @@ $np-white:											#fff;
 /* HomePage */
 
 .lia-component-custom-grz-category{
+	margin-top: 24px;
+	.lia-panel-heading-bar-wrapper{
+		margin-bottom: 10px;
+		.lia-panel-heading-bar.net-app-section{
+			width: 100%;
+			max-width: calc(100% - 115px);
+		}
+	}
 	.category-card{
 		padding: 10px;
 	 	border:5px solid $np-light-gray;
@@ -609,14 +640,15 @@ $np-white:											#fff;
 				box-shadow: 4px 0px 0px -3px rgba(196,196,196,0.5),
 										0px 4px 0px -3px rgba(196,196,196,0.5),
 									  0px 0px 3px -3px rgba(196,196,196,0.5);
-				&:nth-child(5){
-					box-shadow: 4px 0px 0px -3px rgba(196, 196, 196, 0),
-											0px 4px 0px -3px rgba(196, 196, 196, 0.5), 
-											0px 0px 3px -3px rgba(196, 196, 196, 0.5);
-				}	
-				&:nth-child(n+6){
+				&:nth-last-child(-n+4){
 					box-shadow: 4px 0px 0px -3px rgba(196, 196, 196, 0.5), 
 											0px 4px 0px -3px rgba(196, 196, 196, 0),
+											0px 0px 3px -3px rgba(196, 196, 196, 0.5);
+				}
+				&:nth-child(4n),
+				&:nth-last-child(4){
+					box-shadow: 4px 0px 0px -3px rgba(196, 196, 196, 0),
+											0px 4px 0px -3px rgba(196, 196, 196, 0.5), 
 											0px 0px 3px -3px rgba(196, 196, 196, 0.5);
 				}
 				.text-content-center.card-content{
