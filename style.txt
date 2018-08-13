@@ -1725,20 +1725,6 @@ a.header-right-link {
     .lia-component-custom-grz-category{
       margin-top:0;
     }
-    .lia-panel.lia-component-custom-grz-community-stats-count .community-stats-count-wrapper{
-      .icon, .icon-detail{
-        float:left;
-        display: inline-block;
-      }
-      .icon-detail{
-        .count{
-          font-size: 20px;
-        }
-        .count-label{
-          font-size: 18px;
-        }
-      }
-    }
   }
   .lia-quilt.footer-wrapper{
     .lia-quilt-column-single.lia-quilt-column-left, .lia-quilt-column-single.lia-quilt-column-right{
@@ -1771,6 +1757,23 @@ a.header-right-link {
 			}
 		}
 	}
+}
+@media screen and (max-width:767px)
+{
+  .lia-panel.lia-component-custom-grz-community-stats-count .community-stats-count-wrapper{
+      .icon, .icon-detail{
+        float:left;
+        display: inline-block;
+      }
+      .icon-detail{
+        .count{
+          font-size: 20px;
+        }
+        .count-label{
+          font-size: 18px;
+        }
+      }
+    }
 }
 @media screen and (max-width:640px){
 	.lia-component-topic-message{
