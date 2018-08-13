@@ -1681,14 +1681,68 @@ a.header-right-link {
       width:75%;
       .top-links.header-section{
         width:59%;
+        padding: 0 10px;
       }
       .logo.header-section{
         width:40%;
+        .n-property-bar__logo{
+          img{
+            width:50%;
+          }
+          h2{
+            font-size:18px;
+          }
+        }
       }
     }
     .lia-quilt-column-single.lia-quilt-column-right{
       float:left;
       width:25%;
+      a.header-right-link{
+        margin-right:10px;
+      }
+      .userDetails{
+        .user_login{
+          display: none;
+        }
+      }
+      .UserNavigation .lia-header-nav-component-widget.lia-component-notes-widget-summary-modern{
+        margin-right: 10px;
+      }
+      .user_notifications{
+        margin-right: 10px;
+      }
+    }
+  }
+  .lia-quilt.header-banner-cum-search .header-search-section-wrpper{
+    max-width: 440px;
+  }
+  .lia-quilt-community-page{
+    .lia-component-custom-grz-category{
+      margin-top:0;
+    }
+    .lia-panel.lia-component-custom-grz-community-stats-count .community-stats-count-wrapper{
+      .icon, .icon-detail{
+        float:left;
+        display: inline-block;
+      }
+      .icon-detail{
+        .count{
+          font-size: 20px;
+        }
+        .count-label{
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .lia-quilt.footer-wrapper{
+    .lia-quilt-column-single.lia-quilt-column-left, .lia-quilt-column-single.lia-quilt-column-right{
+      float:left;
+      width:50%;
+      .text-content-right{
+        text-align: right;
+      }
     }
   }
 	#lia-body .lia-quilt-column-left.lia-quilt-column-main-content{
