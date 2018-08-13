@@ -458,6 +458,17 @@ a.header-right-link {
 }
 
 
+.custom-pagination{
+  a {
+    margin-left: 10px;
+    &.active{
+      font-weight: 600;
+    }
+  }
+
+}
+
+
 /* Custom User Drop Down -- Anjali */
 
 .text-content-right {
@@ -1083,6 +1094,8 @@ a.header-right-link {
 			    	    img{
 			    	    	max-width: 60px;
 			    	    	max-height: 60px;
+                  height: 60px;
+                  width: 60px;
 			    	    }
 			    	}
 			    	.thread-subject {
