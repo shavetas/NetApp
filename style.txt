@@ -87,6 +87,9 @@ $np-white:											#fff;
 .mobile-avatar{
   display:none;
 }
+#lia body .lia-content {
+    min-width: 300px;
+}
 .lia-button.lia-button-more {
   border: 2px solid $text-link-color;
   border-radius: 0;
@@ -1799,7 +1802,7 @@ a.header-right-link {
       text-align: center;
     }
   }
-  .lia-quilt.footer-wrapper .lia-quilt-header-content-wrapper{
+  .lia-quilt.header-wrapper.lia-quilt.footer-wrapper .lia-quilt-header-content-wrapper{
     .lia-quilt-column-single.lia-quilt-column-left, .lia-quilt-column-single.lia-quilt-column-right{
       float:left;
       width:100%;
@@ -1956,6 +1959,15 @@ a.header-right-link {
     .lia-panel-message .lia-quilt-row-header .lia-component-message-view-widget-subject .lia-message-subject{
       font-size: 16px;
     }
+  }
+  .lia-custom-component .thread-wrapper-section .thread-wrapper .thread-subject{
+    width:70%;
+  }
+  .lia-quilt.top-hat-wrapper a{
+    font-size: 11px;
+  }
+  .lia-quilt.header-banner-cum-search .header-search-section-wrpper .net-app-section.header-search-field .net-app-section{
+    font-size: 13px;
   }
 }
 /* Category Page --Shaveta*/
