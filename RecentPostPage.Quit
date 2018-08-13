@@ -1,0 +1,5 @@
+<quilt layout="one-column" nestable="false" disableTopCssClass="false">
+  <add to="main-content">
+    <component id="post-list"/>
+  </add>
+</quilt>

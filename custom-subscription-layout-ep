@@ -1,0 +1,329 @@
+<#assign action =  http.request.parameters.name.get("action","getAllUnSubscribeBoards") >
+
+<#function getTimeConstraint time>
+    <#assign currentDate = .now?long/>
+    <#switch time>
+      <#case 'Last Day'>
+        <#assign last_time_condition = (currentDate - (1 * 24 * 60 * 60 * 1000))?number_to_datetime?iso_utc />
+      <#break >
+      <#case 'Last Login'>
+        <#assign lastVisitTime  = http.request.parameters.name.get("userLastVisitTime","") >
+        <#assign lastVisitTime  = datesupport.parseAsIso8601(lastVisitTime)?long >
+        <#--
+        <#assign last_time_condition = (currentDate - (15 * 24 * 60 * 60 * 1000))?number_to_datetime?iso_utc />
+        -->
+        <#assign last_time_condition = (currentDate - lastVisitTime)?number_to_datetime?iso_utc />
+      <#break >
+      <#case 'Last Month'>
+
+        <#assign last_time_condition = (currentDate - (30 * 24 * 60 * 60 * 1000))?number_to_datetime?iso_utc />
+      <#break >
+      <#case 'Last Week'>
+        <#assign last_time_condition = (currentDate - (7 * 24 * 60 * 60 * 1000))?number_to_datetime?iso_utc />
+      <#break >
+      <#default>
+        <#assign last_time_condition = "" />
+    </#switch>
+    <#if last_time_condition != "">
+      <#return "AND post_time > ${last_time_condition}">
+    </#if>
+    <#return "">
+</#function>
+
+<#function getBoardDetail id >
+  <#local boardDetail  = rest("2.0", "/search?q=" + "select * from boards where id = '${id}'"?url).data.items[0] >
+  <#return boardDetail >
+</#function>
+
+<#function subscribeThisBoard id>
+  <#local subscribed = restadmin("/boards/id/${id}/subscriptions/users/self/add?subscription.type=email")/>
+  <#local  status = subscribed.@status >
+  <#return status>
+</#function>
+
+<#function unsubscribeThisBoard id>
+  <#local unsubscribed = restadmin("/boards/id/${id}/subscriptions/users/self/type/email/remove")/>
+  <#local  status = unsubscribed.@status >
+  <#return status>
+</#function>
+
+<#function getRepliesCount msgId >
+  <#local repliesCount = rest( "2.0", "/search?q=" + "select count(*) from messages  WHERE parent.id ='${msgId}'"?url).data.count > 
+  <#return repliesCount>
+</#function >
+
+<#function getUserSubscribedBoardIds >
+  <#local ids = [] >
+  <#local subscribedBoardCount = rest("2.0", "/search?q=" + "SELECT count(*) FROM subscriptions WHERE target.type = 'board'"?url).data.count />
+  <#if subscribedBoardCount != 0 >
+    <#local subscribedBoard = rest("2.0", "/search?q=" + "SELECT * FROM subscriptions WHERE target.type = 'board' limit ${subscribedBoardCount}"?url).data.items />
+    <#list subscribedBoard as board>
+      <#local ids = ids + [board.target.id] >
+    </#list>
+  </#if>
+  <#return ids>
+</#function>
+
+<#function getMessageDetail msgId >
+    <#local message = rest("2.0", "/search?q=" + "SELECT * FROM messages where id = '${msgId}'"?url).data.items[0]![] />
+    <#return message >
+</#function>
+
+<#function getUserSubscribedBoardOnThreadBasis >
+  <#local msgIds = [] >
+  <#local boardId = [] >
+  <#local subscribeThreadCount = rest("2.0", "/search?q=" + "SELECT count(*) FROM subscriptions WHERE target.type = 'conversation'"?url).data.count />
+  <#if subscribeThreadCount != 0 >
+    <#local subscribedThread = rest("2.0", "/search?q=" + "SELECT * FROM subscriptions WHERE target.type = 'conversation' limit ${subscribeThreadCount}"?url).data.items />
+    <#list subscribedThread as thread>
+      <#local msgIds = msgIds + [thread.target.id] >
+      <#local getMsgBoardId   = getMessageDetail(thread.target.id).board.id >
+      <#if !boardId?seq_contains(getMsgBoardId) >
+        <#local boardId = boardId + ["${getMsgBoardId}"] >
+      </#if>
+    </#list>
+  </#if>
+  <#return { "boardIds" : boardId , "messageIds" : msgIds } >
+</#function>
+
+<#function getBoardMessage boardIds time = "" count = false >
+  <#if count>
+    <#local returnValue = rest("2.0", "/search?q=" + "SELECT count(*) FROM messages where board.id in ('${boardIds}') and depth = 0 ${time}"?trim?url).data.count >
+  <#else>
+    <#local returnValue = rest("2.0", "/search?q=" + "SELECT * FROM messages where board.id in ('${boardIds}') and depth = 0 ${time}"?trim?url).data.items >
+  </#if>
+  <#return returnValue >
+</#function>
+
+<#function getBoardMessageIds boardIds msgId time = "" count = false>
+  <#local msgIds = "'" +  msgId?join("','") + "'" >
+  <#if count>
+    <#local returnValue = rest("2.0", "/search?q=" + "select count(*) from messages where board.id = '${boardIds}' and id in (${msgIds}) ${time}"?trim?url).data.count >
+  <#else>
+    <#local returnValue = rest("2.0", "/search?q=" + "select * from messages where board.id = '${boardIds}' and id in (${msgIds}) ${time}"?trim?url).data.items >
+  </#if>
+  <#return returnValue >
+</#function>
+
+<#function getAllUnSubscribeBoards >
+  <#local userUnsubscribeBoard = [] >
+  <#--
+  <#local allBoardsCount = rest("2.0", "/search?q=" + "select count(*) from boards where root_category.id = 'English'"?url).data.count >
+  -->
+  <#local allBoardsCount = rest("/categories/id/English/boards/nested/count"?url).value?number >
+  <#if allBoardsCount != 0 >
+    <#--
+    <#local allBoards = rest("2.0", "/search?q=" + "select id,title from boards where root_category.id = 'English' limit ${allBoardsCount}"?url).data.items />
+    -->
+    <#local allBoards = rest("/categories/id/English/boards/nested?page_size=${allBoardsCount}").boards.board />
+    
+    <#local userSubscribeBoardIds = getUserSubscribedBoardIds() >
+    
+    <#list allBoards as board>
+      <#if !userSubscribeBoardIds?seq_contains(board.id) >
+        <#local userUnsubscribeBoard = userUnsubscribeBoard + [board] >
+      </#if>
+    </#list>
+  </#if>
+  <#return userUnsubscribeBoard>
+</#function>
+
+<#function getAllSubscribeBoards >
+  <#local userSubscribeBoard = getUserSubscribedBoardIds() >
+  <#local boarids = "'" + userSubscribeBoard?join("','") + "'" >
+  
+  <#local subscribeBoards = rest("2.0", "/search?q=" + "select id,title from boards where id in (${boarids})"?url).data.items >
+  <#return subscribeBoards >
+  
+</#function>
+
+<#function getAllSubscribeLabels getlabel_text = false >
+  <#local getLabelsCount =  rest("2.0", "/search?q=" + "SELECT count(*) FROM subscriptions where target.type = 'label'"?url).data.count >
+  <#local getLabels =  rest("2.0", "/search?q=" + "SELECT target.id FROM subscriptions where target.type = 'label' limit ${getLabelsCount}"?url).data.items >
+  <#if getlabel_text>
+      <#local label_texts = [] >
+      <#list getLabels as label>
+        <#local label_id  = label.target.id >
+        <#local label_text = rest("/labels/id/${label_id}").label.text >
+        <#local label_texts = label_texts + [label_text] >
+      </#list>
+      <#return label_texts>
+  </#if>
+  <#return getLabels>
+</#function>
+
+
+<#-- LABEL SUBSCRIPTION API -->
+
+<#function getAllSubscribeLabels getlabel_text = false >
+  <#local getLabelsCount =  rest("2.0", "/search?q=" + "SELECT count(*) FROM subscriptions where target.type = 'label'"?url).data.count >
+  <#local getLabels =  rest("2.0", "/search?q=" + "SELECT target.id FROM subscriptions where target.type = 'label' limit ${getLabelsCount}"?url).data.items >
+  <#if getlabel_text>
+      <#local label_texts = [] >
+      <#list getLabels as label>
+        <#local label_id  = label.target.id >
+        <#local label_text = rest("/labels/id/${label_id}").label.text >
+        <#local label_texts = label_texts + [label_text] >
+      </#list>
+      <#return label_texts>
+  </#if>
+  <#return getLabels>
+</#function>
+
+<#function getAllBoardLabelsWise labels>
+  <#local formateLabele = "'" + labels?join("','") + "'" >
+  <#local messageCount  = rest("2.0", "/search?q=" + "select count(*) from messages where labels.text in (${formateLabele})"?trim?url).data.count >
+  <#local messages = rest("2.0", "/search?q=" + "select board.id from messages where labels.text in (${formateLabele})"?trim?url).data.items >
+  <#local ids = [] >
+  <#list messages as message >
+    <#if !ids?seq_contains(message.board.id)>
+      <#local ids = ids + [message.board.id] >
+    </#if>
+  </#list>
+  <#return ids >
+</#function>
+
+<#function getBoardMessageLabelWise boardId labels time = "" count = false >
+  <#local formateLabele = "'" + labels?join("','") + "'" >
+  <#if count>
+      <#local returnValue = rest("2.0", "/search?q=" + "select * from messages where labels.text in (${formateLabele}) and board.id = '${boardId}' ${time}"?trim?url).data.count >
+  <#else>
+      <#local returnValue = rest("2.0", "/search?q=" + "select * from messages where labels.text in (${formateLabele}) and board.id = '${boardId}' ${time}"?trim?url).data.items >
+  </#if>
+    <#return returnValue>
+</#function>
+
+
+<#-- <#function respondRequest data>
+    <#local response = '{"response":"success","data":['+ data?join(",") + '}]}' >
+    <#return response >
+</#function> -->
+
+
+
+<#switch action>
+  <#case "getAllUnSubscribeBoards">
+    <#assign allUnsubscribeBoards = getAllUnSubscribeBoards() >
+    <#assign unsubscribeBoardJson = [] >
+    {
+      "response":"success",
+      "items":[
+        <#list allUnsubscribeBoards as board>
+          {"id":"${board.id}","title":"${board.title}"}
+          <#if board?has_next>
+            ,
+          </#if>
+        </#list>
+      ]
+    }
+    <#break>
+  <#case "subscribeNow">
+    <#assign boardIds =  http.request.parameters.name.get("boardIds","")?split(",") >
+    {
+      "response":"success",
+      "items":[
+          <#list boardIds as id>
+          {
+            "boardId" : "${id}",
+            "subscibeStatus":"${subscribeThisBoard(id)}" 
+          }
+          <#if id?has_next>
+            ,
+          </#if>
+          </#list>
+        ]
+    }
+    <#break>
+  <#case "unsubscribeNow">
+    <#assign boardIds =  http.request.parameters.name.get("boardIds","")?split(",") >
+    {
+      "response":"success",
+      "items":[
+          <#list boardIds as id>
+          {
+            "boardId" : "${id}",
+            "unsubscibeStatus":"${unsubscribeThisBoard(id)}" 
+          }
+          <#if id?has_next>
+            ,
+          </#if>
+          </#list>
+        ]
+    }
+    <#break>
+  <#case "getThreadBoardWise">
+    <#assign subscriptionType       =  http.request.parameters.name.get("subsriptionType","boardWise") >
+    <#if subscriptionType == "boardWise" >
+      <#assign userSubscribeBoards          =  getUserSubscribedBoardIds() >
+    <#elseif subscriptionType == "labelWise">
+      <#assign getAllSubscribeLabelTexts     = getAllSubscribeLabels(true) >
+      <#assign userSubscribeBoards           =  getAllBoardLabelsWise(getAllSubscribeLabelTexts)>
+    <#else>
+      <#assign userThreadSubscribtion         =  getUserSubscribedBoardOnThreadBasis() >
+      <#assign userSubscribeBoards            =  userThreadSubscribtion.boardIds >
+      <#assign userThreadSubscribtionIds      =  userThreadSubscribtion.messageIds >
+    </#if>
+    <#assign timeParam              =  http.request.parameters.name.get("time","Last Day") >
+    <#assign getTimeConstraint      =  getTimeConstraint(timeParam) >
+    {
+      "response":"success",
+      "items":[
+        <#list userSubscribeBoards as board>
+          <#if subscriptionType == "boardWise" >
+            <#assign messages     = getBoardMessage(board,getTimeConstraint) >
+          <#elseif subscriptionType == "labelWise">
+            <#assign messages     = getBoardMessageLabelWise(board,getAllSubscribeLabelTexts,getTimeConstraint) >
+          <#else>
+            <#assign messages     = getBoardMessageIds(board,userThreadSubscribtionIds,getTimeConstraint) >
+          </#if>
+          <#assign boardDetail  = getBoardDetail(board) >
+          {
+            "${board}":{
+              "boardDetail":{
+                 "id" : "${boardDetail.id}",
+                 "title" : "${boardDetail.title?json_string}",
+                 "view_href" : "${boardDetail.view_href}"
+              },
+              "boardmessages":[
+              <#list messages as message >
+                {
+                  "subject" : "${message.subject?json_string}",
+                  "href" : "${message.view_href}",
+                  "commentsCount" : "${getRepliesCount(message.id)}",
+                  "created_on" : "${message.current_revision.last_edit_time?number_to_datetime?string('MM-dd-yyyy HH:mm: a')}",
+                  <#-- "created_on" : "${message.current_revision.last_edit_time?string('MM-dd-yyyy HH:mm: a')}", -->
+                  <#-- "created_on" : "${message.post_time?string('MM-dd-yyyy HH:mm: a')}", -->
+                  <#-- "created_on" : "${message.post_time?string_to_iso}", -->
+                  "user_context_read" : ${message.user_context.read?string}
+                }
+                <#if message?has_next>
+                  ,
+                </#if>
+              </#list>
+            ]}
+          }
+    <#if board?has_next>
+      ,
+    </#if>
+      </#list>
+      ]
+    }
+    <#break>
+  <#case "getUserSubscribedBoard">
+    <#assign allSubscribeBoards = getAllSubscribeBoards() > 
+    {
+      "response":"success",
+      "items":[ 
+      <#list allSubscribeBoards as board >
+        {
+          "id":"${board.id}",
+          "title": "${board.title?json_string}"
+        }
+        <#if board?has_next>
+          ,
+        </#if>
+      </#list>
+    ]}
+    <#break>
+  <#default>
+</#switch>
