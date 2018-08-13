@@ -1718,15 +1718,21 @@ a.header-right-link {
       }
     }
   }
-  .lia-quilt.header-banner-cum-search .header-search-section-wrpper{
-    max-width: 440px;
+  .footer-card-wrapper .footer-card .net-app-section.content-section-right{
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .lia-quilt.header-banner-cum-search{
+    .header-search-section-wrpper{
+      max-width: 440px;
+    }
   }
   .lia-quilt-community-page{
     .lia-component-custom-grz-category{
       margin-top:0;
     }
   }
-  .lia-quilt.footer-wrapper{
+  .lia-quilt.footer-wrapper .lia-quilt-header-content-wrapper{
     .lia-quilt-column-single.lia-quilt-column-left, .lia-quilt-column-single.lia-quilt-column-right{
       float:left;
       width:50%;
@@ -1765,10 +1771,9 @@ a.header-right-link {
       right:48px;
     }
   }
-  
-}
-@media screen and (max-width:767px)
-{
+  .lia-quilt-column-side-content .lia-panel.lia-panel-standard{
+    width:100%;
+  }
   .lia-panel.lia-component-custom-grz-community-stats-count .community-stats-count-wrapper{
       .icon, .icon-detail{
         float:left;
@@ -1783,6 +1788,21 @@ a.header-right-link {
         }
       }
     }
+}
+@media screen and (max-width:767px)
+{
+  .text-content-center{
+    text-align: center;
+  }
+  .lia-quilt.footer-wrapper .lia-quilt-header-content-wrapper{
+    .lia-quilt-column-single.lia-quilt-column-left, .lia-quilt-column-single.lia-quilt-column-right{
+      float:left;
+      width:100%;
+      .text-content-right{
+        text-align: left;
+      }
+    }
+  }
 }
 @media screen and (max-width:640px){
 	.lia-component-topic-message{
@@ -1805,19 +1825,29 @@ a.header-right-link {
       }
     }
     .lia-component-reply-list .lia-linear-display-message-view .lia-message-view-display{
-      padding: 10px;
+      padding: 0px 10px;
     }
+  }
+  .lia-quilt.header-banner-cum-search .banner-title{
+    font-size: 30px;
+    line-height: 32px;
   }
 }
 @media screen and (max-width:420px){
-	.lia-message-state-indicator{
-		&:before{
-			content:none;
-		}
-		&:after{
-			content:none;
-		}
-	}
+	.lia-quilt-column-main-content{
+    .lia-component-reply-list .lia-accepted-solution .lia-message-state-indicator{
+  		&:before{
+  			top:0px;
+        right:50px;
+  		}
+  		&:after{
+  			content:'';
+  		}
+  	}
+    .lia-panel-message .lia-quilt-row-header .lia-component-message-view-widget-subject .lia-message-subject{
+      font-size: 16px;
+    }
+  }
 }
 /* Category Page --Shaveta*/
 .lia-quilt-column.lia-quilt-column-06.lia-quilt-column-single.lia-quilt-column.subcategory {
