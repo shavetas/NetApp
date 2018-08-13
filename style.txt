@@ -1834,9 +1834,29 @@ a.header-right-link {
        }
      }
   }
-  .lia-custom-component .thread-wrapper-section .thread-wrapper .thread-common-section.thread-section{
+  .lia-custom-component .thread-wrapper-section .thread-wrapper{ 
+    .thread-common-section.thread-section{
+      padding-left: 0;
+      max-width: 100%;
+    }
+    .thread-common-section .avatar{
+      float: left;
+      width: 25%;
+    }
+    .thread-subject{
+      float: left;
+      width: 75%;
+      padding-left: 10px;
+    }
+    .thread-body, .thread-detail{
+      float:left;
+      width: 100%;
+      padding-top: 5px;
+    }
+  }
+  #lia-body .lia-quilt-column-left.lia-quilt-column-main-content{
     padding-left: 0;
-    max-width: 100%;
+    padding-right: 0;
   }
 }
 @media screen and (max-width:480px){
@@ -1853,6 +1873,30 @@ a.header-right-link {
   .lia-quilt.header-banner-cum-search .banner-title{
     font-size: 30px;
     line-height: 32px;
+  }
+  .lia-panel.lia-component-custom-grz-community-stats-count{
+    .lia-panel-content-wrapper .lia-panel-content .community-stats-count-wrapper .net-app-section{
+      width:100%;
+      .icon-detail{
+        padding-left: 15px
+      }
+    }
+  }
+  .footer-card-wrapper{
+    .n-footer__copyright{
+      .copy-right{
+        display: block;
+      }
+      .separtor{
+        display: none;
+      }
+    }
+    .text-content-right{
+      line-height: 20px;
+      .let-us-know{
+        display: block;
+      }
+    }
   }
 }
 @media screen and (max-width:420px){
