@@ -84,7 +84,9 @@ $np-white:											#fff;
 	width: 25%;
 	float: left;
 }
-
+.mobile-avatar{
+  display:none;
+}
 .lia-button.lia-button-more {
   border: 2px solid $text-link-color;
   border-radius: 0;
@@ -1443,7 +1445,7 @@ a.header-right-link {
     .lia-quilt-row-header{
       .lia-component-message-view-widget-action-menu{
         top:0;
-        right:0;
+        right:-35px;
       }
       .lia-component-message-view-widget-subject{
           display: block;
@@ -1599,6 +1601,7 @@ a.header-right-link {
 			border-bottom: 1px solid #eee;
 			.lia-message-view-display{
 				margin: 15px 0px;
+        padding: 20px;
 				.lia-component-message-view-widget-tags{
 					display:none;
 				}
@@ -1616,7 +1619,6 @@ a.header-right-link {
 			}
 		}
 		.lia-accepted-solution{
-			padding: 20px;
 			background-color: $np-gray;
 			border-left: 5px solid #448602;
 			.lia-message-state-indicator{
@@ -1686,14 +1688,60 @@ a.header-right-link {
       width:75%;
       .top-links.header-section{
         width:59%;
+        padding: 0 10px;
       }
       .logo.header-section{
         width:40%;
+        .n-property-bar__logo{
+          img{
+            width:50%;
+          }
+          h2{
+            font-size:18px;
+          }
+        }
       }
     }
     .lia-quilt-column-single.lia-quilt-column-right{
       float:left;
       width:25%;
+      a.header-right-link{
+        margin-right:10px;
+      }
+      .userDetails{
+        .user_login{
+          display: none;
+        }
+      }
+      .UserNavigation .lia-header-nav-component-widget.lia-component-notes-widget-summary-modern{
+        margin-right: 10px;
+      }
+      .user_notifications{
+        margin-right: 10px;
+      }
+    }
+  }
+  .footer-card-wrapper .footer-card .net-app-section.content-section-right{
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .lia-quilt.header-banner-cum-search{
+    .header-search-section-wrpper{
+      max-width: 440px;
+    }
+  }
+  .lia-quilt-community-page{
+    .lia-component-custom-grz-category{
+      margin-top:0;
+    }
+  }
+  .lia-quilt.footer-wrapper .lia-quilt-header-content-wrapper{
+    .lia-quilt-column-single.lia-quilt-column-left, .lia-quilt-column-single.lia-quilt-column-right{
+      float:left;
+      width:50%;
+      .text-content-right{
+        text-align: right;
+      }
     }
   }
 	#lia-body .lia-quilt-column-left.lia-quilt-column-main-content{
@@ -1718,6 +1766,48 @@ a.header-right-link {
 			}
 		}
 	}
+  .lia-quilt-column-main-content .lia-panel-message{
+    .lia-quilt-row-header .lia-component-message-view-widget-action-menu{
+      right:0;
+    }
+    .lia-component-messages-stat-thread-replies-count:before{
+      right:48px;
+    }
+  }
+  .lia-quilt-column-side-content .lia-panel.lia-panel-standard{
+    width:100%;
+  }
+  .lia-panel.lia-component-custom-grz-community-stats-count .community-stats-count-wrapper{
+      .icon, .icon-detail{
+        float:left;
+        display: inline-block;
+      }
+      .icon-detail{
+        .count{
+          font-size: 20px;
+        }
+        .count-label{
+          font-size: 18px;
+        }
+      }
+    }
+}
+@media screen and (max-width:767px)
+{
+  .lia-quilt-header-banner-cum-search-content-wrapper , .lia-quilt-community-page{
+    .text-content-center{
+      text-align: center;
+    }
+  }
+  .lia-quilt.footer-wrapper .lia-quilt-header-content-wrapper{
+    .lia-quilt-column-single.lia-quilt-column-left, .lia-quilt-column-single.lia-quilt-column-right{
+      float:left;
+      width:100%;
+      .text-content-right{
+        text-align: left;
+      }
+    }
+  }
 }
 @media screen and (max-width:640px){
 	.lia-component-topic-message{
@@ -1727,16 +1817,111 @@ a.header-right-link {
 		}
     }
   }
+  .lia-body .lia-top-quilt > .lia-quilt-row-main, .lia-body .lia-top-quilt .lia-quilt-column-main-top-content, .lia-body .lia-top-quilt .lia-quilt-column-main-bottom-content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .mobile-avatar{
+    display:block;
+  }
+  .profile-section.thread-common-section{
+    display: none;
+  }
+  .lia-quilt.header-wrapper .lia-quilt-header-content-wrapper{
+     .lia-quilt-column-single.lia-quilt-column-left{ 
+       .logo.header-section{
+        width: auto;
+       }
+       .top-links.header-section{
+        width:100%;
+       }
+     }
+  }
+  .lia-custom-component .thread-wrapper-section .thread-wrapper{ 
+    .thread-common-section.thread-section{
+      padding-left: 0;
+      max-width: 100%;
+    }
+    .thread-common-section .avatar{
+      float: left;
+    }
+    .thread-subject{
+      float: left;
+      width: 75%;
+      padding-left: 10px;
+      padding-top: 10px;
+    }
+    .thread-body, .thread-detail{
+      float:left;
+      width: 100%;
+      padding-top: 5px;
+    }
+  }
+  #lia-body .lia-quilt-column-left.lia-quilt-column-main-content{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media screen and (max-width:480px){
+  .lia-quilt-column-main-content{
+    .lia-component-topic-message .lia-quilt-forum-message{
+      .lia-quilt-row-main, .lia-quilt-row-footer{
+        padding-left: 0;
+      }
+    }
+    .lia-component-reply-list .lia-linear-display-message-view .lia-message-view-display{
+      padding: 0px 10px;
+    }
+  }
+  .lia-quilt.header-banner-cum-search .banner-title{
+    font-size: 30px;
+    line-height: 32px;
+  }
+  .lia-panel.lia-component-custom-grz-community-stats-count{
+    .lia-panel-content-wrapper .lia-panel-content .community-stats-count-wrapper .net-app-section{
+      width:100%;
+      padding-bottom: 15px;
+      .icon-detail{
+        padding-left: 15px;
+        padding-top: 10px;
+        .count, .count-label{
+          display:inline-block;
+        }
+      }
+    }
+  }
+  .footer-card-wrapper{
+    .n-footer__copyright{
+      .copy-right{
+        display: block;
+      }
+      .separtor{
+        display: none;
+      }
+    }
+    .text-content-right{
+      line-height: 20px;
+      .let-us-know{
+        display: block;
+      }
+    }
+  }
 }
 @media screen and (max-width:420px){
-	.lia-message-state-indicator{
-		&:before{
-			content:none;
-		}
-		&:after{
-			content:none;
-		}
-	}
+	.lia-quilt-column-main-content{
+    .lia-component-reply-list .lia-accepted-solution .lia-message-state-indicator{
+  		&:before{
+  			top:0px;
+        right:50px;
+  		}
+  		&:after{
+  			content:'';
+  		}
+  	}
+    .lia-panel-message .lia-quilt-row-header .lia-component-message-view-widget-subject .lia-message-subject{
+      font-size: 16px;
+    }
+  }
 }
 /* Category Page --Shaveta*/
 .lia-quilt-column.lia-quilt-column-06.lia-quilt-column-single.lia-quilt-column.subcategory {
