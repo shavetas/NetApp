@@ -87,7 +87,7 @@ $np-white:											#fff;
 .mobile-avatar{
   display:none;
 }
-#lia body .lia-content {
+#lia-body .lia-content {
     min-width: 300px;
 }
 .lia-button.lia-button-more {
@@ -1911,7 +1911,7 @@ a.header-right-link {
       }
     }
   }
-  .footer-card-wrapper{
+  .footer-wrapper{
     .n-footer__copyright{
       .copy-right{
         display: block;
