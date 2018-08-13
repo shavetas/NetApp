@@ -197,6 +197,9 @@ a.header-right-link {
 		.lia-quilt-column-main-content{
 			padding-left: 0;
 		}
+    .lia-quilt-column-single > .lia-quilt-column-alley {
+      padding: 0;
+    }
 	}
 	.lia-quilt-row-main .lia-quilt-column-side-content{
 		padding-left: 0;
@@ -1663,6 +1666,7 @@ a.header-right-link {
   .lia-header-nav-component-widget .private-notes-link {
     /*padding: 5px 0 0;*/
     padding:0;
+
   }
 }
 

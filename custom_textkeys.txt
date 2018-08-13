@@ -1,0 +1,3 @@
+page.post.title = Start a Discussion
+form.MessageEditor.fieldset.Post.title = New Message
+form.MessageEditor.field.board.title = Select Board
