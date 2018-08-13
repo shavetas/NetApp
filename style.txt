@@ -1793,8 +1793,10 @@ a.header-right-link {
 }
 @media screen and (max-width:767px)
 {
-  .lia-quilt-community-page .text-content-center{
-    text-align: center;
+  .lia-quilt-header-banner-cum-search-content-wrapper , .lia-quilt-community-page{
+    .text-content-center{
+      text-align: center;
+    }
   }
   .lia-quilt.footer-wrapper .lia-quilt-header-content-wrapper{
     .lia-quilt-column-single.lia-quilt-column-left, .lia-quilt-column-single.lia-quilt-column-right{
@@ -1846,6 +1848,7 @@ a.header-right-link {
       float: left;
       width: 75%;
       padding-left: 10px;
+      padding-top: 10px;
     }
     .thread-body, .thread-detail{
       float:left;
@@ -1878,7 +1881,11 @@ a.header-right-link {
       width:100%;
       padding-bottom: 15px;
       .icon-detail{
-        padding-left: 15px
+        padding-left: 15px;
+        padding-top: 10px;
+        .count, .count-label{
+          display:inline-block;
+        }
       }
     }
   }
