@@ -1666,9 +1666,35 @@ a.header-right-link {
   .lia-header-nav-component-widget .private-notes-link {
     /*padding: 5px 0 0;*/
     padding:0;
+
   }
 }
+
+@media screen and (max-width:1210px){
+  .lia-body .lia-top-quilt > .lia-quilt-row-main, .lia-body .lia-top-quilt .lia-quilt-column-main-top-content, .lia-body .lia-top-quilt .lia-quilt-column-main-bottom-content {
+    max-width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
 @media screen and (max-width:991px){
+  .lia-quilt.header-wrapper .lia-quilt-header-content-wrapper{
+    .lia-quilt-column-single.lia-quilt-column-left{
+      float:left;
+      width:75%;
+      .top-links.header-section{
+        width:59%;
+      }
+      .logo.header-section{
+        width:40%;
+      }
+    }
+    .lia-quilt-column-single.lia-quilt-column-right{
+      float:left;
+      width:25%;
+    }
+  }
 	#lia-body .lia-quilt-column-left.lia-quilt-column-main-content{
                  padding-left:15px;
                  padding-right:15px;
