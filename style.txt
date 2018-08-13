@@ -1793,7 +1793,7 @@ a.header-right-link {
 }
 @media screen and (max-width:767px)
 {
-  .lia-quilt-header-banner-cum-search-content-wrapper .text-content-center{
+  .lia-quilt-community-page .text-content-center{
     text-align: center;
   }
   .lia-quilt.footer-wrapper .lia-quilt-header-content-wrapper{
@@ -1841,7 +1841,6 @@ a.header-right-link {
     }
     .thread-common-section .avatar{
       float: left;
-      width: 25%;
     }
     .thread-subject{
       float: left;
@@ -1877,6 +1876,7 @@ a.header-right-link {
   .lia-panel.lia-component-custom-grz-community-stats-count{
     .lia-panel-content-wrapper .lia-panel-content .community-stats-count-wrapper .net-app-section{
       width:100%;
+      padding-bottom: 15px;
       .icon-detail{
         padding-left: 15px
       }
