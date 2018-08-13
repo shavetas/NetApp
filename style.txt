@@ -87,6 +87,9 @@ $np-white:											#fff;
 .mobile-avatar{
   display:none;
 }
+#lia-body .lia-content {
+    min-width: 300px;
+}
 .lia-button.lia-button-more {
   border: 2px solid $text-link-color;
   border-radius: 0;
@@ -1812,13 +1815,31 @@ a.header-right-link {
       text-align: center;
     }
   }
-  .lia-quilt.footer-wrapper .lia-quilt-header-content-wrapper{
+  .lia-quilt.header-wrapper.lia-quilt.footer-wrapper .lia-quilt-header-content-wrapper{
     .lia-quilt-column-single.lia-quilt-column-left, .lia-quilt-column-single.lia-quilt-column-right{
       float:left;
       width:100%;
       .text-content-right{
         text-align: left;
       }
+    }
+  }
+  .lia-quilt.header-wrapper .lia-quilt-header-content-wrapper{
+    .lia-quilt-column-single.lia-quilt-column-left{
+      width:60%;
+      .logo.header-section{
+          width:auto;
+      }
+      .top-links.header-section{
+        width:100%;
+        padding: 0;
+        ul li{
+          padding-left: 5px;
+        }
+      }
+    }
+    .lia-quilt-column-single.lia-quilt-column-right{
+      width:40%;
     }
   }
 }
@@ -1903,7 +1924,7 @@ a.header-right-link {
       }
     }
   }
-  .footer-card-wrapper{
+  .footer-wrapper{
     .n-footer__copyright{
       .copy-right{
         display: block;
@@ -1916,6 +1937,23 @@ a.header-right-link {
       line-height: 20px;
       .let-us-know{
         display: block;
+      }
+    }
+  }
+  .lia-quilt.header-banner-cum-search .header-search-section-wrpper .net-app-section.header-search-field .net-app-section{
+    font-size: 14px;
+  }
+  .lia-quilt.header-wrapper .lia-quilt-header-content-wrapper{
+    .lia-quilt-column-single.lia-quilt-column-left{
+      width:75%;
+      .top-links.header-section{
+        display:none;
+      }
+    }
+    .lia-quilt-column-single.lia-quilt-column-right{
+      width: 25%;
+      a.header-right-link, .UserNavigation.lia-component-common-widget-user-navigation-combine, .user_notifications{
+        display: none;
       }
     }
   }
@@ -1934,6 +1972,15 @@ a.header-right-link {
     .lia-panel-message .lia-quilt-row-header .lia-component-message-view-widget-subject .lia-message-subject{
       font-size: 16px;
     }
+  }
+  .lia-custom-component .thread-wrapper-section .thread-wrapper .thread-subject{
+    width:70%;
+  }
+  .lia-quilt.top-hat-wrapper a{
+    font-size: 11px;
+  }
+  .lia-quilt.header-banner-cum-search .header-search-section-wrpper .net-app-section.header-search-field .net-app-section{
+    font-size: 13px;
   }
 }
 /* Category Page --Shaveta*/
