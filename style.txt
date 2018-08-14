@@ -1580,10 +1580,10 @@ a.header-right-link {
       display:inline-block;
     }
     .lia-component-me-too{
-      span.lia-rating-enumeration{
+      .lia-rating-enumeration{
         display: inline-block;
       }
-      span.lia-rating-link-summary{
+      .lia-rating-link-summary{
         display: inline-block;
         float: right;
         padding-left: 10px;
@@ -1595,6 +1595,9 @@ a.header-right-link {
       color: #17a217;
       background-color: transparent;
       margin-top: 0;
+      a{
+        color: #17a217;
+      }
     }
     .lia-action-reply.reply-action-link{
       background: transparent;
