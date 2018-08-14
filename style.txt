@@ -228,6 +228,16 @@ a.header-right-link {
     .top-links-wrapper{
     	width:100%;
     	line-height: 2;
+      .n-top-hat__list-item{
+        padding-left:6px;
+        padding-right: 6px;
+        /* &:first-child{
+          padding-left: 0;
+        }
+        &:last-child{
+          padding-right: 0;
+        } */ 
+      }
     }
 		a{
 			color: $np-white;
@@ -258,6 +268,18 @@ a.header-right-link {
 		}
     .n-property-bar__property-mark {
       line-height: 0;
+    }
+    .logo.header-section.net-app-section{
+      a{
+        color: $np-light-blue;
+        text-decoration: none;
+        &:hover,
+        &:focus{
+          color: $np-light-blue;
+          text-decoration: none;
+          outline: none;
+        }
+      }
     }
 		.top-links.header-section{
 			padding: 0 20px;
@@ -309,7 +331,7 @@ a.header-right-link {
   background-color: #f6f6f6;
   margin-bottom: 24px;
   .lia-quilt.header-breadcrumb{
-    background-color: #fff;
+    /* background-color: #fff; */
   }
   .lia-component-common-widget-breadcrumb{
     background-color: transparent;
@@ -1031,6 +1053,32 @@ a.header-right-link {
       select{
         padding: 0;
         height: 30px;
+        min-width: 80px;
+      }
+      span.filter-labels.net-app-section {
+          margin-right: 10px;
+      }
+      span.lia-panel-heading-bar-subscribe{
+        margin-left: 10px;
+        a{
+          color: $np-light-blue;
+          text-transform: uppercase;
+        }
+      }
+      span.lia-panel-heading-bar-page-option{
+        .default-menu-option {
+          background-color: transparent;
+          border: none;
+          color: $np-light-blue;
+          text-transform: uppercase;
+          font-size: 14px;
+          line-height: 16px;
+          font-weight: 500;
+          &:after{
+            content: "\f142";
+            color: $np-light-blue;
+          }
+        }
       }
 		}
     .loader-section{
