@@ -1505,6 +1505,9 @@ a.header-right-link {
       box-shadow: none;
     }
     .lia-quilt-row-header{
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
       .lia-component-message-view-widget-action-menu{
         top:0;
         right:-35px;
@@ -1566,12 +1569,32 @@ a.header-right-link {
         background-color: #f6f6f6;
         text-transform: capitalize;
       }
+      .lia-message-tags{
+        margin-top:10px;
+        .lia-form{
+          float:left;
+        }
+      }
     }
     .lia-component-me-too, .lia-component-quick-reply-button{
       display:inline-block;
     }
+    .lia-component-me-too{
+      span.lia-rating-enumeration{
+        display: inline-block;
+      }
+      span.lia-rating-link-summary{
+        display: inline-block;
+        float: right;
+        padding-left: 10px;
+        padding-top: 5px;
+      }
+    }
     .lia-panel-feedback-banner-safe{
-      padding: 8px;
+      padding: 8px 0;
+      color: #17a217;
+      background-color: transparent;
+      margin-top: 0;
     }
     .lia-action-reply.reply-action-link{
       background: transparent;
@@ -1645,18 +1668,14 @@ a.header-right-link {
     }
   .lia-quilt-row-footer{
     background-color:transparent;
+    border-top: 1px solid #eee;
+    padding: 10px 0;
+    margin: 10px 0;
   }
   }
   .lia-discussion-page-sub-section-header{
     padding-left:0;
     border-bottom:1px solid #eee;
-  }
-  .lia-component-topic-message{
-    .lia-quilt-forum-message{
-    .lia-quilt-row-main, .lia-quilt-row-footer{
-          padding-left: 55px;
-    }
-    }
   }
   .lia-component-reply-list{
     .lia-linear-display-message-view{
