@@ -1829,6 +1829,12 @@ a.header-right-link {
       width:40%;
     }
   }
+  .lia-component-custom-grz-subcategory .lia-panel-content-wrapper .lia-panel-content .sub-category-wrapper .text-content-center.card-content{
+    min-height: auto;
+    padding: 20px 0;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
 }
 @media screen and (max-width:640px){
 	.lia-component-topic-message{
@@ -1968,6 +1974,10 @@ a.header-right-link {
   }
   .lia-quilt.header-banner-cum-search .header-search-section-wrpper .net-app-section.header-search-field .net-app-section{
     font-size: 13px;
+  }
+  .lia-component-custom-grz-subcategory .lia-panel-content-wrapper .lia-panel-content .sub-category-wrapper .text-content-center.card-content .title.card-title{
+    font-size: 14px;
+    line-height: 18px;
   }
 }
 /* Category Page --Shaveta*/
