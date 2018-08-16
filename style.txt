@@ -1642,12 +1642,18 @@ a.header-right-link {
       .kudos-count-link{
         color: #5d5d5d;
         font-size: 16px;
+        padding: 6px;
       }
       .kudos-link{
         background-color: transparent;
         color: #5d5d5d;
         border: 0;
-        padding: 5px 0;
+        padding: 6px 0;
+        &:active:focus:hover{
+          background-color:transparent;
+          border:0;
+          outline: 0;
+        }
       }
     .kudos-link:before{
     color: #5d5d5d;
@@ -1678,7 +1684,8 @@ a.header-right-link {
         height: 20px;
         position: absolute;
         top: 17px;
-        right: 72px;
+        right: auto;
+        left:0;
         transform: translate(-50%, -50%);
         background-position: center;
         background-repeat: no-repeat;
@@ -1705,6 +1712,9 @@ a.header-right-link {
         .lia-component-message-view-widget-tags{
           display:none;
         }
+         .lia-message-view-display .lia-message-subject .lia-link-navigation{
+          display:none;
+        }
       }
       .lia-quilt-column-header-left{
         .lia-quilt-column-alley-inner{
@@ -1724,17 +1734,17 @@ a.header-right-link {
       .lia-message-state-indicator{
           color: #448602;
           &:before{
-            top: 20px;
+            top: 10px;
             content: "\f058";
             position: absolute;
-            right: 192px;
-            font-size: 21px;
+            right: 175px;
+            font-size: 20px;
             font-family: FontAwesome;
           }
           &:after{
             content: 'Accepted Solution';
             position: absolute;
-            top: 25px;
+            top: 15px;
             right: 66px;
             font-weight: bold;
           }
