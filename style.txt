@@ -1500,6 +1500,18 @@ a.header-right-link {
      .lia-form-vertical .lia-button-group .lia-button-wrapper{
       padding-left: 0;
      }
+     .lia-panel-section{
+        margin-left:0;
+        margin-right: 0;
+        .lia-panel-heading-bar{
+          padding: 8.5px 0px;
+          margin-bottom: 10px;
+        }
+        .lia-panel-content{
+          padding:0;
+         }
+     }
+     
   }
 /* ForumTopic Message Main Section **/
 .lia-quilt-column-main-content{
@@ -1573,6 +1585,7 @@ a.header-right-link {
       .lia-tag-list-item
       {
         padding: 5px 10px;
+        margin-bottom: 5px;
         background-color: #f6f6f6;
         text-transform: capitalize;
       }
@@ -1798,8 +1811,21 @@ a.header-right-link {
     padding-left: 40px;
     padding-right: 40px;
   }
+  .lia-quilt-column-main-content .lia-panel-message{
+    .lia-component-accepted-solutions-button .lia-button-secondary{
+      font-size: 14px;
+    }
+    .lia-component-messages-stat-thread-replies-count{
+      margin-left:10px;
+      .lia-message-stats-count, .lia-message-stats-label{
+        font-size:14px;
+      }
+    }
+    .KudosButton .kudos-count-link{
+      font-size: 14px;
+    }
+  }
 }
-
 @media screen and (max-width:991px){
   .lia-quilt.header-wrapper .lia-quilt-header-content-wrapper{
     .lia-quilt-column-single.lia-quilt-column-left{
@@ -1866,20 +1892,24 @@ a.header-right-link {
   #lia-body .lia-quilt-column-left.lia-quilt-column-main-content{
                  padding-left:15px;
                  padding-right:15px;
-    .lia-panel-message .lia-quilt-row-header{
-      .lia-quilt-column-header-left{
-        float:left;
-      }
+  }
+  .lia-panel-message .lia-quilt-row-header{
+    .lia-quilt-column-header-left{
+      float:left;
     }
   }
   .lia-quilt-column-main-content .lia-panel-message{
     .lia-quilt-column-footer-right{
       margin-top: 10px;
+      .lia-component-accepted-solutions-button .lia-button{
+        float:right;
+      }
       .lia-button{
         float:left;
       }
       .lia-component-messages-stat-thread-replies-count{
         float:left;
+        margin-right:5px;
       }
     }
   }
@@ -2017,6 +2047,9 @@ a.header-right-link {
     padding-left: 0;
     padding-right: 0;
   }
+  .lia-quilt-column-main-content .lia-panel-message{
+    padding:10px;
+  }
 }
 @media screen and (max-width:480px){
   .lia-quilt-column-main-content{
@@ -2077,6 +2110,25 @@ a.header-right-link {
       a.header-right-link, .UserNavigation.lia-component-common-widget-user-navigation-combine, .user_notifications{
         display: none;
       }
+    }
+  }
+  .lia-quilt-column-main-content .lia-panel-message{
+    .KudosButton .kudos-count-link{
+      font-size: 16px;
+    }
+    .lia-component-messages-stat-thread-replies-count{
+      .lia-message-stats-count, .lia-message-stats-label{
+        font-size: 16px;
+      }
+    }
+    .lia-quilt-column-footer-right{
+      .lia-component-accepted-solutions-button{
+        float:left;
+        width:100%;
+        .lia-button{
+          float:left;
+        }
+      } 
     }
   }
 }
