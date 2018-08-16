@@ -1627,10 +1627,21 @@ a.header-right-link {
       color: white;
     }
   }
+  .lia-component-accepted-solutions-button{
+    .lia-button-secondary{
+      color: #17a217;
+      background-color: #f7f7f7;
+      border: none;
+      &:active:focus:hover{
+        color: #17a217;
+        background-color: #eee;
+      }
+    }
+  }
     .KudosButton{
       .kudos-count-link{
         color: #5d5d5d;
-        font-size: 12px;
+        font-size: 16px;
       }
       .kudos-link{
         background-color: transparent;
@@ -1652,11 +1663,13 @@ a.header-right-link {
       position: relative;
       .lia-message-stats-count{
         color: #5d5d5d;
-        font-size:12px;
+        font-size:16px;
         display:inline-block;
       }
       .lia-message-stats-label{
         display:inline-block;  
+        font-size: 16px;
+        text-transform: capitalize;
       }
       &:before{
         background-image: url(/html/assets/reply.png);
@@ -1665,7 +1678,7 @@ a.header-right-link {
         height: 20px;
         position: absolute;
         top: 17px;
-        right: 62px;
+        right: 72px;
         transform: translate(-50%, -50%);
         background-position: center;
         background-repeat: no-repeat;
