@@ -1496,13 +1496,11 @@ a.header-right-link {
   }
 }
 
-.lia-body{
-  .PostPage, .ReplyPage, .EditPage{
+  .lia-body.PostPage, .lia-body.ReplyPage, .lia-body.EditPage{
      .lia-form-vertical .lia-button-group .lia-button-wrapper{
       padding-left: 0;
      }
   }
-}
 /* ForumTopic Message Main Section **/
 .lia-quilt-column-main-content{
   .lia-panel-message{
@@ -1708,6 +1706,9 @@ a.header-right-link {
     border-bottom:1px solid #eee;
   }
   .lia-component-reply-list{
+    .lia-img-message-type-solution{
+      display: none;
+    }
     .lia-panel-message{
       padding: 0;
       border: 0;
@@ -1866,14 +1867,12 @@ a.header-right-link {
                  padding-left:15px;
                  padding-right:15px;
     .lia-panel-message .lia-quilt-row-header{
-      .lia-quilt-column-header-left-avatar{
-        float:left;
-      }
       .lia-quilt-column-header-left{
         float:left;
-        padding-left: 15px;
       }
     }
+  }
+  .lia-quilt-column-main-content .lia-panel-message{
     .lia-quilt-column-footer-right{
       margin-top: 10px;
       .lia-button{
@@ -1950,8 +1949,10 @@ a.header-right-link {
     text-align: left;
     border-bottom: 1px solid #ccc;
   }
-  .lia-body{
-    .PostPage , .ReplyPage , .EditPage{
+  .lia-message-author-avatar{
+    float:none;
+  }
+    .lia-body.PostPage , .lia-body.ReplyPage , .lia-body.EditPage{
       .lia-form-fieldset-wrapper.lia-form-post-fieldset-toggle, .lia-form-kudos-fieldset-toggle, .lia-form-tags-fieldset-toggle, .lia-form-attachments-fieldset-toggle, lia-form-labels-fieldset-toggle{
         width:100%;
       }
@@ -1963,7 +1964,6 @@ a.header-right-link {
         width:100%;
       }
     }
-  }
 }
 @media screen and (max-width:640px){
   .lia-component-topic-message{
@@ -2082,7 +2082,7 @@ a.header-right-link {
 }
 @media screen and (max-width:420px){
   .lia-quilt-column-main-content{
-    .lia-component-reply-list .lia-accepted-solution .lia-message-state-indicator{
+    .lia-component-reply-list .lia-message-view-display.lia-accepted-solution .lia-message-state-indicator{
       &:before{
         top:0px;
         right:50px;
