@@ -1496,6 +1496,13 @@ a.header-right-link {
   }
 }
 
+.lia-body{
+  .PostPage, .ReplyPage, .EditPage{
+     .lia-form-vertical .lia-button-group .lia-button-wrapper{
+      padding-left: 0;
+     }
+  }
+}
 /* ForumTopic Message Main Section **/
 .lia-quilt-column-main-content{
   .lia-panel-message{
@@ -1943,19 +1950,18 @@ a.header-right-link {
     text-align: left;
     border-bottom: 1px solid #ccc;
   }
-  .PostPage , .ReplyPage , .EditPage{
-    .lia-form-fieldset-wrapper.lia-form-post-fieldset-toggle, .lia-form-kudos-fieldset-toggle, .lia-form-tags-fieldset-toggle, .lia-form-attachments-fieldset-toggle, lia-form-labels-fieldset-toggle{
-      width:100%;
-    }
-    .lia-form-labels-fieldset-toggle{
-      float:left;
-    }
-    .lia-quilt-row-standard.lia-input-edit-form-row{
-      float:left;
-      width:100%;
-    }
-    .lia-form-vertical .lia-button-group .lia-button-wrapper{
-      padding-left: 0;
+  .lia-body{
+    .PostPage , .ReplyPage , .EditPage{
+      .lia-form-fieldset-wrapper.lia-form-post-fieldset-toggle, .lia-form-kudos-fieldset-toggle, .lia-form-tags-fieldset-toggle, .lia-form-attachments-fieldset-toggle, lia-form-labels-fieldset-toggle{
+        width:100%;
+      }
+      .lia-form-labels-fieldset-toggle{
+        float:left;
+      }
+      .lia-quilt-row-standard.lia-input-edit-form-row{
+        float:left;
+        width:100%;
+      }
     }
   }
 }
