@@ -337,6 +337,11 @@ a.header-right-link {
     background-color: transparent;
     padding: 0;
   }
+  .extra-coreNode-detail-wrapper{
+    .lia-component-coreNodeDetail .card-title{
+      display: none;
+    }
+  }
   .lia-custom-component{
     margin-bottom: 0;
     background-color: transparent;
@@ -346,7 +351,10 @@ a.header-right-link {
         .cat-desc{
           margin-bottom: 0;
           &.card-title{
-          font-size: 24px;
+            font-size: 24px;
+          }
+          &.card-detail{
+            display: none;
           }
         }
       }
@@ -484,6 +492,7 @@ a.header-right-link {
 
 
 .custom-pagination{
+  text-align: right;
   a {
     margin-left: 10px;
     &.active{
@@ -1088,16 +1097,16 @@ a.header-right-link {
       }
     }
 
-    .filter-topic-pagination-wrapper-section{
-      padding: 10px  0;
-      a{
-        margin-left: 5px;
-        margin-right:5px;
-        &.active{
-          font-weight: 600;
-        }
-      }
-    }
+    // .filter-topic-pagination-wrapper-section{
+    //   padding: 10px  0;
+    //   a{
+    //     margin-left: 5px;
+    //     margin-right:5px;
+    //     &.active{
+    //       font-weight: 600;
+    //     }
+    //   }
+    // }
 
     &.loading {
       lia-panel-content {
