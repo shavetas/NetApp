@@ -99,6 +99,21 @@ $np-white:                      #fff;
 .mobile-avatar{
   display:none;
 }
+.link-right-arrow{
+  position: relative;
+  &:after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    background-image: url(/html/assets/arrow-right.png);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
 #lia-body .lia-content {
     min-width: 300px;
 }
@@ -379,12 +394,13 @@ a.header-right-link {
       }
     }
     &.lia-component-categoryPage-subCategory{
+      margin-bottom: 24px;
       .lia-quilt-column.subcategory{
         margin-top: 5px;
         margin-bottom: 5px;
         .cat-wrapper{
           background-color: #fff;
-          padding: 15px 10px;
+          padding: 10px;
           margin: 10px 0;
           width: calc(50% - 10px);
           border: 3px solid $np-light-gray;
@@ -1025,7 +1041,12 @@ a.header-right-link {
       }
   }
   .lia-panel-heading-bar-wrapper{
-    /*font-size: 24px;*/
+    font-size: 24px;
+    .lia-panel-heading-bar-title{
+      /*font-size: 16px;*/
+      /*font-weight: 600;*/
+      /*color: $text-color;*/
+    }
   }
 
   /* Forum Category */
@@ -1393,6 +1414,13 @@ a.header-right-link {
   }
 }
 
+/* Main Side Content */
+.lia-quilt-column-main-content{
+  .lia-panel{
+    margin-bottom: 0;
+  }
+}
+
 
 
 /* Right side Pannel */
@@ -1402,7 +1430,7 @@ a.header-right-link {
     background-color: $np-gray;
     border-bottom: 3px solid $lia-pannel-highlight-color;
     border-radius: 0;
-    padding: 20px;
+    padding: 15px;
     .lia-panel-heading-bar,
     .lia-panel-content{
       padding-left: 0;
@@ -1414,6 +1442,11 @@ a.header-right-link {
       text-transform: uppercase;
       line-height: 1;
       padding-top: 0;
+      .heading.net-app-section{
+        font-size: 16px;
+        font-weight: 600;
+        color: $text-color;
+      }
       .heading-icon.net-app-section{
         width: 15px;
         height: 15px;
@@ -1524,20 +1557,22 @@ a.header-right-link {
     }
     .content-section-bottom.content-section{
       padding: 20px;
+      color: $text-color;
+      font-size: 14px;
+      line-height: 1.5;
       .date-section{
-        font-size: 15px;
-        line-height: 18px;
+        font-size: 13px;
         margin-bottom: 5px;
-        font-weight: 600;
+        /*font-weight: 600;*/
       }
       .content-sub-heading{
-        font-size: 14px;
-        line-height: 20px;
+        /*font-size: 14px;*/
+        /*line-height: 1.5;*/
       }
       .read-more.content-sub-heading {
         margin-top: 10px;
-        font-size: 14px;
-        line-height: 20px;
+        text-transform: uppercase;
+        /*line-height: 1.5;*/
       }
     }
     &.blog-card-1 {
@@ -2659,11 +2694,11 @@ a.header-right-link {
 /* Search Page -- Kritika */
 
 .tab-pane .filter-list .Filter-list-items a{
-padding: 15px 10px 13px 10px;
-border-right: 1px solid #c1c1c1;
-border-top: 1px solid #c1c1c1;
-border-bottom: 1px solid #c1c1c1;
-background-color: #f1f1f1;
+  padding: 15px 10px 13px 10px;
+  border-right: 1px solid #c1c1c1;
+  border-top: 1px solid #c1c1c1;
+  border-bottom: 1px solid #c1c1c1;
+  background-color: #f1f1f1;
 }
 .tab-pane .filter-list .Filter-list-items:nth-child(odd){
 width:16.66%;
