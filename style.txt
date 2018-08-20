@@ -1553,6 +1553,17 @@ a.header-right-link {
      }
      
   }
+   #manageRolesTaplet{
+    table.lia-list-slim tbody{
+      display: block;
+      max-height: 158px;
+      overflow-y: scroll;
+    }
+  }
+  .lia-custom-component .thread-wrapper-section .text-content-center {
+    padding: 20px;
+    font-size: 16px;
+  }
 /* ForumTopic Message Main Section **/
 .lia-quilt-column-main-content{
   .lia-message-view-display.lia-list-row-requires-moderation .lia-message-state-indicator{
@@ -1981,13 +1992,11 @@ a.header-right-link {
         }
       }
     }
-    .ForumPage{
-        .lia-quilt-column-cs-2{
-          width: 30%;
-        }
-        .lia-quilt-column-cs-2.text-content-right{
-          width: 70%;
-        }
+    .lia-quilt-column-cs-2{
+      width: 30%;
+    }
+    .lia-quilt-column-cs-2.text-content-right{
+      width: 70%;
     }
 }
 @media screen and (max-width:767px)
@@ -2121,7 +2130,6 @@ a.header-right-link {
     width: 50%;
     display: inline-block;
   }
-  .ForumPage{
     .lia-panel.lia-component-custom-grz-filterTopics .lia-panel-heading-bar-wrapper{
       height:100px;
         .lia-quilt-column-cs-2{
@@ -2133,7 +2141,6 @@ a.header-right-link {
           margin-top:10px;
         }
       }
-    }
 }
 @media screen and (max-width:480px){
   .lia-quilt-column-main-content{
@@ -2234,7 +2241,6 @@ a.header-right-link {
     margin-top: 5px;
     text-align: left;
   }
-  .ForumPage{
     .lia-panel.lia-component-custom-grz-filterTopics .lia-panel-heading-bar-wrapper{
       height:130px;
         .lia-panel-heading-bar-filter{
@@ -2248,7 +2254,6 @@ a.header-right-link {
           margin-top:10px;
         }
       }
-    }
 }
 @media screen and (max-width:420px){
   .lia-quilt-column-main-content{
@@ -2402,6 +2407,7 @@ a.header-right-link {
   .lia-user-badge-list 
   {
     position: relative;
+    text-align: left;
     .lia-badge-list{
       height: 160px;
       max-width: 100%;
@@ -2430,12 +2436,13 @@ a.header-right-link {
       margin-bottom: 14px;
     }
     .lia-view-all .lia-link-navigation{
-      font-size: 12px;
+      font-size: 14px;
       position: absolute;
       top: 20px;
       right: 0;
       display: inline-block;
-      border: 1px solid #146cac;
+      border: 2px solid #0067c5;
+      font-weight: 500;
       text-transform: uppercase;
       text-decoration: none;
       color: #146cac;
