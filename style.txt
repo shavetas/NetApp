@@ -2046,6 +2046,13 @@ a.header-right-link {
         width: 100%;
       }
     }
+    .lia-form-vertical .lia-form-submit{
+      float:left;
+      .lia-button-wrapper{
+        float: left;
+        padding-left: 0;
+      }
+    }
 }
 @media screen and (max-width:640px){
   .lia-component-topic-message{
@@ -2193,11 +2200,11 @@ a.header-right-link {
       display: block;
     }
     .lia-component-view-profile-banner img.lia-user-avatar-profile{
-      width: 100px;
+      width: 80px;
     }
     .banner_wrap{
       .UserProfileSummary, .biograprhyHolder{
-        margin-left: 90px;
+        margin-left: 70px;
       }
     }
   }
