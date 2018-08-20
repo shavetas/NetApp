@@ -2037,12 +2037,12 @@ a.header-right-link {
         width:100%;
       }
     }
-    .lia-panel{
-      .lia-component-users-widget-moderator-controls{
+    #lia-body.ViewProfilePage{
+      .lia-panel.lia-component-users-widget-moderator-controls{
         margin-right: 0;
         width: 100%;
       }
-      .lia-component-users-widget-manage-roles{
+      .lia-panel.lia-component-users-widget-manage-roles{
         width: 100%;
       }
     }
@@ -2188,7 +2188,7 @@ a.header-right-link {
     }
   }
   #lia-body.ViewProfilePage{ 
-    . .profile_header_wrap .body_wrap .custom_detail_tab {
+    .profile_header_wrap .body_wrap .custom_detail_tab {
       width: 100%;
       display: block;
     }
