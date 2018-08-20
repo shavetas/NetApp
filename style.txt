@@ -92,6 +92,10 @@ $np-white:                      #fff;
   width: 25%;
   float: left;
 }
+.lia-quilt-column-cs-5{
+  width: 20%;
+  float: left;
+}
 .mobile-avatar{
   display:none;
 }
@@ -340,7 +344,7 @@ a.header-right-link {
 }
 .external-header-wrppaer{
   background-color: #f6f6f6;
-  margin-bottom: 24px;
+  /*margin-bottom: 24px;*/
   .lia-quilt.header-breadcrumb{
     /* background-color: #fff; */
   }
@@ -1187,8 +1191,8 @@ a.header-right-link {
                 }
             }
             .thread-subject {
-              /*font-size: 18px;*/
-              font-size: 20px;
+              font-size: 18px;
+              /*font-size: 20px;*/
               line-height: 24px;
               font-weight: 600;
               margin-bottom: 5px;
@@ -1202,15 +1206,15 @@ a.header-right-link {
             }
           }
           .thread-body {
-              /*font-size: 14px;*/
-              font-size: 16px;
-              line-height: 20px;
+              font-size: 14px;
+              /*font-size: 16px;*/
+              line-height: 1.5;
           }
           .thread-detail {
             font-size: 0;
             margin-top: 5px;
             .net-app-section{
-              font-size: 14px;
+              font-size: 12px;
               line-height: 15px;
               width: 50%;
               &.thread-meta-data-right .thread-meta-data{
@@ -1323,10 +1327,8 @@ a.header-right-link {
   }
 }
 
-
-
-
 .lia-component-custom-grz-subcategory{
+  margin-bottom: 0;
   .lia-panel-heading-bar-wrapper{
     display: none;
   }
