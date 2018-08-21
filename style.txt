@@ -359,7 +359,7 @@ a.header-right-link {
 }
 .external-header-wrppaer{
   background-color: #f6f6f6;
-  /*margin-bottom: 24px;*/
+  margin-bottom: 24px;
   .lia-quilt.header-breadcrumb{
     /* background-color: #fff; */
   }
@@ -394,10 +394,13 @@ a.header-right-link {
       }
     }
     &.lia-component-categoryPage-subCategory{
-      margin-bottom: 24px;
+      /*margin-bottom: 24px;*/
+      padding-bottom: 15px;
+      .lia-panel-content{
+        padding: 0;
+      }
       .lia-quilt-column.subcategory{
-        margin-top: 5px;
-        margin-bottom: 5px;
+        margin:0;
         .cat-wrapper{
           background-color: #fff;
           padding: 10px;
@@ -933,6 +936,19 @@ a.header-right-link {
           font-size: 14px;
           line-height: 1.5;
           text-transform: uppercase;
+          position: relative;
+          &:after{
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            width: 20px;
+            height: 20px;
+            transform: translate(-50%, -50%);
+            background-image: url(/html/assets/arrow-right-white.png);
+            background-position: center;
+            background-repeat: no-repeat;
+          }
           a{
             text-decoration: none;
             color: inherit;
@@ -1114,6 +1130,7 @@ a.header-right-link {
     .lia-panel-heading-bar-wrapper{
       border-bottom:1px solid #c4c4c4;
       height: 60px;
+      font-size: 14px;
       select{
         padding: 0;
         height: 30px;
@@ -1199,6 +1216,11 @@ a.header-right-link {
         border-bottom: 1px solid $np-light-gray;
         padding-top: 15px ;
         padding-bottom:15px ;
+        &.moderation-status-approved {
+          border-left: 5px solid transparent;
+          padding-left: 10px;
+          box-sizing: border-box;
+        }
         .thread-common-section{
             vertical-align: top;
             .avatar {
@@ -1293,7 +1315,7 @@ a.header-right-link {
 /* HomePage */
 
 .lia-component-custom-grz-category{
-  margin-top: 24px;
+  /*margin-top: 24px;*/
   margin-bottom: 0;
   .lia-panel-heading-bar-wrapper{
     margin-bottom: 10px;
@@ -1517,8 +1539,12 @@ a.header-right-link {
         .net-app-section{
           width: 33%;
           font-size: 12px;
-          // padding: 0 3%;
+          /*padding: 0 3%;*/
           line-height: 15px;
+          &:nth-child(2){
+            border-right: 1px solid $np-light-gray;
+            border-left: 1px solid $np-light-gray;
+          }
           .count{
             font-size: 16px;
             font-weight: 600;
@@ -2693,77 +2719,104 @@ a.header-right-link {
 
 /* Search Page -- Kritika */
 
-.tab-pane .filter-list .Filter-list-items a{
-  padding: 15px 10px 13px 10px;
-  border-right: 1px solid #c1c1c1;
-  border-top: 1px solid #c1c1c1;
-  border-bottom: 1px solid #c1c1c1;
-  background-color: #f1f1f1;
+.filter-list .Filter-list-items a{
+padding: 15px 10px 13px 10px;
+border-right: 1px solid #c1c1c1;
+border-top: 1px solid #c1c1c1;
+border-bottom: 1px solid #c1c1c1;
 }
-.tab-pane .filter-list .Filter-list-items:nth-child(odd){
+.filter-list .Filter-list-items:nth-child(odd){
 width:16.66%;
 }
-.tab-pane .filter-list .Filter-list-items:nth-child(even){
-width:25%;
+.filter-list .Filter-list-items:nth-child(even){width: 25%;}
+.ng-scope #showCanvasLoaderDefault .filter-list .Filter-list-items.head-category,
+#all a {
+margin-top:0px !important;
 }
-.ng-scope #showCanvasLoaderDefault .filter-list .Filter-list-items.head-category {
-margin-top: 0px;
-}
-.tab-pane .filter-list .Filter-list-items a.active {
+.filter-list .Filter-list-items a.active {
 border-bottom: 5px solid #0067c5;
 }
-.tab-pane .filter-list li .Filter-list-items:first-child {
+.filter-list li .Filter-list-items:first-child {
 border-left: 1px solid #c1c1c1;
 }
+
 @media screen and (min-width:586px) and (max-width:767px){
-.tab-pane .filter-list .Filter-list-items:nth-child(1),
-.tab-pane .filter-list .Filter-list-items:nth-child(2),
-.tab-pane .filter-list .Filter-list-items:nth-child(3)
+.filter-list .Filter-list-items:nth-child(1),
+.filter-list .Filter-list-items:nth-child(2),
+.filter-list .Filter-list-items:nth-child(3),
 {
 width:33.33%;
 }
-.tab-pane .filter-list .Filter-list-items:nth-child(4),
-.tab-pane .filter-list .Filter-list-items:nth-child(5)
+li#all,
+li#forums,
+li#netapp-blogs{
+width:32.33%;
+}
+.filter-list .Filter-list-items:nth-child(4),
+.filter-list .Filter-list-items:nth-child(5)
 {
 width:50%;
 }
-.tab-pane .filter-list .Filter-list-items:nth-child(4){
+li#tech-ontap{
+width:49%;
+}
+.filter-list .Filter-list-items:nth-child(4){
 border-left:1px solid #c1c1c1;
 }
-.tab-pane .filter-list .Filter-list-items{
+.filter-list .Filter-list-items{
 float:none;
 display:inline-block;
 }
 }
 
 @media screen and (max-width:585px){
-.tab-pane .filter-list .Filter-list-items:nth-child(1n){
+.filter-list .Filter-list-items:nth-child(1n){
 width:100%;
 }
-.tab-pane .filter-list .Filter-list-items:nth-child(n+1){
+.filter-list .Filter-list-items:nth-child(n+1){
 border-left:1px solid #c1c1c1;
 }
 
 
 }
-@media screen and (min-width:768px) and (max-width:1129px)
+@media screen and (min-width:992px) and (max-width:1129px)
 {
-.tab-pane .filter-list .Filter-list-items a{
+.filter-list .Filter-list-items a{
 padding-right:0;
 padding-left:0;
 }
-.tab-pane .filter-list .Filter-list-items:first-child,
-.tab-pane .filter-list .Filter-list-items:last-child{
-width:12%;
+.filter-list .Filter-list-items:first-child,
+.filter-list .Filter-list-items:last-child,
+li#all
+{
+width:10%;
 }
-.tab-pane .filter-list .Filter-list-items:nth-child(4){
+.filter-list .Filter-list-items:nth-child(4),
+li#tech-ontap{
 width:35%;
 }
-.tab-pane .filter-list .Filter-list-items:nth-child(2){
+.filter-list .Filter-list-items:nth-child(2),
+li#forums{
 width:24%;
 }
-.tab-pane .filter-list .Filter-list-items a{
+.filter-list .Filter-list-items a{
 font-size:16px;
 }
 
+}
+@media screen and (min-width:768px) and (max-width:991px)
+{
+
+li#forums {
+width:21%;
+}
+li#tech-ontap{
+width:34%;
+}
+li#all{
+width:10%;
+}
+}
+div#searchContent_309d41114a886e {
+clear: both;
 }
