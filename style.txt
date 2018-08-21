@@ -1670,6 +1670,25 @@ a.header-right-link {
     text-align: right;
   }
 }
+.lia-rating-enumeration-system-tkb_helpfulness{
+  .lia-rating-image {
+    background-color: transparent;
+    border-color: #146CAC;
+    color: #146CAC;
+    &:hover{
+      background-color: #146CAC;
+    }
+  }
+  .lia-rating-image-selected.lia-rating-image-active{
+    background-color: #146CAC;
+    border-color: #146CAC;
+    color: #fff;
+  }
+}
+.lia-rating-control-active .ui-stars-star{
+  color: #146CAC;
+}
+
 .lia-component-article{
   margin-top: 0;
 }
