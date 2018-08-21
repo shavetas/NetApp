@@ -1650,10 +1650,30 @@ a.header-right-link {
     padding: 20px;
     font-size: 16px;
   }
+.post-page-disclaimer-div{
+  display:none;
+}
+
+/* TKB Article Page*/
+.TkbArticlePage 
+  .lia-quilt-tkb-message .lia-quilt-column-footer-left{
+    padding: 0;
+    .lia-button-wrapper{
+      padding-left: 0;
+    }
+  }
+  .lia-quilt-tkb-message > .lia-quilt-row:last-child{
+    border:0;
+  }
+}
+
 /* ForumTopic Message Main Section **/
-.lia-quilt-column-main-content{
+.lia-body .lia-quilt-column-main-content{
   .lia-message-view-display.lia-list-row-requires-moderation .lia-message-state-indicator{
     left:-20px;
+  }
+  .lia-panel-message{
+    border:0;
   }
   .MessageView{
     border:0;
@@ -1693,6 +1713,7 @@ a.header-right-link {
       .lia-message-post-date.lia-component-post-date{
         position: relative;
         padding-left: 25px;
+        display: inline-block;
         :before {
           background-image: url(/html/assets/cal.png);
           width: 20px;
