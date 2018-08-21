@@ -1655,7 +1655,8 @@ a.header-right-link {
 }
 
 /* TKB Article Page*/
-.TkbArticlePage 
+
+.TkbArticlePage{ 
   .lia-quilt-tkb-message .lia-quilt-column-footer-left{
     padding: 0;
     .lia-button-wrapper{
@@ -1665,6 +1666,12 @@ a.header-right-link {
   .lia-quilt-tkb-message > .lia-quilt-row:last-child{
     border:0;
   }
+  .lia-quilt-column-header-right{
+    text-align: right;
+  }
+}
+.lia-component-article{
+  margin-top: 0;
 }
 
 /* ForumTopic Message Main Section **/
