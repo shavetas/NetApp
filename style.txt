@@ -1039,9 +1039,23 @@ a.header-right-link {
     }
   }
 
-
-
-
+/* Page Option */
+.lia-component-community-widget-page-options{
+  span.lia-panel-heading-bar-page-option{
+   .default-menu-option {
+     background-color: transparent;
+     border: none;
+     color: $np-light-blue;
+     text-transform: uppercase;
+     font-size: 14px;
+     line-height: 16px;
+     &:after{
+       content: "\f142";
+       color: $np-light-blue;
+     }
+   }
+  } 
+}
 /* Common Commponent Css */
 .lia-panel{
   /* Announcaement */
@@ -1146,20 +1160,7 @@ a.header-right-link {
           text-transform: uppercase;
         }
       }
-      span.lia-panel-heading-bar-page-option{
-        .default-menu-option {
-          background-color: transparent;
-          border: none;
-          color: $np-light-blue;
-          text-transform: uppercase;
-          font-size: 14px;
-          line-height: 16px;
-          &:after{
-            content: "\f142";
-            color: $np-light-blue;
-          }
-        }
-      }
+      
     }
     .loader-section{
       display: none;
