@@ -1673,12 +1673,65 @@ a.header-right-link {
     padding: 20px;
     font-size: 16px;
   }
+.post-page-disclaimer-div{
+  display:none;
+}
+
+/* TKB Article Page*/
+
+.TkbArticlePage{ 
+  .lia-quilt-tkb-message .lia-quilt-column-footer-left{
+    padding: 0;
+    .lia-button-wrapper{
+      padding-left: 0;
+    }
+  }
+  .lia-quilt-tkb-message > .lia-quilt-row:last-child{
+    border:0;
+  }
+  .lia-quilt-column-header-right{
+    text-align: right;
+  }
+  .lia-rating-enumeration-system-tkb_helpfulness .lia-rating-image-selected{
+    opacity:1;
+    &:hover{
+      opacity:1;
+    }
+  }
+}
+.lia-rating-enumeration-system-tkb_helpfulness{
+  .lia-rating-image {
+    background-color: transparent;
+    border-color: #146CAC;
+    color: #146CAC;
+    &:hover{
+      background-color: #146CAC;
+      color:#fff;
+    }
+  }
+  .lia-rating-image-selected.lia-rating-image-active.lia-link-disabled{
+    background-color: #146CAC;
+    border-color: #146CAC;
+    color: #fff;
+  }
+}
+.lia-rating-control-active .ui-stars-star{
+  color: #146CAC;
+}
+
+.lia-component-article{
+  margin-top: 0;
+}
+
 /* ForumTopic Message Main Section **/
-.lia-quilt-column-main-content{
+.lia-body .lia-quilt-column-main-content{
   .lia-message-view-display.lia-list-row-requires-moderation .lia-message-state-indicator{
     left:-20px;
   }
   .lia-panel-message{
+    border:0;
+  }
+  .MessageView{
     border:0;
     box-shadow:none;
     padding: 20px;
@@ -1716,6 +1769,7 @@ a.header-right-link {
       .lia-message-post-date.lia-component-post-date{
         position: relative;
         padding-left: 25px;
+        display: inline-block;
         :before {
           background-image: url(/html/assets/cal.png);
           width: 20px;
@@ -1885,7 +1939,7 @@ a.header-right-link {
     .lia-img-message-type-solution{
       display: none;
     }
-    .lia-panel-message{
+    .MessageView{
       padding: 0;
       border: 0;
     }
@@ -1974,7 +2028,7 @@ a.header-right-link {
     padding-left: 40px;
     padding-right: 40px;
   }
-  .lia-quilt-column-main-content .lia-panel-message{
+  .lia-quilt-column-main-content .MessageView{
     .lia-component-accepted-solutions-button .lia-button-secondary{
       font-size: 14px;
     }
@@ -2056,12 +2110,12 @@ a.header-right-link {
                  padding-left:15px;
                  padding-right:15px;
   }
-  .lia-panel-message .lia-quilt-row-header{
+  .MessageView .lia-quilt-row-header{
     .lia-quilt-column-header-left{
       float:left;
     }
   }
-  .lia-quilt-column-main-content .lia-panel-message{
+  .lia-quilt-column-main-content .MessageView{
     .lia-quilt-column-footer-right{
       margin-top: 10px;
       .lia-component-accepted-solutions-button .lia-button{
@@ -2069,6 +2123,7 @@ a.header-right-link {
       }
       .lia-button{
         float:left;
+        width:100%;
       }
       .lia-component-messages-stat-thread-replies-count{
         float:left;
@@ -2076,7 +2131,7 @@ a.header-right-link {
       }
     }
   }
-  .lia-quilt-column-main-content .lia-panel-message{
+  .lia-body .lia-quilt-column-main-content .MessageView{
     .lia-quilt-row-header .lia-component-message-view-widget-action-menu{
       right:0;
     }
@@ -2232,7 +2287,7 @@ a.header-right-link {
     padding-left: 0;
     padding-right: 0;
   }
-  .lia-quilt-column-main-content .lia-panel-message{
+  .lia-quilt-column-main-content .MessageView{
     padding:10px;
   }
   #lia-body.ViewProfilePage .profile_header_wrap .body_wrap .custom_detail_tab {
@@ -2312,7 +2367,7 @@ a.header-right-link {
       }
     }
   }
-  .lia-quilt-column-main-content .lia-panel-message{
+  .lia-quilt-column-main-content .MessageView{
     .KudosButton .kudos-count-link{
       font-size: 16px;
     }
@@ -2375,7 +2430,7 @@ a.header-right-link {
         content:'';
       }
     }
-    .lia-panel-message .lia-quilt-row-header .lia-component-message-view-widget-subject .lia-message-subject{
+    .MessageView .lia-quilt-row-header .lia-component-message-view-widget-subject .lia-message-subject{
       font-size: 16px;
     }
   }
