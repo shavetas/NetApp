@@ -1040,21 +1040,23 @@ a.header-right-link {
   }
 
 /* Page Option */
-.lia-component-community-widget-page-options{
-  span.lia-panel-heading-bar-page-option{
-   .default-menu-option {
-     background-color: transparent;
-     border: none;
-     color: $np-light-blue;
-     text-transform: uppercase;
-     font-size: 14px;
-     line-height: 16px;
-     &:after{
-       content: "\f142";
-       color: $np-light-blue;
-     }
+.lia-component-community-widget-page-options .lia-menu-navigation{
+  .default-menu-option {
+   background-color: transparent;
+   border: none;
+   color: $np-light-blue;
+   text-transform: uppercase;
+   font-size: 14px;
+   line-height: 16px;
+   &:focus,
+   &:focus:active{
+    background-color: transparent;
    }
-  } 
+   &:after{
+     content: "\f142";
+     color: $np-light-blue;
+   }
+ }
 }
 /* Common Commponent Css */
 .lia-panel{
@@ -1355,6 +1357,11 @@ a.header-right-link {
     }
     .arrow4{
        right:12%;
+    }
+    @media only screen and (max-width:767px){
+      .arrow{
+        display:none;
+      }
     }
   }
   .top-card-wrapper.view-more-category{
