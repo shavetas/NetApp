@@ -2131,7 +2131,7 @@ a.header-right-link {
       }
       .lia-button{
         float:left;
-        width:100%;
+        text-align: left;
       }
       .lia-component-messages-stat-thread-replies-count{
         float:left;
@@ -2169,6 +2169,9 @@ a.header-right-link {
     }
     .lia-quilt-column-cs-2.text-content-right{
       width: 70%;
+    }
+    .lia-component-custom-grz-subcategory .lia-panel-content-wrapper .lia-panel-content .sub-category-wrapper .text-content-center.card-content .title.card-title{
+      font-size:15px;
     }
 }
 @media screen and (max-width:767px)
@@ -2363,16 +2366,13 @@ a.header-right-link {
   }
   .lia-quilt.header-wrapper .lia-quilt-header-content-wrapper{
     .lia-quilt-column-single.lia-quilt-column-left{
-      width:75%;
+      width:50%;
       .top-links.header-section{
         display:none;
       }
     }
     .lia-quilt-column-single.lia-quilt-column-right{
-      width: 25%;
-      a.header-right-link, .UserNavigation.lia-component-common-widget-user-navigation-combine, .user_notifications{
-        display: none;
-      }
+      width: 50%;
     }
   }
   .lia-quilt-column-main-content .MessageView{
@@ -2644,7 +2644,10 @@ a.header-right-link {
   .lia-component-users-widget-moderator-controls{
     display: inline-block;
     vertical-align: top;
-    margin-right: 150px;
+    width:40%;
+    .lia-decoration-border-content{
+      width:70%;
+    }
   }
   .lia-component-users-widget-manage-roles{
     display: inline-block;
