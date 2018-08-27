@@ -2462,6 +2462,8 @@ a.header-right-link {
       }
       span.small-section.status{
         padding-left: 20px;
+        max-width:100%;
+        text-align: left;
       }
       span.small-section.status.solved:before{
         left:0;
