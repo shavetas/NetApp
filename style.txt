@@ -104,6 +104,10 @@ $np-white:                      #fff;
   &:nth-of-type(3){
     margin-right: 0;
   }
+  @media screen and (max-width: 767px){
+    width:100%;
+    margin-right: 0;
+  }
 }
 
 .mobile-avatar{
@@ -290,10 +294,10 @@ a.header-right-link {
     padding-left: 0;
     padding-right: 0;
     .lia-quilt-column-alley.lia-quilt-column-alley-right{
-      padding-right: 15px;
+      /*padding-right: 15px;*/
       @media screen and (max-width: 991px){
-        padding-left: 15px;
-        padding-right: 15px;
+        /*padding-left: 15px;*/
+        /*padding-right: 15px;*/
       }
     }
   }
@@ -2248,8 +2252,8 @@ a.header-right-link {
     }
   }
   #lia-body .lia-quilt-column-left.lia-quilt-column-main-content{
-                 padding-left:15px;
-                 padding-right:15px;
+                 /* padding-left:15px; */
+                 /* padding-right:15px; */
   }
   .MessageView .lia-quilt-row-header{
     .lia-quilt-column-header-left{
