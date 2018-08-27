@@ -224,7 +224,10 @@ a.header-right-link {
     }
   }
 }
-
+.lia-tabs-standard-wrapper .t-data-grid{
+  margin-left: 0;
+  margin-right: 0; 
+}
 
 .PrivateNotesPage .lia-top-quilt > .lia-quilt-row-main > .lia-quilt-column > .lia-quilt-column-alley{
   max-width: 100%;
@@ -497,19 +500,19 @@ a.header-right-link {
             .cat-detail.cat-title{
               font-weight: 600;
             }
-          }
-          &:after{
-           content: "";
-           position: absolute;
-           top: 50%;
-           right: -5px;
-           width: 20px;
-           height: 20px;
-           /* border: 1px solid green; */
-           transform: translate(-50%,-50%);
-           background-image: url(/html/assets/arrow-right.png);
-           background-position: center;
-           background-repeat: no-repeat;
+            &:after{
+             content: "";
+             position: absolute;
+             top: 50%;
+             right: -5px;
+             width: 20px;
+             height: 20px;
+             /* border: 1px solid green; */
+             transform: translate(-50%,-50%);
+             background-image: url(/html/assets/arrow-right.png);
+             background-position: center;
+             background-repeat: no-repeat;
+            }
           }
         }        
       }
@@ -1693,6 +1696,7 @@ a.header-right-link {
         font-size: 16px;
         font-weight: 600;
         color: $text-color;
+        text-transform: uppercase;
       }
       .heading-icon.net-app-section{
         width: 15px;
