@@ -197,12 +197,11 @@ a.header-right-link {
 
 /* Css Issues Fixes */
 /*=============== OVERRIDING THE OUT OF BOX RESPONSIVE SKIN =================*/
-
 .lia-component-forums-widget-message-list{
+  thead{
+    display: table-header-group;
+  }
   .single-message-list{
-    thead{
-      display: table-header-group;
-    }
     .NewMessagesCount{
       text-decoration: none;
     }
@@ -1425,7 +1424,7 @@ a.header-right-link {
         }
         .thread-common-section.thread-section{
           padding-left: 20px;
-          max-width: calc(100% - 70px);
+          max-width: calc(100% - 50px);
           width: 100%;
         }
     }
