@@ -1026,14 +1026,10 @@ a.header-right-link {
       width: 60%;
       font-size: 16px;
       vertical-align: top;
-      min-height: 120px;
+      min-height: 125px;
       position: relative;
       .text-content-wrapper{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        width: 100%;
+        width: 100%; 
         padding: 20px;
         color: $np-white;
         span.heading {
@@ -1342,6 +1338,7 @@ a.header-right-link {
       font-size: 22px;
       line-height: 15px;
       text-transform: capitalize;
+      color: $text-color;
     }
   }
   .lia-panel-content-wrapper .lia-panel-content{
@@ -1461,6 +1458,7 @@ a.header-right-link {
         border-radius: 0;
         text-transform: uppercase;
         font-size: 14px;
+        font-weight: normal;
       }
     }
   }
@@ -1719,6 +1717,10 @@ a.header-right-link {
     margin-right: 10px;
     margin-left: 26px;
 }
+.lia-custom-component.lia-component-custom-grz-lastestTopic:last-of-type .lia-panel-content-wrapper .lia-panel-content {
+    padding-bottom: 0;
+}
+
 /* Custom Componet Start a Discussion */
 .start-discussion-wrapper{
   margin-bottom:24px;
@@ -1726,7 +1728,7 @@ a.header-right-link {
   a{
      width: 100%;
     border-radius: 0;
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 1px;
   }
 }
@@ -1797,6 +1799,7 @@ a.header-right-link {
 
  background-color: transparent;
   padding: 20px 0;
+  padding-bottom: 5px;
   .lia-panel-heading-bar{
     background-color: inherit;
     color: #fff;
@@ -2679,6 +2682,24 @@ a.header-right-link {
   .lia-panel .lia-view-all .lia-link-navigation:before{
     line-height:36px;
   }
+  .footer-card-wrapper {
+    margin-top: 0;
+  }
+}
+.close_opener.mainCategory, .close_holder.null_item.mainCategory{
+  cursor:pointer;
+}
+.mainCategory.closer_span{
+  cursor:pointer;
+}
+.lia-form-row.lia-form-subject-entry.lia-component-search-auto-complete-before-post {
+    margin: 17px 0 0;
+}
+.lia-form-subscriptions-fieldset-toggle {
+    margin: 0 0 9px;
+}
+.MessageSubjectIcons a.verified-icon{
+  display: none;
 }
 #lia-body .lia-content ul .liopen_board{
   span {
