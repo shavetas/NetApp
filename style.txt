@@ -155,7 +155,14 @@ a.header-right-link {
   background-color: #fff;
   border-color: #fff;
 }
-
+.lia-tag-list-item .lia-tag{
+  display: inline-block;
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap;
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -1306,9 +1313,11 @@ a.header-right-link {
 .lia-custom-component{
   .lia-panel-heading-bar-wrapper .lia-panel-heading-bar{
     border-bottom: none;
+    line-height: 15px;
     .lia-panel-heading-bar-title{
       font-size: 22px;
-      line-height: 25px;
+      line-height: 15px;
+      text-transform: capitalize;
     }
   }
   .lia-panel-content-wrapper .lia-panel-content{
@@ -1402,6 +1411,7 @@ a.header-right-link {
       margin-top: 24px;
       a.view-more-topic{
         border-radius: 0;
+        text-transform: uppercase;
       }
     }
   }
@@ -2476,7 +2486,7 @@ a.header-right-link {
     font-size: 30px;
     line-height: 32px;
   }
-  .lia-panel.lia-component-custom-grz-community-stats-count{
+  /**.lia-panel.lia-component-custom-grz-community-stats-count{
     .lia-panel-content-wrapper .lia-panel-content .community-stats-count-wrapper .net-app-section{
       width:100%;
       padding-bottom: 15px;
@@ -2497,7 +2507,7 @@ a.header-right-link {
         }
       }
     }
-  }
+  }**/
   .footer-wrapper{
     .n-footer__copyright{
       .copy-right{
