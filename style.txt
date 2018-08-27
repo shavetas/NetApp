@@ -96,6 +96,16 @@ $np-white:                      #fff;
   width: 20%;
   float: left;
 }
+
+.lia-quilt-column-cs-equal-3{
+  width: calc(33.33% - 24px);
+  float: left;
+  margin-right: 36px;
+  &:nth-of-type(3){
+    margin-right: 0;
+  }
+}
+
 .mobile-avatar{
   display:none;
 }
@@ -113,6 +123,9 @@ $np-white:                      #fff;
     background-position: center;
     background-repeat: no-repeat;
   }
+}
+.lia-top-quilt > .lia-quilt-row-footer{   
+   margin-top:0;   
 }
 #lia-body .lia-content {
     min-width: 300px;
@@ -159,6 +172,46 @@ a.header-right-link {
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
+
+.mobile {
+  display: none;
+}
+@media screen and (max-width: 767px){
+  .mobile {
+    display: block;
+  }
+  .desktop{
+  display: none;
+  }
+}
+
+
+/* Css Issues Fixes */
+/*=============== OVERRIDING THE OUT OF BOX RESPONSIVE SKIN =================*/
+
+.lia-component-forums-widget-message-list{
+  .single-message-list{
+    thead{
+      display: table-header-group;
+    }
+    .NewMessagesCount{
+      text-decoration: none;
+    }
+  }
+  .lia-message-by,
+  .lia-user-name,
+  .local-date,
+  .local-friendly-date,
+  .local-time {
+    white-space: normal;
+  }
+
+}
+.PrivateNotesPage .lia-top-quilt > .lia-quilt-row-main > .lia-quilt-column > .lia-quilt-column-alley{
+  max-width: 100%;
+}
+
+
 
 /* Slider Fixes */
 .owl-carousel.owl-theme {
@@ -436,7 +489,21 @@ a.header-right-link {
     }
   }
 }
-
+/* Responsive Header Section */
+@media only screen and (max-width:767px){
+  .lia-quilt.header-wrapper .lia-quilt-header-content-wrapper {
+    .lia-quilt-column-single.lia-quilt-column{
+      padding-bottom: 0;
+      &.lia-quilt-column-right.mobile{
+        width:100%;
+        .top-links.header-section{
+          display: block;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
 
 
 
@@ -585,11 +652,13 @@ a.header-right-link {
         background-color: #0097d7;
         color: #fff;
         top: -8px;
-        padding: 3px 6px;
         left: 11px;
+        height: 21px;
+        width: 22px;
+        line-height: 18px;
         font-size: 10px;
-        font-weight: bold;
-        line-height: normal;
+        padding: 2px;
+        text-align: center;
       }
     }
     .notification-popup-container {
@@ -799,6 +868,12 @@ a.header-right-link {
       .subscriptions:before{
        content: "\f09e";
       }
+      .studio:before{
+       content: "\f1de";
+      }
+      .communityAdmin:before{
+       content: "\f1d1";
+      }
       .Logout a:before{
         content: "\f08b";
         display: inline-block;
@@ -959,7 +1034,8 @@ a.header-right-link {
     .net-app-section.content-section-right{
       width: 40%;
       background-position: center;
-      background-size: contain;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
   }
   .footer-card-1{
@@ -1056,8 +1132,29 @@ a.header-right-link {
      content: "\f142";
      color: $np-light-blue;
    }
+   
  }
+  .dropdown-positioning {
+    .lia-menu-dropdown-items{
+     left: unset;
+     right: 0;
+    }
+  }
 }
+
+/* Thread Action Option */
+.lia-component-message-view-widget-action-menu{
+  .dropdown-positioning{
+    .lia-menu-dropdown-items{
+     left: unset;
+     right: 0;
+    }
+  }
+}
+
+
+
+
 /* Common Commponent Css */
 .lia-panel{
   /* Announcaement */
@@ -1414,12 +1511,23 @@ a.header-right-link {
       background-color: $np-gray;
       .top-sub-category-wrapper {
         position: relative;
-        .card-wrapper-row.see-more-sub-cat-handler{
+        display: none;
+        max-height: 160px;
+        overflow: hidden;
+        transition: all 0.5s ease-in-out;
+        &.height-auto{
+          max-height: none;
+        }
+        &:first-child{
+          display:block;
+        }
+        .see-more-sub-cat-handler{
           position: absolute;
           right: 5px;
           bottom: 0;
           font-size: 0.9em;
           font-weight: 600;
+          z-index: 9;
         }
       }
       .card-wrapper-row{
@@ -1465,12 +1573,37 @@ a.header-right-link {
       }
     }   
   }
+
+  @media screen and (max-width:767px){
+   .lia-panel-content-wrapper{
+      padding: 0;
+      margin: 0 0 15px;
+    }
+    .lia-quilt-column-cs-5,
+    .lia-quilt-column-cs-4, 
+    .lia-quilt-column-cs-3, 
+    .lia-quilt-column-cs-2, 
+    .lia-quilt-column-cs-1{
+      width: 100%;
+      float: left;
+    }
+    .cat-blank {
+      &.lia-quilt-column-cs-5,
+      &.lia-quilt-column-cs-4, 
+      &.lia-quilt-column-cs-3, 
+      &.lia-quilt-column-cs-2, 
+      &.lia-quilt-column-cs-1{
+        display: none;
+      }
+    }
+  }
 }
 
 /* Main Side Content */
 .lia-quilt-column-main-content{
   .lia-panel{
     margin-bottom: 0;
+    overflow: visible;
   }
 }
 
@@ -1534,7 +1667,7 @@ a.header-right-link {
     background-image: url(/html/assets/join-the-community.png);
       color: $np-white;
       background-position: center;
-      /* background-size: contain; */
+      background-size: cover; 
       background-repeat: no-repeat;
       .lia-panel-content{
         padding: 20px;
@@ -2152,8 +2285,9 @@ a.header-right-link {
   }
   .lia-panel.lia-component-custom-grz-community-stats-count .community-stats-count-wrapper{
       .icon, .icon-detail{
-        float:left;
-        display: inline-block;
+        float:none;
+        display: block;
+        vertical-align: top;
       }
       .icon-detail{
         .count{
@@ -2163,12 +2297,6 @@ a.header-right-link {
           font-size: 18px;
         }
       }
-    }
-    .lia-quilt-column-cs-2{
-      width: 30%;
-    }
-    .lia-quilt-column-cs-2.text-content-right{
-      width: 70%;
     }
     .lia-component-custom-grz-subcategory .lia-panel-content-wrapper .lia-panel-content .sub-category-wrapper .text-content-center.card-content .title.card-title{
       font-size:15px;
@@ -2328,6 +2456,18 @@ a.header-right-link {
       padding: 0px 10px;
     }
   }
+  .text-content-right .user_notifications .Notification-wrapper .notification-popup-container.active {
+    display: block;
+    width: 260px;
+    right: -56px;
+    top: 40px;
+    &:before{
+      right: 52px;
+    }
+    .notification-list li .notifi_decription{
+      width:86%;
+    }
+  }
   .lia-quilt.header-banner-cum-search .banner-title{
     font-size: 30px;
     line-height: 32px;
@@ -2336,6 +2476,15 @@ a.header-right-link {
     .lia-panel-content-wrapper .lia-panel-content .community-stats-count-wrapper .net-app-section{
       width:100%;
       padding-bottom: 15px;
+      text-align: left;
+      &:nth-child(2){
+        border-left:0px solid;
+        border-right:0px solid;
+      }
+      .icon, .icon-detail{
+        display:inline-block;
+        vertical-align: top;
+      }
       .icon-detail{
         padding-left: 15px;
         padding-top: 10px;
@@ -2773,37 +2922,31 @@ a.header-right-link {
 /* HomePage search bar --Saundarya */
 .lia-autocomplete-content ul{
   padding-left:0px;
-}     
-.lia-quilt.header-banner-cum-search .SearchForm {
-    max-width: 583px;
-    margin: 0 auto;
-    padding: 0;
-    /*padding: 10px 23px 10px 0px;*/
-}
-
+} 
 .lia-autocomplete-container {
-    width: 580px !important;
+  width: 100% !important;
+}
+.lia-quilt.header-banner-cum-search .SearchForm {
+  max-width: 583px;
+  margin: 0 auto;
+  padding: 0;
+  position:relative;
 }
 
 .lia-search-form-wrapper .lia-search-form-granularity.search-granularity{
-    display: none;
+  display: none;
 }
 
 .CommunityPage .lia-button.lia-button-secondary.lia-button-searchForm-action{
-   background-color: #fff;
-    border-radius: 0px;
-    border-bottom: 4px solid #57627E;
-    border-top: 4px solid #57627E;
-    border-right: 4px solid #57627E;
+  right: 0px;
+  position: absolute;
+  z-index:0;
 }
 
 .CommunityPage .lia-form-type-text.lia-autocomplete-input.search-input.lia-search-input-message{
-   border-right:0px;
-    border-radius: 0px;
-    padding-left:10px;
-    border-bottom: 4px solid #57627E;
-    border-left: 4px solid #57627E;
-    border-top: 4px solid #57627E;
+  border-radius: 0px;
+  padding-left: 10px;
+  border: 4px solid #57627E; 
 }
 
 /* Search Page -- Kritika */
