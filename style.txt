@@ -1355,10 +1355,34 @@ a.header-right-link {
                 color: inherit;
                 cursor: pointer;
                 text-decoration: none;
-              &:hover{
-                color: $text-link-color;
+                display: inline-block;
+                width: 100%;
+                &:hover{
+                  color: $text-link-color;
+                }
+                &.small-section{
+                  width: calc(100% - 115px);
+                }
               }
-            }
+              span.small-section.status {
+                max-width: 115px;
+                font-weight: 500;
+                font-size: 14px;
+                text-align: right;
+                width: 100%;
+                float: right;
+                position: relative;
+                &.solved{
+                  color: #448602;
+                  &:before{
+                    content: "\f058";
+                    position: absolute;
+                    font-size: 20px;
+                    font-family: FontAwesome;
+                    left: -10px;
+                  }
+                }
+              }
           }
           .thread-body {
               font-size: 14px;
