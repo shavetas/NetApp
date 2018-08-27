@@ -155,7 +155,7 @@ a.header-right-link {
 }
 .lia-tag-list-item .lia-tag{
   display: inline-block;
-    max-width: 130px;
+  max-width: 130px;
     overflow: hidden;
     text-overflow: ellipsis;
     vertical-align: middle;
@@ -181,7 +181,6 @@ a.header-right-link {
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
 }
-
 .mobile {
   display: none;
 }
@@ -198,10 +197,11 @@ a.header-right-link {
 /* Css Issues Fixes */
 /*=============== OVERRIDING THE OUT OF BOX RESPONSIVE SKIN =================*/
 .lia-component-forums-widget-message-list{
-  thead{
-    display: table-header-group;
-  }
-  .single-message-list{
+  .single-message-list,
+  .thread-list{
+    thead{
+      display: table-header-group;
+    }
     .NewMessagesCount{
       text-decoration: none;
     }
@@ -213,8 +213,19 @@ a.header-right-link {
   .local-time {
     white-space: normal;
   }
-
 }
+.TaggedMessagesTaplet {
+  .lia-component-forums-widget-message-list{
+    .single-message-list,
+    .thread-list{
+      thead{
+        display: none;
+      }
+    }
+  }
+}
+
+
 .PrivateNotesPage .lia-top-quilt > .lia-quilt-row-main > .lia-quilt-column > .lia-quilt-column-alley{
   max-width: 100%;
 }
@@ -272,6 +283,11 @@ a.header-right-link {
     background-color: $np-deep-purple;
   }
 }
+.page-wrapper {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .lia-body .lia-top-quilt {
   > .lia-quilt-row-main,
    .lia-quilt-column-main-top-content,
@@ -289,6 +305,9 @@ a.header-right-link {
     }
     .lia-quilt-column-main-content{
       padding-left: 0;
+      &.lia-quilt-column-single{
+        padding-right: 0;
+      }
     }
     .lia-quilt-column-single > .lia-quilt-column-alley {
       padding: 0;
@@ -497,6 +516,10 @@ a.header-right-link {
     }
   }
 }
+
+
+
+
 /* Responsive Header Section */
 @media only screen and (max-width:767px){
   .lia-quilt.header-wrapper .lia-quilt-header-content-wrapper {
@@ -625,7 +648,11 @@ a.header-right-link {
       padding-right: 0;
     }
   }
+}
 
+.TagViewPageBanner.lia-component-tag-banner{
+  margin: 0;
+  margin-bottom: 24px;
 }
 
 
