@@ -1433,6 +1433,7 @@ a.header-right-link {
       a.view-more-topic{
         border-radius: 0;
         text-transform: uppercase;
+        font-size: 14px;
       }
     }
   }
@@ -1687,14 +1688,19 @@ a.header-right-link {
 .blogIcon a {
     font-family: 'Source Sans Pro', 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
 }
+.lia-custom-component .thread-wrapper-section .thread-wrapper .thread-common-section .thread-detail .net-app-section.thread-meta-data-right .thread-meta-data:nth-child(2) {
+    margin-right: 10px;
+    margin-left: 26px;
+}
 /* Custom Componet Start a Discussion */
 .start-discussion-wrapper{
   margin-bottom:24px;
   width: 100%;
   a{
-    width: 100%;
+     width: 100%;
     border-radius: 0;
     font-size: 14px;
+    letter-spacing: 1px;
   }
 }
 
@@ -2618,7 +2624,7 @@ a.header-right-link {
     }
   }
   .lia-custom-component .thread-wrapper-section .thread-wrapper .thread-subject{
-    width:70%;
+    width: calc(100% - 50px);
   }
   .lia-quilt.top-hat-wrapper a{
     font-size: 11px;
@@ -2642,7 +2648,26 @@ a.header-right-link {
     /*width: 50%;*/
    /* padding-bottom: 5px;*/
 }
-
+.CategoryPage{
+  .lia-panel .lia-view-all .lia-link-navigation:before{
+    line-height:36px;
+  }
+}
+#lia-body .lia-content ul .liopen_board{
+  span {
+    display: block;
+    &:before{
+      width: 6%;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    a {
+    width: 94%;
+    display: inline-block;
+    vertical-align: top;
+    }
+  }
+}
 .cat-title.card-title {
     text-align: left;
     font-weight: bold;
