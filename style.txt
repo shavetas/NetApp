@@ -449,6 +449,14 @@ a.header-right-link {
   .lia-component-common-widget-breadcrumb{
     background-color: transparent;
     padding: 0;
+    .lia-link-navigation {
+      display: inline-block;
+      max-width: 160px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
   }
   .extra-coreNode-detail-wrapper{
     padding-bottom: 15px;
@@ -1969,7 +1977,7 @@ a.header-right-link {
       .lia-component-message-view-widget-subject{
           display: block;
           text-transform: capitalize;
-      margin-bottom:0;
+      margin-bottom:10px;
       .lia-message-subject{
       margin-bottom:0;
       }
@@ -2451,6 +2459,20 @@ a.header-right-link {
         padding-left: 0;
       }
     }
+    .lia-custom-component .thread-wrapper-section .thread-wrapper .thread-common-section .thread-subject{
+      overflow: hidden;
+      a.small-section{
+        width:100%;
+      }
+      span.small-section.status{
+        padding-left: 20px;
+        max-width:100%;
+        text-align: left;
+      }
+      span.small-section.status.solved:before{
+        left:0;
+      }
+    }
 }
 @media screen and (max-width:640px){
   .lia-component-topic-message{
@@ -2492,7 +2514,7 @@ a.header-right-link {
       float: left;
       width: 75%;
       padding-left: 10px;
-      padding-top: 10px;
+      padding-top: 0;
     }
     .thread-body, .thread-detail{
       float:left;
@@ -2697,10 +2719,10 @@ a.header-right-link {
   cursor:pointer;
 }
 .lia-form-row.lia-form-subject-entry.lia-component-search-auto-complete-before-post {
-    margin: 17px 0 0;
+    margin-top: 17px;
 }
 .lia-form-subscriptions-fieldset-toggle {
-    margin: 0 0 9px;
+    margin-bottom: 9px;
 }
 .MessageSubjectIcons a.verified-icon{
   display: none;
