@@ -1341,6 +1341,7 @@ a.lia-quilt-column.category-card.category-card-4{
           color: $np-light-blue;
           text-transform: uppercase;
           font-weight: bold;
+          text-decoration: none;
         }
       }
       
@@ -1973,6 +1974,7 @@ a.lia-quilt-column.category-card.category-card-4{
     background-color: transparent;
     border-color: $np-light-blue;
     color: $np-light-blue;
+    min-width: 50px;
     &:hover{
       background-color: $np-light-blue;
       color:#fff;
@@ -2237,6 +2239,9 @@ a.lia-quilt-column.category-card.category-card-4{
   }
   .lia-component-reply-list{
     .MessageView .lia-quilt-row-header .lia-component-message-view-widget-subject{
+      display: none;
+    }
+    .lia-component-messages-stat-thread-replies-count{
       display: none;
     }
     .lia-img-message-type-solution{
