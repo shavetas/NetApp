@@ -252,6 +252,9 @@ a.header-right-link {
   max-width: 100%;
 }
 
+a.lia-quilt-column.category-card.category-card-4{
+  margin-right: 0 !important;
+}
 
 
 /* Slider Fixes */
@@ -1387,8 +1390,8 @@ a.header-right-link {
     .lia-panel-heading-bar-title{
       font-size: 22px;
       line-height: 15px;
-      text-transform: capitalize;
-      color: $text-color;
+      /*text-transform: uppercase;*/
+      /*color: $text-color;*/
     }
   }
   .lia-panel-content-wrapper .lia-panel-content{
