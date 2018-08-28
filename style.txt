@@ -177,6 +177,7 @@ a.header-right-link {
     text-overflow: ellipsis;
     vertical-align: middle;
     white-space: nowrap;
+    line-height: 1;
   }
 }
 
@@ -2070,12 +2071,16 @@ a.header-right-link {
         margin-bottom: 5px;
         background-color: #f6f6f6;
         text-transform: capitalize;
+        font-size: 76%;
       }
       .lia-message-tags{
         margin-top:10px;
         .lia-form{
           float:left;
         }
+      }
+      .lia-list-standard-inline > li:first-child {
+        min-width: 56px;
       }
     }
     .lia-component-me-too, .lia-component-quick-reply-button{
@@ -2109,15 +2114,25 @@ a.header-right-link {
       padding-left: 0;
       padding: 0;
       color: $np-light-blue;
-      min-width: 60px;
+      min-width: auto;
     }
   .lia-action-reply.reply-action-link:active:focus{
     background:transparent;
     border:0;
     color: $np-light-blue;
   }
+   .lia-component-me-too{
+      .lia-rating-value-summary{
+        &:before{
+          content:"(";
+        }
+        &:after{
+          content:")";
+        }
+      }
+    }
   .lia-component-me-too .lia-button-secondary{
-    min-width:60px;
+    min-width:auto;
     padding:5px 15px;
     border:none;
     border-color: $np-light-blue;
@@ -2129,6 +2144,11 @@ a.header-right-link {
       background-color: transparent;
       color: $np-light-blue;
       outline:0;
+    }
+    &:before {
+      content: "|";
+      color: #eee;
+      padding: 0 10px;
     }
   }
   .lia-component-accepted-solutions-button{
@@ -2205,6 +2225,9 @@ a.header-right-link {
     border-bottom:1px solid #eee;
   }
   .lia-component-reply-list{
+    .lia-component-message-view-widget-subject{
+      display: none;
+    }
     .lia-img-message-type-solution{
       display: none;
     }
