@@ -2136,13 +2136,12 @@ a.lia-quilt-column.category-card.category-card-4{
     }
   .lia-component-me-too .lia-button-secondary{
     min-width:auto;
-    padding:5px 15px;
+    padding:5px 0;
     border:none;
     border-color: $np-light-blue;
     color:$np-light-blue;
     background:transparent;
     text-align: left;
-    padding-left: 0;
     &:active:focus:hover{
       background-color: transparent;
       color: $np-light-blue;
@@ -2228,7 +2227,7 @@ a.lia-quilt-column.category-card.category-card-4{
     border-bottom:1px solid #eee;
   }
   .lia-component-reply-list{
-    .lia-component-message-view-widget-subject{
+    .MessageView .lia-quilt-row-header .lia-component-message-view-widget-subject{
       display: none;
     }
     .lia-img-message-type-solution{
