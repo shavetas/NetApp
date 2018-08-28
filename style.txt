@@ -2446,6 +2446,12 @@ a.header-right-link {
       width:40%;
     }
   }
+  .TagViewPage .lia-list-wide .lia-list-row{
+    padding-left: 50px;
+    td.cMessageAuthorAvatarColumn{
+      left:0;
+    }
+  }
    .lia-component-custom-grz-subcategory .lia-panel-content-wrapper .lia-panel-content .sub-category-wrapper .text-content-center.card-content{
     min-height: auto;
     padding: 20px 0;
