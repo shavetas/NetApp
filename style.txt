@@ -663,8 +663,27 @@ a.header-right-link {
 
 .TagViewPageBanner.lia-component-tag-banner{
   margin: 0;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
+  background-color: #173e77;
+  a.lia-link-navigation{
+    color: #d3dcff;
+  }
 }
+.lia-body.TagViewPage{
+  .lia-panel .lia-view-all .lia-link-navigation{
+    top:10px;
+  }
+  .lia-quilt-column-side-content{
+    padding-top:25px;
+    .lia-panel .lia-view-all .lia-link-navigation{
+      top:5px;
+    }
+  }
+  .lia-panel .lia-panel-heading-bar{
+    padding-left: 0;
+  }
+}
+
 
 
 /* Custom User Drop Down -- Anjali */
@@ -2255,6 +2274,11 @@ a.header-right-link {
     padding-left: 40px;
     padding-right: 40px;
   }
+  .TagViewPageBanner.lia-component-tag-banner{
+    max-width: 100%;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
   .lia-quilt-column-main-content .MessageView{
     .lia-component-accepted-solutions-button .lia-button-secondary{
       font-size: 14px;
@@ -2485,6 +2509,10 @@ a.header-right-link {
   .lia-body .lia-top-quilt > .lia-quilt-row-main, .lia-body .lia-top-quilt .lia-quilt-column-main-top-content, .lia-body .lia-top-quilt .lia-quilt-column-main-bottom-content {
     padding-left: 15px;
     padding-right: 15px;
+  }
+  .TagViewPageBanner.lia-component-tag-banner{
+    margin-left: 20px;
+    margin-right: 20px;
   }
   .mobile-avatar{
     display:block;
