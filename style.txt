@@ -167,13 +167,17 @@ a.header-right-link {
   background-color: #fff;
   border-color: #fff;
 }
-.lia-tag-list-item .lia-tag{
-  display: inline-block;
-  max-width: 130px;
+.lia-tag-list-item{ 
+  border-radius: 200px;
+  font-size: 12px;
+  .lia-tag{
+    display: inline-block;
+    max-width: 100px;
     overflow: hidden;
     text-overflow: ellipsis;
     vertical-align: middle;
     white-space: nowrap;
+  }
 }
 
 /* width */
@@ -1986,9 +1990,6 @@ a.header-right-link {
 
 /* ForumTopic Message Main Section **/
 .lia-body .lia-quilt-column-main-content{
-  .lia-message-view-display.lia-list-row-requires-moderation .lia-message-state-indicator{
-    left:-20px;
-  }
   .lia-panel-message{
     border:0;
   }
@@ -2011,9 +2012,12 @@ a.header-right-link {
       .lia-component-message-view-widget-subject{
           display: block;
           text-transform: capitalize;
-      margin-bottom:10px;
+        margin-bottom:10px;
       .lia-message-subject{
       margin-bottom:0;
+      h5{
+        font-weight: bold;
+      }
       }
       }
     .lia-quilt-column-header-left-avatar{
@@ -2105,7 +2109,7 @@ a.header-right-link {
       padding-left: 0;
       padding: 0;
       color: $np-light-blue;
-      min-width: 70px;
+      min-width: 60px;
     }
   .lia-action-reply.reply-action-link:active:focus{
     background:transparent;
@@ -2113,14 +2117,18 @@ a.header-right-link {
     color: $np-light-blue;
   }
   .lia-component-me-too .lia-button-secondary{
-    min-width:70px;
+    min-width:60px;
     padding:5px 15px;
+    border:none;
     border-color: $np-light-blue;
     color:$np-light-blue;
     background:transparent;
+    text-align: left;
+    padding-left: 0;
     &:active:focus:hover{
-      background-color: $np-light-blue;
-      color: white;
+      background-color: transparent;
+      color: $np-light-blue;
+      outline:0;
     }
   }
   .lia-component-accepted-solutions-button{
