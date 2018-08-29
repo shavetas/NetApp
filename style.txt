@@ -97,6 +97,9 @@ $np-white:                      #fff;
 .lia-quilt-blog-topic-message > .lia-quilt-row-header{
   padding: 0;
 }
+.lia-component-body-signature-highlight-escalation{
+  display: none;
+}
 .BlogArticlePage , .ForumTopicPage, .TkbArticlePage{
   .LabelsForArticle .label-link{
     font-weight: normal;
@@ -2439,7 +2442,7 @@ a.lia-quilt-column.category-card.category-card-4{
     .profile_header_wrap .banner_wrap{
       .profile-info, .contact-section{
         float: left;
-        width: 100%;
+        width: 100% !important;
       }
       .lia-component-users-widget-contact-me{
         float:left;
@@ -3028,11 +3031,18 @@ a.lia-quilt-column.category-card.category-card-4{
   }
   .lia-component-users-widget-contact-me{
     float:right;
-    .lia-panel-heading-bar{
-      padding:0;
+    .lia-panel-heading-bar-wrapper{
+      display: none;
     }
     .lia-panel-content{
       padding: 0;
+    }
+    .MyStatisticsBeanDisplay + ul, .MyStatisticsBeanDisplay + ul + ul li{
+      padding-top: 0;
+    }
+    .MyStatisticsBeanDisplay + ul > li > a{
+      background-color: #146cac;
+      border-color: #146cac;
     }
   }
 }
@@ -3053,7 +3063,7 @@ a.lia-quilt-column.category-card.category-card-4{
   .lia-avatar-edit-action{
     position: absolute;
     top: 15px;
-    right: 20px;
+    left: 135px;
   }
   .lia-component-badges-widget-user-badges-list{
     position: relative;
