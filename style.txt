@@ -1093,13 +1093,6 @@ a.lia-quilt-column.category-card.category-card-4{
 .TkbArticlePage .lia-quilt-tkb-message .TagList {
     margin-bottom: 0;
 }
-
-
-
-
-
-
-
 /* Footer Section */
 
 .footer-card-wrapper{
