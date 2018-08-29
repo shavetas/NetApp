@@ -1402,6 +1402,7 @@ a.lia-quilt-column.category-card.category-card-4{
   .thread-wrapper-section{
     color: $text-color;
     .thread-wrapper {
+      position: relative;
         border-bottom: 1px solid $np-light-gray;
         padding-top: 15px ;
         padding-bottom:15px ;
@@ -1436,9 +1437,6 @@ a.lia-quilt-column.category-card.category-card-4{
                 width: 100%;
                 &:hover{
                   color: $text-link-color;
-                }
-                &.small-section{
-                  width: calc(100% - 115px);
                 }
               }
               span.small-section.status {
@@ -1514,6 +1512,30 @@ a.lia-quilt-column.category-card.category-card-4{
         font-size: 14px;
         font-weight: normal;
       }
+    }
+    .thread-wrapper.status-accepted:before {
+      border-left: 40px solid transparent;
+      border-top: 40px solid;
+      border-top-color: #49a757;
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .thread-wrapper.status-accepted:after {
+      display: inline-block;
+      font: normal normal normal 16px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: translate(0, 0);
+      color: #fff;
+      content: "\f00c";
+      font-size: 15.5px;
+      position: absolute;
+      right: 5px;
+      top: 4px;
     }
   }
 
@@ -2018,7 +2040,7 @@ a.lia-quilt-column.category-card.category-card-4{
       .lia-component-message-view-widget-action-menu{
         top:0;
         right:0;
-        .default-menu-option:active:hover, .default-menu-option:active:focus{
+        .default-menu-option:active:hover, .default-menu-option:active:focus, .default-menu-option:hover{
           background: transparent;
           border: 0;
           outline: 0;
