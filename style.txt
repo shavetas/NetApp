@@ -1413,10 +1413,11 @@ a.lia-quilt-column.category-card.category-card-4{
 .lia-custom-component{
   .lia-panel-heading-bar-wrapper .lia-panel-heading-bar{
     border-bottom: none;
-    line-height: 15px;
+    /*line-height: 15px;*/
+    margin-bottom: 12px;
     .lia-panel-heading-bar-title{
       font-size: 22px;
-      line-height: 15px;
+      /*line-height: 15px;*/
       /*text-transform: uppercase;*/
       /*color: $text-color;*/
     }
