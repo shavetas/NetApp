@@ -94,6 +94,9 @@ $np-white:                      #fff;
   width: 20%;
   float: left;
 }
+.lia-quilt-blog-topic-message > .lia-quilt-row-header{
+  padding: 0;
+}
 .BlogArticlePage , .ForumTopicPage, .TkbArticlePage{
   .LabelsForArticle .label-link{
     font-weight: normal;
@@ -1546,9 +1549,9 @@ a.lia-quilt-column.category-card.category-card-4{
       }
     }
     .thread-wrapper.status-accepted:before {
-      border-left: 40px solid transparent;
-      border-top: 40px solid;
-      border-top-color: #49a757;
+      border-left: 25px solid transparent;
+      border-top: 25px solid;
+      border-top-color: #448602;
       content: '';
       position: absolute;
       right: 0;
@@ -1564,9 +1567,9 @@ a.lia-quilt-column.category-card.category-card-4{
       transform: translate(0, 0);
       color: #fff;
       content: "\f00c";
-      font-size: 15.5px;
+      font-size: 10.5px;
       position: absolute;
-      right: 5px;
+      right: 3px;
       top: 4px;
     }
   }
@@ -2050,7 +2053,7 @@ a.lia-quilt-column.category-card.category-card-4{
   }
   .lia-js-data-ratingValue-1:after{
     content: "|";
-    color: #eee;
+    color: #d3d3d3;
     padding:0 5px;
   }
 }
@@ -2061,7 +2064,9 @@ a.lia-quilt-column.category-card.category-card-4{
 .lia-component-article{
   margin-top: 0;
 }
-
+.lia-body .lia-quilt-column-main-content .MessageView.lia-message-view-tkb-reply-message {
+    background-color: #fff;
+}
 /* ForumTopic Message Main Section **/
 .lia-body .lia-quilt-column-main-content{
   .lia-panel-message{
@@ -2076,6 +2081,7 @@ a.lia-quilt-column.category-card.category-card-4{
     box-shadow:none;
     padding: 20px;
     border: 1px solid #eee;
+    background-color: $np-gray;
     .lia-message-view-display{
       box-shadow: none;
     }
@@ -2104,6 +2110,9 @@ a.lia-quilt-column.category-card.category-card-4{
       }
       }
       }
+      .lia-message-author-avatar{
+          padding-right:0;
+        }
     .lia-quilt-column-header-left-avatar{
       text-align: center;
       padding-right: 0;  
@@ -2111,9 +2120,6 @@ a.lia-quilt-column.category-card.category-card-4{
         .lia-message-author-avatar{
           padding-right:0;
         }
-      }
-      .lia-message-author-with-avatar:before {
-        content: "By";
       }
       .lia-message-post-date.lia-component-post-date{
         position: relative;
@@ -2229,7 +2235,7 @@ a.lia-quilt-column.category-card.category-card-4{
     }
     &:before {
       content: "|";
-      color: #eee;
+      color: #d3d3d3;
       padding: 0 10px;
     }
   }
@@ -2324,6 +2330,7 @@ a.lia-quilt-column.category-card.category-card-4{
         margin: 15px 0px;
         padding: 15px;
         border: 1px solid #eee;
+        background-color: #fff;
          .lia-message-view-display .lia-message-subject .lia-link-navigation{
           display:none;
         }
@@ -2427,6 +2434,18 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 @media screen and (max-width:991px){
+
+  #lia-body.ViewProfilePage{
+    .profile_header_wrap .banner_wrap{
+      .profile-info, .contact-section{
+        float: left;
+        width: 100%;
+      }
+      .lia-component-users-widget-contact-me{
+        float:left;
+      }
+    }
+  }
   .lia-quilt.header-wrapper .lia-quilt-header-content-wrapper{
     .lia-quilt-column-single.lia-quilt-column-left{
       float:left;
@@ -2998,6 +3017,26 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 
+#lia-body.ViewProfilePage{
+  .profile_header_wrap .banner_wrap{
+    float:left;
+    width: 100%;
+    .profile-info, .contact-section{
+      float: left;
+      width: 50%;
+    }
+  }
+  .lia-component-users-widget-contact-me{
+    float:right;
+    .lia-panel-heading-bar{
+      padding:0;
+    }
+    .lia-panel-content{
+      padding: 0;
+    }
+  }
+}
+
 
 /* ProfilePage STARTS -- Tarun */
 #lia-body.ViewProfilePage{
@@ -3370,7 +3409,7 @@ vertical-align: top;
 position:unset;
 }
 #lia-body .lia-content .UserAvatar .lia-link-navigation {
-padding: 0px 10px 0px 0px;
+padding: 0px 5px 0px 0px;
 }
 #lia-body .lia-content .Inside-Filter{
 margin:0;
