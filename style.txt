@@ -255,6 +255,32 @@ a.lia-quilt-column.category-card.category-card-4{
   margin-right: 0 !important;
 }
 
+/*.lia-panel-feedback-inline-alert,
+.lia-panel-feedback-inline-warning,
+.lia-panel-feedback-inline-note,
+.lia-panel-feedback-inline-safe,
+.mce-container .lia-mce-loader-feedback,
+.lia-ajax-loader-feedback,
+.lia-panel-feedback-banner-alert,
+.lia-panel-feedback-banner-warning,
+.lia-panel-feedback-spam-warning,
+.lia-panel-feedback-banner-note,
+.lia-component-tag-banner,
+.lia-panel-feedback-banner-safe,
+.lia-panel-status-banner-note,
+.lia-quilt-column-feedback .lia-component-common-widget-page-information {
+    margin-top: 0;
+}
+*/
+
+.lia-quilt-column-main-content{
+  .lia-panel-feedback-inline-note{
+    margin-top: 0;
+  }
+}
+
+
+
 
 /* Slider Fixes */
 .owl-carousel.owl-theme {
@@ -1535,11 +1561,12 @@ a.lia-quilt-column.category-card.category-card-4{
     margin-bottom: 10px;
     .lia-panel-heading-bar{
       width: 100%;
+      font-size: 0;
       .lia-panel-heading-bar-title.net-app-section{
         width: 100%;
         line-height: 25px;
         font-size: 22px;
-        max-width: calc(100% - 90px);
+        max-width: calc(100% - 82px);
       }
     }
   }

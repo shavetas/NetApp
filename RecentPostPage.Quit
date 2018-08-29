@@ -1,5 +1,78 @@
-<quilt layout="one-column" nestable="false" disableTopCssClass="false">
-  <add to="main-content">
-    <component id="post-list"/>
-  </add>
-</quilt>
+<@component id="custom.grz.top-hat-header"/>
+<#macro getTopLinks screenMode >
+	<div class="top-links header-section net-app-section padding-0 ${screenMode}">
+		<ul class="netapp-links lia-list-standard-inline">
+		  <#-- <li><a href="//www.netapp.com">Home</a></li> -->
+		  <li><a href="/t5/forums/recentpostspage">Discussions</a></li>
+		  <li><a href="/t5/custom/page/page-id/ArticleandResources">Articles & Resources</a></li>
+		</ul>
+	</div>
+</#macro>
+<div class="lia-quilt header-wrapper full-width lia-top-quilt">
+  <div class="lia-quilt-column lia-quilt-full-width lia-quilt-row-main">
+    <div class="lia-quilt-row lia-quilt-row-header lia-quilt-column lia-quilt-column-single">
+      <div class="lia-quilt-column-alley lia-quilt-column-alley-single padding-top-0 padding-bottom-0 margin-bottom-0">
+        <div class="lia-quilt-column lia-quilt-header-content-wrapper">
+          <div class="lia-quilt-column lia-quilt-column-16 lia-quilt-column-single lia-quilt-column-left padding-left-0">
+            <div class="lia-quilt-column">
+              <div class="logo header-section net-app-section">
+                <div class="n-property-bar__property-mark ">
+                  <a class="n-property-bar__property-link n-property-bar__logo" href="/">
+                    <img alt="NetApp" class="net-app-section" src="/html/assets/netapp-logo.png">
+                    <span class="head_title net-app-section"><h2>Community</h2></span>
+                  </a>
+                </div>
+              </div>
+              <@getTopLinks "desktop" />
+            </div>
+          </div>
+          <div class="lia-quilt-column lia-quilt-column-08 lia-quilt-column-single  lia-quilt-column-right padding-right-0">
+      
+            <div class="lia-quilt-column text-content-right">
+              
+              <div class="user-menu-wrap">
+               <#--  <a class="header-right-link" href="/t5/Community-Related-Discussions/bd-p/community-related-discussions">
+                <i class="fa fa-question-circle" aria-hidden="true"></i>
+                </a> -->
+                <@component id="custom.grz.user.menu.dropdown" /> 
+              </div>     
+              <@component id="common.widget.user-navigation-combine" />
+              <@component id="custom.grz.notification.on.dropdown" /> 
+        
+              <#--
+              <div class="icon header-section net-app-section">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <i class="fa fa-bell" aria-hidden="true"></i>
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+              </div>
+              <div class="profile header-section net-app-section">
+                <i class="fa fa-question-circle" aria-hidden="true"></i>
+              </div>
+              -->
+            </div>
+          </div>
+          	<div class="lia-quilt-column lia-quilt-column-24 lia-quilt-column-single  lia-quilt-column-right padding-0 mobile">
+			 				<@getTopLinks "mobile" />
+		   			</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<#assign isVisibleCoreNodeDetail = ["CategoryPage"] > 
+<#assign isVisibleSubCategory = ["CategoryPage"] > 
+<div class="external-header-wrppaer">
+  <@component id="custom.grz.banner-cum-search"/>
+  <div class="lia-quilt li-categoryPage-subCategory full-width lia-top-quilt">
+    <div class="lia-quilt-column lia-quilt-full-width lia-quilt-row-main">  
+      <#--  <#if isVisibleCoreNodeDetail?seq_contains(page.name)>
+        <#if (page.name !="CategoryPage")>
+        <@component id="custom.grz.coreNodeDetail"/>
+        </#if>
+      </#if>  -->
+      <#if isVisibleSubCategory?seq_contains(page.name)>
+        <@component id="custom.grz.categoryPage.subCategory"/>
+      </#if>
+    </div>
+  </div>
+</div>

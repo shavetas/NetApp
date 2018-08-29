@@ -1,10 +1,80 @@
-<quilt layout="one-column" nestable="false" disableTopCssClass="false">
-  <add to="main-content">
-    <component id="custom-search-angular"/>
-    <component id="custom-css-search"/>
-    <component id="custom.grz.detailSearch"/>
-  </add>
-  <remove from="site-navigation" for="Header">
-    <component id="common.widget.search-form-message"/>
-  </remove>
-</quilt>
+<#macro thread threadNode >
+<#if threadNode?size &gt; 0>
+ <#list threadNode as topic>
+    <div class="thread-wrapper moderation-status-${topic.moderation_status!'NA'}">
+        <#attempt>
+          <#assign consvertionStyle = topic.conversation.style >
+        <#recover>
+          <#assign consvertionStyle = "" >
+        </#attempt>
+        <#attempt>
+          <#assign isSolved = topic.conversation.solved >
+          <#assign subjectClass = "subject" >
+          <#assign additionDiv  = '' > 
+          <#if isSolved>
+          	<#assign subjectClass = "small-section subject solved " >
+          	<#assign additionDiv  = '<span class="small-section status solved-status">Accepted Solution</span>' > 
+          </#if>
+        <#recover>
+          <#assign subjectClass = "subject" >
+          <#assign additionDiv  = '' > 
+        </#attempt>
+        <div class="profile-section thread-common-section net-app-section ${consvertionStyle}">
+          <#assign authorDetail = getUserDetail(topic.author.id) >
+          <div class="avatar">
+            <img src="${authorDetail.avatar.profile}">
+          </div>
+        </div>
+        <div class="thread-section thread-common-section net-app-section">
+		  <div class="avatar mobile-avatar">
+            <img src="${authorDetail.avatar.profile}">
+          </div>
+          <div class="thread-subject">
+          	<#--
+          	We dont require custom Batch processing
+          	<@component id = "custom.grz.moderationCheckbox" msgid=topic.id />
+            -->
+            <span class="subject-wrapper">
+            	<a href="${topic.view_href}" class="${subjectClass}"> ${topic.subject} </a>
+          		${additionDiv}
+            </span>
+          </div>
+          <div class="thread-body">
+            ${truncate(stripHtmlTags(topic.body),150," ...","<a class='read-more' href='${topic.view_href}'>read more</a>")}
+          </div>
+          <div class="thread-detail">
+            <div class="net-app-section thread-meta-data-left ">
+              <span class="thread-meta-data">
+                By <a href="${authorDetail.view_href}"> ${authorDetail.login} </a> in <a href="${topic.board.view_href}">${topic.board.title} </a>
+              </span>
+            </div>
+            <div class="net-app-section thread-meta-data-right text-content-right">
+              <span class="thread-meta-data">
+                <#-- ${topic.post_time?string('dd.MM.yyyy HH:mm:ss')}  -->
+                <span class="date-icon meta-detail"></span>
+                ${topic.post_time?string('dd.MM.yyyy')} 
+              </span>
+              <span class="thread-meta-data">
+                <#-- ${getKudosCount(topic.id)} --> 
+                <span class="kudos-icon meta-detail"></span>
+                ${topic.kudos.sum.weight} 
+                Likes 
+              </span>
+              <span class="thread-meta-data">
+                <#-- ${getRepliesCount(topic.id)} --> 
+                <span class="replies-icon meta-detail"></span>
+                ${topic.replies.count} 
+                Replies
+              </span>
+            </div>
+          </div>
+        </div>
+    </div>
+  </#list>
+<#else>
+<div class="text-content-center" >
+<p> No content to display</p>
+</div>
+</#if>
+ 
+</#macro>
