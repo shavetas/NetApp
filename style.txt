@@ -94,11 +94,15 @@ $np-white:                      #fff;
   width: 20%;
   float: left;
 }
-.BlogArticlePage , .ForumTopicPage{
+.BlogArticlePage , .ForumTopicPage, .TkbArticlePage{
   .LabelsForArticle .label-link{
     font-weight: normal;
     padding: 5px 10px;
     margin-bottom: 0;
+    border-radius: 200px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #747474;
   }
   .LabelsList:before {
     display: inline-block;
@@ -1083,7 +1087,9 @@ a.lia-quilt-column.category-card.category-card-4{
 .user-navigation-parent-dropdown-combine{
  padding-right: 0;
 }
-
+.TkbArticlePage .lia-quilt-tkb-message .TagList {
+    margin-bottom: 0;
+}
 
 
 
@@ -2003,6 +2009,7 @@ a.lia-quilt-column.category-card.category-card-4{
     padding: 0;
     .lia-button-wrapper{
       padding: 0;
+      vertical-align: bottom;
     }
   }
   .lia-quilt-tkb-message > .lia-quilt-row:last-child{
@@ -2025,6 +2032,8 @@ a.lia-quilt-column.category-card.category-card-4{
     color: $np-light-blue;
     min-width: auto;
     border-radius: 0;
+    border:none;
+    padding:0;
     &:hover{
       background-color: transparent;
       color:$np-light-blue;
@@ -2035,9 +2044,14 @@ a.lia-quilt-column.category-card.category-card-4{
     border-color: transparent;
     color: $np-light-blue;
     opacity: 0.65;
+    &:hover{
+      opacity:0.65;
+    }
   }
-  .lia-js-data-ratingValue-1{
-    border-right: 2px solid #eee;
+  .lia-js-data-ratingValue-1:after{
+    content: "|";
+    color: #eee;
+    padding:0 5px;
   }
 }
 .lia-rating-control-active .ui-stars-star{
@@ -2086,6 +2100,7 @@ a.lia-quilt-column.category-card.category-card-4{
       margin-bottom:0;
       h5{
         font-weight: bold;
+        font-size: 20px;
       }
       }
       }
@@ -2142,7 +2157,7 @@ a.lia-quilt-column.category-card.category-card-4{
         font-size: 76%;
       }
       .lia-message-tags{
-        margin-top:10px;
+        margin-top:5px;
         .lia-form{
           float:left;
         }
@@ -2289,7 +2304,6 @@ a.lia-quilt-column.category-card.category-card-4{
   }
   .lia-discussion-page-sub-section-header{
     padding-left:0;
-    border-bottom:1px solid #eee;
   }
   .lia-component-reply-list{
     .MessageView .lia-quilt-row-header .lia-component-message-view-widget-subject{
@@ -2482,6 +2496,11 @@ a.lia-quilt-column.category-card.category-card-4{
   .MessageView .lia-quilt-row-header{
     .lia-quilt-column-header-left{
       float:left;
+      width:95%;
+    }
+    .lia-quilt-column-header-right{
+      float:left;
+      width: 5%;
     }
   }
   .lia-quilt-column-main-content .MessageView{
