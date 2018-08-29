@@ -753,7 +753,7 @@ a.lia-quilt-column.category-card.category-card-4{
       /*padding: 15px 0;*/
      /* margin: 0 20px 0 0px;*/
       min-width: 17px;
-      margin-top: 5px;
+      margin-top: 10px;
       margin-right: 15px;
       cursor: pointer;
       position: relative;
@@ -1096,13 +1096,6 @@ a.lia-quilt-column.category-card.category-card-4{
 .TkbArticlePage .lia-quilt-tkb-message .TagList {
     margin-bottom: 0;
 }
-
-
-
-
-
-
-
 /* Footer Section */
 
 .footer-card-wrapper{
@@ -1114,6 +1107,9 @@ a.lia-quilt-column.category-card.category-card-4{
     margin-bottom: 10px;
     .net-app-section{
       width: 60%;
+      @media screen and (max-width:992px) and (min-width:768px){
+        width: 100%;
+      }
       font-size: 16px;
       vertical-align: top;
       min-height: 125px;
@@ -1154,6 +1150,9 @@ a.lia-quilt-column.category-card.category-card-4{
     }
     .net-app-section.content-section-right{
       width: 40%;
+      @media screen and (max-width:992px) and (min-width:768px){
+        width: 100%;
+      }
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -1364,7 +1363,7 @@ a.lia-quilt-column.category-card.category-card-4{
     overflow: visible;
     .lia-panel-heading-bar-wrapper{
       border-bottom:1px solid #c4c4c4;
-      height: 60px;
+      height: 65px;
       font-size: 14px;
       select{
         padding: 0;
@@ -1425,10 +1424,11 @@ a.lia-quilt-column.category-card.category-card-4{
 .lia-custom-component{
   .lia-panel-heading-bar-wrapper .lia-panel-heading-bar{
     border-bottom: none;
-    line-height: 15px;
+    /*line-height: 15px;*/
+    margin-bottom: 12px;
     .lia-panel-heading-bar-title{
       font-size: 22px;
-      line-height: 15px;
+      /*line-height: 15px;*/
       /*text-transform: uppercase;*/
       /*color: $text-color;*/
     }
@@ -1920,11 +1920,17 @@ a.lia-quilt-column.category-card.category-card-4{
     background-color: inherit;
     color: #fff;
   }
-  
+  .lia-panel-content{
+    display: flex;
+    .lia-quilt-column-single{
+      flex:1;
+    }
+  }
   .lia-quilt-column.blog-card{
     background-color: $np-white;
     margin-top: 10px;
     margin-bottom: 10px;
+    height: 100%;
     .content-section-top.content-section {
       width: 100%;
       height: 150px;
@@ -2387,7 +2393,7 @@ a.lia-quilt-column.category-card.category-card-4{
 .UserNavigation.lia-component-common-widget-user-navigation-combine {
   /*display: inline-block;*/
   float: right;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .user-navigation-parent-dropdown.user-navigation-parent-dropdown-combine {
