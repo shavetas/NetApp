@@ -224,6 +224,19 @@ a.header-right-link {
 
 
 /* Css Issues Fixes */
+
+.lia-body{
+  a{
+    &:hover,
+    &:focus{
+      color:$np-light-blue;
+      text-decoration: none;
+    }
+  }
+}
+
+
+
 /*=============== OVERRIDING THE OUT OF BOX RESPONSIVE SKIN =================*/
 .lia-component-forums-widget-message-list{
   .single-message-list,
@@ -285,7 +298,7 @@ a.lia-quilt-column.category-card.category-card-4{
 */
 
 .lia-quilt-column-main-content{
-  .lia-panel-feedback-inline-note{
+  .InfoMessage{
     margin-top: 0;
   }
 }
@@ -507,6 +520,10 @@ a.lia-quilt-column.category-card.category-card-4{
   .lia-component-common-widget-breadcrumb{
     background-color: transparent;
     padding: 0;
+    li.lia-breadcrumb-node + li:before{
+      color:$np-light-blue;
+      vertical-align: middle;
+    } 
     .lia-link-navigation {
       display: inline-block;
       max-width: 160px;
@@ -1620,7 +1637,7 @@ a.lia-quilt-column.category-card.category-card-4{
   .top-card-wrapper{
     margin-bottom: 10px;
     overflow: hidden;
-    position: relative;
+    /*position: relative;*/
     .arrow{
       height: 10px;
       width: 20px;
@@ -1628,7 +1645,8 @@ a.lia-quilt-column.category-card.category-card-4{
       border-left: 10px solid transparent;
       border-right: 10px solid transparent;
       border-bottom: 10px solid #f1f1f1;
-      top:131px;
+      /*top:131px;*/
+      top:10px;
     }
     .arrow1{
        left:12%;
@@ -3316,7 +3334,6 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 }
-
 
 /* ProfilePage ENDS -- Tarun */
 

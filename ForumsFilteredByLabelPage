@@ -1,0 +1,20 @@
+<quilt layout="netapp-homepage" nestable="false" disableTopCssClass="false">
+  <add to="side-content">
+    <component id="custom_content_3"/>
+    <component id="kudos.widget.messages-leaderboard"/>
+    <component id="netapp-related-sites"/>
+  </add>
+  <add to="main-content">
+    <component id="custom-board-description"/>
+    <component id="labels.widget.labels-list"/>
+    <component id="custom-board-table-header"/>
+    <component id="custom-board-subscription"/>
+    <component id="menu-bar"/>
+    <component id="labelFilter"/>
+    <component id="custom-board-recent-discussion"/>
+    <component id="post-list"/>
+  </add>
+  <add to="common-header">
+    <component id="custom.breadcrumbs"/>
+  </add>
+</quilt>
