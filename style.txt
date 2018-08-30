@@ -1592,7 +1592,9 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 
-
+.lia-button-primary.view-more-topic{
+  font-size: 14px;
+}
 /* HomePage */
 
 .lia-component-custom-grz-category{
@@ -2663,10 +2665,10 @@ a.lia-quilt-column.category-card.category-card-4{
       }
     }
   #lia-body.ViewProfilePage{
-    .profile_header_wrap .banner_wrap{
+    .lia-quilt-column-main-content .profile_header_wrap .banner_wrap{
       .profile-info, .contact-section{
         float: left;
-        width: 100% !important;
+        width: 100%;
       }
       .contact-section{
         border-top: 1px solid #eee;
@@ -2687,6 +2689,10 @@ a.lia-quilt-column.category-card.category-card-4{
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 2px;
+  }
+  .home-bottom-link-list li{
+    width:32.80%;
+    padding: 0 2px;
   }
 }
 @media screen and (max-width:640px){
@@ -2863,7 +2869,7 @@ a.lia-quilt-column.category-card.category-card-4{
         margin-left: 70px;
       }
     }
-    .lia-avatar-edit-action{
+    .UserAvatar .lia-avatar-edit-action{
       left:95px;
     }
   }
@@ -2925,6 +2931,9 @@ a.lia-quilt-column.category-card.category-card-4{
     .lia-button-secondary:before{
       content:none;
     }
+  }
+  .home-bottom-link-list li{
+    width:32.50%;
   }
 }
 /* Category Page --Shaveta*/
