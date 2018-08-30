@@ -773,7 +773,7 @@ a.lia-quilt-column.category-card.category-card-4{
       .notification-count {
         position: absolute;
         border-radius: 100%;
-        background-color: #0097d7;
+        background-color: $np-deep-blue;
         color: #fff;
         top: -8px;
         left: 11px;
@@ -815,14 +815,14 @@ a.lia-quilt-column.category-card.category-card-4{
       &:before {
         content: "";
         border: 12px solid;
-        border-color: transparent transparent #0096d6;
+        border-color: transparent transparent $np-deep-blue;
         position: absolute;
         top: -22px;
         right: 9px;
         z-index: 99;
       }
       .notify-head {
-        background-color: #0096d6;
+        background-color: $np-deep-blue;
         padding: 10px;
         color: #fff;
         text-align: left;
@@ -2447,6 +2447,12 @@ a.lia-quilt-column.category-card.category-card-4{
     }
     .KudosButton .kudos-count-link{
       font-size: 14px;
+    }
+  }
+  .lia-body .footer-card-wrapper .footer-card .net-app-section .text-content-wrapper{
+    padding: 15px;
+    span.heading{
+      font-size: 20px;
     }
   }
 }
