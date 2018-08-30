@@ -248,6 +248,19 @@ a.header-right-link {
     color: white;
 }
 /* Css Issues Fixes */
+
+.lia-body{
+  a{
+    &:hover,
+    &:focus{
+      color:$np-light-blue;
+      text-decoration: none;
+    }
+  }
+}
+
+
+
 /*=============== OVERRIDING THE OUT OF BOX RESPONSIVE SKIN =================*/
 .lia-component-forums-widget-message-list{
   .single-message-list,
@@ -309,7 +322,7 @@ a.lia-quilt-column.category-card.category-card-4{
 */
 
 .lia-quilt-column-main-content{
-  .lia-panel-feedback-inline-note{
+  .InfoMessage{
     margin-top: 0;
   }
 }
@@ -531,6 +544,10 @@ a.lia-quilt-column.category-card.category-card-4{
   .lia-component-common-widget-breadcrumb{
     background-color: transparent;
     padding: 0;
+    li.lia-breadcrumb-node + li:before{
+      color:$np-light-blue;
+      vertical-align: middle;
+    } 
     .lia-link-navigation {
       display: inline-block;
       max-width: 160px;
@@ -590,6 +607,7 @@ a.lia-quilt-column.category-card.category-card-4{
             padding-right: 5px;
             .cat-detail.cat-title{
               font-weight: 600;
+              word-wrap: break-word;
             }
             &:after{
              content: "";
@@ -730,6 +748,9 @@ a.lia-quilt-column.category-card.category-card-4{
   text-align: right;
   a {
     padding: 0 12px;
+    @media screen and (max-width:767px){
+      padding: 0 6px;
+    }
     color: #3e3e3e;
     font-size: 14px;
     &.active{
@@ -1351,6 +1372,7 @@ a.lia-quilt-column.category-card.category-card-4{
       .lia-panel-content{
         max-height: 385px;
         overflow-y:scroll;
+        -webkit-overflow-scrolling:touch;
       }
     }
   }
@@ -1365,6 +1387,7 @@ a.lia-quilt-column.category-card.category-card-4{
     .lia-panel-content-wrapper .lia-panel-content{
       max-height: 385px;
       overflow-y:scroll;
+      -webkit-overflow-scrolling:touch;
       .rss-feeds{
         font-size: 0;
         padding:5px 0;
@@ -1395,9 +1418,22 @@ a.lia-quilt-column.category-card.category-card-4{
       border-bottom:1px solid #c4c4c4;
       height: 65px;
       font-size: 14px;
+      .lia-quilt-column-cs-2{
+        max-width: 250px;
+        width: 100%;
+        &.bigger-section{
+          max-width: calc(100% - 250px);
+        }
+        .default-menu-option{
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+
       select{
         padding: 0;
         height: 30px;
+        max-width: 150px;
       }
       span.filter-labels.net-app-section {
           margin-right: 10px;
@@ -1648,7 +1684,7 @@ a.lia-quilt-column.category-card.category-card-4{
   .top-card-wrapper{
     margin-bottom: 10px;
     overflow: hidden;
-    position: relative;
+    /*position: relative;*/
     .arrow{
       height: 10px;
       width: 20px;
@@ -1656,7 +1692,8 @@ a.lia-quilt-column.category-card.category-card-4{
       border-left: 10px solid transparent;
       border-right: 10px solid transparent;
       border-bottom: 10px solid #f1f1f1;
-      top:131px;
+      /*top:131px;*/
+      top:10px;
     }
     .arrow1{
        left:12%;
@@ -2620,7 +2657,7 @@ a.lia-quilt-column.category-card.category-card-4{
 }
 @media screen and (max-width:767px)
 {
-  .lia-quilt-header-banner-cum-search-content-wrapper , .lia-quilt-community-page{
+  .lia-quilt-header-banner-cum-search-content-wrapper {
     .text-content-center{
       text-align: center;
     }
@@ -2816,9 +2853,11 @@ a.lia-quilt-column.category-card.category-card-4{
           width: 100%;
         }
         .lia-quilt-column-cs-2.text-content-right{
-          width: 100%;
           text-align: left;
           margin-top:10px;
+          .lia-panel-heading-bar-page-option{
+            float: right;
+          }
         }
       }
 }
@@ -3358,6 +3397,12 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 }
+
+/* Eventum -- Need to be Verified -- SuryaDevSingh */ 
+
+
+
+/* Eventum -- Need to be Verified -- SuryaDevSingh --- END*/ 
 
 
 /* ProfilePage ENDS -- Tarun */
