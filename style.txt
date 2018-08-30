@@ -22,7 +22,12 @@ $np-light-gray:                 #c2c2c2;
 $np-white:                      #fff;
 
 /* Default CSS -- Global CSS*/
-
+a{
+  cursor:pointer;
+  &:hover{
+    text-decoration:none;
+  }
+}
 .lia-quilt-column.lia-quilt-full-width {
     margin: 0;
     padding: 0;
@@ -794,7 +799,7 @@ a.lia-quilt-column.category-card.category-card-4{
       .notification-count {
         position: absolute;
         border-radius: 100%;
-        background-color: $np-deep-blue;
+        background-color: $np-light-blue;
         color: #fff;
         top: -8px;
         left: 11px;
@@ -836,14 +841,14 @@ a.lia-quilt-column.category-card.category-card-4{
       &:before {
         content: "";
         border: 12px solid;
-        border-color: transparent transparent $np-deep-blue;
+        border-color: transparent transparent $np-light-blue;
         position: absolute;
         top: -22px;
         right: 9px;
         z-index: 99;
       }
       .notify-head {
-        background-color: $np-deep-blue;
+        background-color: $np-light-blue;
         padding: 10px;
         color: #fff;
         text-align: left;
@@ -957,7 +962,7 @@ a.lia-quilt-column.category-card.category-card-4{
         }
       }
       .UserInfo {
-        background-color: #0097D7;
+        background-color: $np-light-blue;
         padding: 10px;
         text-align: left;
         line-height: normal;
@@ -998,17 +1003,17 @@ a.lia-quilt-column.category-card.category-card-4{
           }
         }
         a.switch-user-page-link:before{
-            content:'\f0ec';
+            content:'\f079';
         }
       }
       .profile:before{
         content: "\f007";
       }
       .settings:before{
-        content: "\f013";
+        content: "\f0ad";
       }
       .post:before{
-        content: "\f15c";
+        content: "\f2b9";
       }
       .subscriptions:before{
        content: "\f09e";
@@ -1500,7 +1505,7 @@ a.lia-quilt-column.category-card.category-card-4{
                 display: inline-block;
                 width: 100%;
                 &:hover{
-                  color: $text-link-color;
+                  color: inherit;
                 }
               }
               span.small-section.status {
@@ -1531,10 +1536,17 @@ a.lia-quilt-column.category-card.category-card-4{
           .thread-detail {
             font-size: 0;
             margin-top: 5px;
+            .net-app-section.thread-meta-data-left{
+              width:60%;
+              vertical-align: top;
+            }
+            .net-app-section.thread-meta-data-right{
+              width:40%;
+              vertical-align: top;
+            }
             .net-app-section{
               font-size: 12px;
               line-height: 15px;
-              width: 50%;
               &.thread-meta-data-right .thread-meta-data{
                 margin-left: 20px;
                 position: relative;
@@ -1704,6 +1716,9 @@ a.lia-quilt-column.category-card.category-card-4{
 }
 
 .lia-component-custom-grz-subcategory{
+  .title.card-title a:hover {
+    color: $np-light-blue;
+  }
   margin-bottom: 0;
   .lia-panel-heading-bar-wrapper{
     display: none;
@@ -1965,19 +1980,20 @@ a.lia-quilt-column.category-card.category-card-4{
     height: 100%;
     .content-section-top.content-section {
       width: 100%;
-      height: 150px;
+      height: 160px;
       /*margin-bottom: 24px;*/
      /* background-size: 100%;*/
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-
+      margin-bottom: 5px;
     }
     .content-section-bottom.content-section{
       padding: 20px;
       color: $text-color;
       font-size: 14px;
       line-height: 1.5;
+      border: 1px solid #eee;
       .date-section{
         font-size: 13px;
         margin-bottom: 5px;
@@ -2160,6 +2176,9 @@ a.lia-quilt-column.category-card.category-card-4{
         .lia-message-author-avatar{
           padding-right:0;
         }
+      }
+      .lia-message-author-with-avatar:before {
+        content: "by";
       }
       .lia-message-post-date.lia-component-post-date{
         position: relative;
@@ -2718,9 +2737,16 @@ a.lia-quilt-column.category-card.category-card-4{
     text-transform: uppercase;
     letter-spacing: 2px;
   }
-  .lia-body .home-bottom-link-list li{
-    width:32.80%;
-    padding: 0 2px;
+  .lia-body{
+    .home-bottom-link-list li{
+      width:32.80%;
+      padding: 0 2px;
+    }
+    .lia-custom-component .thread-wrapper-section .thread-wrapper .thread-common-section .thread-detail{
+      .net-app-section.thread-meta-data-left, .net-app-section.thread-meta-data-right{
+        width:100%;
+      }
+    }
   }
 }
 @media screen and (max-width:640px){
