@@ -102,9 +102,6 @@ a{
 .lia-quilt-blog-topic-message > .lia-quilt-row-header{
   padding: 0;
 }
-.lia-component-body-signature-highlight-escalation{
-  display: none;
-}
 .BlogArticlePage , .ForumTopicPage, .TkbArticlePage{
   .LabelsForArticle .label-link{
     font-weight: normal;
@@ -519,6 +516,7 @@ a.lia-quilt-column.category-card.category-card-4{
       text-overflow: ellipsis;
       vertical-align: middle;
       white-space: nowrap;
+      font-weight: bold;
     }
   }
   .extra-coreNode-detail-wrapper{
