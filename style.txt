@@ -1964,7 +1964,7 @@ a.lia-quilt-column.category-card.category-card-4{
       color: $text-color;
       font-size: 14px;
       line-height: 1.5;
-      border: 1px solid #eeee;
+      border: 1px solid #eee;
       .date-section{
         font-size: 13px;
         margin-bottom: 5px;
