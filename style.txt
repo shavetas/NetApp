@@ -215,7 +215,7 @@ a.header-right-link {
 .mobile {
   display: none;
 }
-@media screen and (max-width: 767px){
+@media screen and (max-width: 991px){
   .mobile {
     display: block;
   }
@@ -238,7 +238,15 @@ a.header-right-link {
     padding-top: 8px;
   }
 }
-
+.lia-component-reply-list .UserSignature.lia-message-signature {
+    display: block;
+}
+.UserSignature.lia-message-signature {
+    display: none;
+}
+.home-bottom-link-list li a:hover {
+    color: white;
+}
 /* Css Issues Fixes */
 /*=============== OVERRIDING THE OUT OF BOX RESPONSIVE SKIN =================*/
 .lia-component-forums-widget-message-list{
