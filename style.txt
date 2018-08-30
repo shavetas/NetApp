@@ -216,7 +216,7 @@ a.header-right-link {
 .mobile {
   display: none;
 }
-@media screen and (max-width: 767px){
+@media screen and (max-width: 991px){
   .mobile {
     display: block;
   }
@@ -239,7 +239,15 @@ a.header-right-link {
     padding-top: 8px;
   }
 }
-
+.lia-component-reply-list .UserSignature.lia-message-signature {
+    display: block;
+}
+.UserSignature.lia-message-signature {
+    display: none;
+}
+.home-bottom-link-list li a:hover {
+    color: white;
+}
 /* Css Issues Fixes */
 
 .lia-body{
@@ -2261,6 +2269,7 @@ a.lia-quilt-column.category-card.category-card-4{
     }
     .lia-component-me-too, .lia-component-quick-reply-button{
       display:inline-block;
+      vertical-align: middle;
     }
     .lia-component-me-too{
       .lia-rating-enumeration{
