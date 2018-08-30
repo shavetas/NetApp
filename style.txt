@@ -2268,6 +2268,7 @@ a.lia-quilt-column.category-card.category-card-4{
     }
     .lia-component-me-too, .lia-component-quick-reply-button{
       display:inline-block;
+      vertical-align: middle;
     }
     .lia-component-me-too{
       .lia-rating-enumeration{
