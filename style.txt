@@ -1352,6 +1352,7 @@ a.lia-quilt-column.category-card.category-card-4{
       .lia-panel-content{
         max-height: 385px;
         overflow-y:scroll;
+        -webkit-overflow-scrolling:touch;
       }
     }
   }
@@ -1366,6 +1367,7 @@ a.lia-quilt-column.category-card.category-card-4{
     .lia-panel-content-wrapper .lia-panel-content{
       max-height: 385px;
       overflow-y:scroll;
+      -webkit-overflow-scrolling:touch;
       .rss-feeds{
         font-size: 0;
         padding:5px 0;
@@ -1396,9 +1398,22 @@ a.lia-quilt-column.category-card.category-card-4{
       border-bottom:1px solid #c4c4c4;
       height: 65px;
       font-size: 14px;
+      .lia-quilt-column-cs-2{
+        max-width: 250px;
+        width: 100%;
+        &.bigger-section{
+          max-width: calc(100% - 250px);
+        }
+        .default-menu-option{
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+
       select{
         padding: 0;
         height: 30px;
+        max-width: 150px;
       }
       span.filter-labels.net-app-section {
           margin-right: 10px;
@@ -2622,7 +2637,7 @@ a.lia-quilt-column.category-card.category-card-4{
 }
 @media screen and (max-width:767px)
 {
-  .lia-quilt-header-banner-cum-search-content-wrapper , .lia-quilt-community-page{
+  .lia-quilt-header-banner-cum-search-content-wrapper {
     .text-content-center{
       text-align: center;
     }
@@ -2818,9 +2833,11 @@ a.lia-quilt-column.category-card.category-card-4{
           width: 100%;
         }
         .lia-quilt-column-cs-2.text-content-right{
-          width: 100%;
           text-align: left;
           margin-top:10px;
+          .lia-panel-heading-bar-page-option{
+            float: right;
+          }
         }
       }
 }
@@ -3360,6 +3377,13 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 }
+
+/* Eventum -- Need to be Verified -- SuryaDevSingh */ 
+
+
+
+/* Eventum -- Need to be Verified -- SuryaDevSingh --- END*/ 
+
 
 /* ProfilePage ENDS -- Tarun */
 
