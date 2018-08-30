@@ -224,6 +224,20 @@ a.header-right-link {
   }
 }
 
+#recommendedContentTaplet_container{
+  width:100%;
+  .lia-panel-heading-bar-title{
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .lia-panel-content > .lia-list-standard{
+    margin: 0;
+  }
+  .lia-list-standard .lia-list-slim {
+    padding-bottom: 8px;
+    padding-top: 8px;
+  }
+}
 
 /* Css Issues Fixes */
 /*=============== OVERRIDING THE OUT OF BOX RESPONSIVE SKIN =================*/
