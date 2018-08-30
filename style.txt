@@ -153,7 +153,8 @@ a{
   }
 }
 .lia-top-quilt > .lia-quilt-row-footer{   
-   margin-top:0;   
+   margin-top:0;
+   border:none;  
 }
 #lia-body .lia-content {
     min-width: 300px;
@@ -1849,7 +1850,7 @@ a.lia-quilt-column.category-card.category-card-4{
 /* Main Side Content */
 .lia-quilt-column-main-content{
   .lia-panel{
-    margin-bottom: 0;
+    /*margin-bottom: 0;*/
     overflow: visible;
   }
 }
