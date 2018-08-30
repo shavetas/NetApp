@@ -611,8 +611,8 @@ a.lia-quilt-column.category-card.category-card-4{
 .lia-quilt.header-banner-cum-search{
   color:$np-white;
   background-image: url("/html/assets/banner.png");
-  background-position: 0 -65px;
-  /*background-color: $np-purple;*/
+  background-repeat: no-repeat;
+  background-size: cover;
 
   .lia-quilt-column-alley.lia-quilt-column-alley-single{
     background-color: transparent;
@@ -633,6 +633,7 @@ a.lia-quilt-column.category-card.category-card-4{
     font-weight: 600;
     a{
       color: #4faaff;
+
     }
   }
   .header-search-section-wrpper{
@@ -2090,7 +2091,6 @@ a.lia-quilt-column.category-card.category-card-4{
     box-shadow:none;
     padding: 20px;
     border: 1px solid #eee;
-    background-color: $np-gray;
     .lia-message-view-display{
       box-shadow: none;
     }
@@ -2339,7 +2339,6 @@ a.lia-quilt-column.category-card.category-card-4{
         margin: 15px 0px;
         padding: 15px;
         border: 1px solid #eee;
-        background-color: #fff;
          .lia-message-view-display .lia-message-subject .lia-link-navigation{
           display:none;
         }
@@ -2443,18 +2442,6 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 @media screen and (max-width:991px){
-
-  #lia-body.ViewProfilePage{
-    .profile_header_wrap .banner_wrap{
-      .profile-info, .contact-section{
-        float: left;
-        width: 100% !important;
-      }
-      .lia-component-users-widget-contact-me{
-        float:left;
-      }
-    }
-  }
   .lia-quilt.header-wrapper .lia-quilt-header-content-wrapper{
     .lia-quilt-column-single.lia-quilt-column-left{
       float:left;
@@ -2668,6 +2655,32 @@ a.lia-quilt-column.category-card.category-card-4{
         left:0;
       }
     }
+  #lia-body.ViewProfilePage{
+    .profile_header_wrap .banner_wrap{
+      .profile-info, .contact-section{
+        float: left;
+        width: 100% !important;
+      }
+      .contact-section{
+        border-top: 1px solid #eee;
+        padding-top: 10px;
+        margin-top: 10px;
+      }
+      .lia-component-users-widget-contact-me{
+        float:left;
+      }
+    }
+  }
+  .lia-quilt.header-banner-cum-search .banner-sub-title a{
+    display: block;
+    max-width: 200px;
+    margin: 12px auto 0;
+    border: 1px solid #fff;
+    padding: 5px 10px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
 }
 @media screen and (max-width:640px){
   .lia-component-topic-message{
@@ -2842,6 +2855,9 @@ a.lia-quilt-column.category-card.category-card-4{
       .UserProfileSummary, .biograprhyHolder{
         margin-left: 70px;
       }
+    }
+    .lia-avatar-edit-action{
+      left:95px;
     }
   }
   .lia-custom-component .thread-wrapper-section .thread-wrapper .thread-common-section .thread-detail .net-app-section{
@@ -3070,6 +3086,9 @@ a.lia-quilt-column.category-card.category-card-4{
     position: absolute;
     top: 15px;
     left: 135px;
+  }
+  .lia-user-item .lia-user-avatar{
+    padding-right: 10px;
   }
   .lia-component-badges-widget-user-badges-list{
     position: relative;
