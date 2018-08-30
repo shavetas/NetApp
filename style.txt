@@ -565,6 +565,7 @@ a.lia-quilt-column.category-card.category-card-4{
             padding-right: 5px;
             .cat-detail.cat-title{
               font-weight: 600;
+              word-wrap: break-word;
             }
             &:after{
              content: "";
@@ -704,6 +705,9 @@ a.lia-quilt-column.category-card.category-card-4{
   text-align: right;
   a {
     padding: 0 12px;
+    @media screen and (max-width:767px){
+      padding: 0 6px;
+    }
     color: #3e3e3e;
     font-size: 14px;
     &.active{
