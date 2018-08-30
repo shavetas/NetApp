@@ -1106,6 +1106,10 @@ a.lia-quilt-column.category-card.category-card-4{
     font-size: 0;
     margin-top: 10px;
     margin-bottom: 10px;
+    @media screen and (max-width:992px) and (min-width:768px){
+      display: flex;
+      flex-flow: column-reverse;
+    }
     .net-app-section{
       width: 60%;
       @media screen and (max-width:992px) and (min-width:768px){
@@ -1923,6 +1927,9 @@ a.lia-quilt-column.category-card.category-card-4{
   }
   .lia-panel-content{
     display: flex;
+    @media screen and (max-width: 767px){
+      flex-flow: column;
+    }
     .lia-quilt-column-single{
       flex:1;
     }
