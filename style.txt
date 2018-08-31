@@ -225,6 +225,21 @@ a.header-right-link {
   }
 }
 
+
+/**
+Text Editor**/
+.lia-body .mce-floatpanel.mce-window{
+  top:50px !important;
+  .mce-container-body.li-dialog-iframe-container{
+    max-height: 400px;
+    .lia-video-html5-upload-input-wrapper a.lia-button-secondary{
+      margin-top: 10px;
+      color:white;
+    }
+  }
+}
+
+/****/
 #recommendedContentTaplet_container{
   width:100%;
   .lia-panel-heading-bar-title{
