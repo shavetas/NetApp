@@ -2665,6 +2665,10 @@ a.lia-quilt-column.category-card.category-card-4{
     text-transform: uppercase;
     letter-spacing: 2px;
   }
+  .external-header-wrppaer .lia-custom-component.lia-component-categoryPage-subCategory .lia-quilt-column.subcategory .cat-wrapper a{
+    font-size: 12px;
+    line-height: 14px;
+  }
 }
 @media screen and (max-width:767px)
 {
@@ -2783,6 +2787,9 @@ a.lia-quilt-column.category-card.category-card-4{
         width:100%;
       }
     }
+  }
+  #lia-body .external-header-wrppaer .lia-custom-component.lia-component-categoryPage-subCategory .lia-quilt-column.subcategory .cat-wrapper{
+    height: auto;
   }
 }
 @media screen and (max-width:640px){
