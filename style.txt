@@ -1557,7 +1557,6 @@ a.lia-quilt-column.category-card.category-card-4{
                    width: 20px;
                    height: 20px;
                    transform: translate(-50%,50%);
-                   / padding: 10px; /
                    border: 1px solid red;
                    border-radius: 50%;
                    overflow: hidden;
@@ -1693,6 +1692,62 @@ a.lia-quilt-column.category-card.category-card-4{
       padding-left: 15px;
       padding-right: 15px;
       background-color: $np-gray;
+    }
+  }
+
+  &.lia-custom-component-search-result{
+    .lia-pannel-heading{
+      padding-top: 20px;
+      font-size: 28px;
+      font-weight: 500;
+      &.bottom-section{
+        padding-top: 0;
+        font-size: 12px;
+        padding-bottom:20px; 
+        border-bottom: 1px solid #c2c2c2;
+      }
+    }
+    .thread-detail-author-stats{
+      .net-app-section{
+        width: auto !important;
+        line-height: 2em !important;
+        margin-right: 20px;
+        .meta-detail{
+          top: 40% !important; 
+        }
+      }
+    }
+    .thread-body {
+      margin-top: 15px;
+    }
+    .thread-meta-data.label-section-wrapper {
+      font-size: 14px;
+      line-height: 18px;
+      vertical-align: middle;
+      .label-list-wrapper {
+        background-color: #eaeaea;
+        margin: 0 2px;
+        padding: 2px;
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: 1px;
+        vertical-align: middle;
+        padding-bottom: 0;
+
+      }
+    }
+    .plus-minus-icon{
+      letter-spacing: 2px;
+      color: $np-light-blue;
+      font-weight: 600;
+    }
+    a.replies-link {
+      margin-left: 15px;
+    }
+    span.reply-icon {
+      font-size: 12px;
+      font-weight: 600;
+      margin-right: 5px;
     }
   }
 }
@@ -3627,7 +3682,7 @@ margin:0;
 padding:0;
 }
 .tab-pane .suggestion-data{
-padding:15px 0px;
+/*padding:15px 0px;*/
 }
 .search_box .form-group .search-filter-icon {
 padding: 20px;
