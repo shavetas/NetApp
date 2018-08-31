@@ -656,25 +656,6 @@ a.lia-quilt-column.category-card.category-card-4{
 
 
 
-/* Responsive Header Section */
-@media only screen and (max-width:767px){
-  .lia-quilt.header-wrapper .lia-quilt-header-content-wrapper {
-    .lia-quilt-column-single.lia-quilt-column{
-      padding-bottom: 0;
-      &.lia-quilt-column-right.mobile{
-        width:100%;
-        .top-links.header-section{
-          display: block;
-          text-align: center;
-        }
-      }
-    }
-  }
-}
-
-
-
-
 .lia-quilt.header-banner-cum-search{
   color:$np-white;
   background-image: url("/html/assets/banner.png");
@@ -1783,7 +1764,7 @@ a.lia-quilt-column.category-card.category-card-4{
       position: absolute;
       border-left: 10px solid transparent;
       border-right: 10px solid transparent;
-      border-bottom: 10px solid #f1f1f1;
+      border-bottom: 10px solid #f6f6f6;
       /*top:131px;*/
       top:10px;
     }
@@ -1800,8 +1781,14 @@ a.lia-quilt-column.category-card.category-card-4{
        right:12%;
     }
     @media only screen and (max-width:767px){
-      .arrow{
-        display:none;
+      #lia-body{
+        .arrow1,arrow2,arrow3,arrow4{
+          left:45px;
+          top:0;
+        }
+        .grid2a{
+          padding-top:10px;
+        }
       }
     }
   }
@@ -2080,7 +2067,30 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 
+/*PrivateNotesPage**/
 
+.PrivateNotesPage{
+  .lia-notes-list{
+    margin: 0;
+  }
+}
+.lia-form-input-wrapper{ 
+    .lia-token-input-input-token{
+      width: 100%;
+    }
+    .lia-token-input-input-token > input{
+      width:100%;
+    }
+  }
+
+.lia-quilt-notes-compose-page{
+  .title{
+    padding: 5px;
+  }
+  .lia-note-view-display{
+    padding: 5px;
+  }
+}
 /* Blog Section - HOMPAGE*/
 .lia-panel.lia-component-custom-grz-blog-section{
 
@@ -2113,7 +2123,6 @@ a.lia-quilt-column.category-card.category-card-4{
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-      margin-bottom: 5px;
     }
     .content-section-bottom.content-section{
       padding: 20px;
@@ -2637,6 +2646,16 @@ a.lia-quilt-column.category-card.category-card-4{
 }
 @media screen and (max-width:991px){
   .lia-quilt.header-wrapper .lia-quilt-header-content-wrapper{
+    .lia-quilt-column-single.lia-quilt-column{
+      padding-bottom: 0;
+      &.lia-quilt-column-right.mobile{
+        width:100%;
+        .top-links.header-section{
+          display: block;
+          text-align: center;
+        }
+      }
+    }
     .lia-quilt-column-single.lia-quilt-column-left{
       float:left;
       width:75%;
