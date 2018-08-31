@@ -190,7 +190,7 @@ a.header-right-link {
     text-overflow: ellipsis;
     vertical-align: middle;
     white-space: nowrap;
-    line-height: 1;
+    line-height: 16px;
   }
 }
 
@@ -232,12 +232,13 @@ Text Editor**/
   top:50px !important;
   .mce-container-body.li-dialog-iframe-container{
     max-height: 400px;
-    .lia-video-html5-upload-input-wrapper a.lia-button-secondary{
-      margin-top: 10px;
-      color:white;
-    }
   }
 }
+.lia-video-html5-upload-input-wrapper a.lia-button-secondary{
+    margin-top: 10px;
+    color:white;
+    outline: 0;
+  }
 
 /****/
 #recommendedContentTaplet_container{
@@ -2112,7 +2113,9 @@ a.lia-quilt-column.category-card.category-card-4{
 .post-page-disclaimer-div{
   display:none;
 }
-
+.lia-component-message-view-widget-tags input#lia-tagsDelimitedByCommas {
+    font-size: 13px;
+}
 /* TKB Article Page*/
 
 .TkbArticlePage{ 
@@ -2177,6 +2180,37 @@ a.lia-quilt-column.category-card.category-card-4{
 }
 /* ForumTopic Message Main Section **/
 .lia-body .lia-quilt-column-main-content{
+  .lia-message-view-display.lia-accepted-solution{
+      background-color: $np-gray;
+      border-top: 2px solid #008000;
+      border-bottom: 2px solid #008000;
+      .lia-message-state-indicator{
+          color: #448602;
+          &:before{
+            border-left: 40px solid transparent;
+            border-top: 40px solid #008000;
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+          &:after{
+            -webkit-font-smoothing: antialiased;
+            color: #fff;
+            content: "\f00c";
+            display: inline-block;
+            font-size: 15.5px;
+            font-size: inherit;
+            font: normal normal normal 16px/1 FontAwesome;
+            position: absolute;
+            right: 5px;
+            text-rendering: auto;
+            top: 4px;
+            transform: translate(0, 0);
+          }
+      }
+    }
+  
   .lia-panel-message{
     border:0;
   }
@@ -2424,7 +2458,9 @@ a.lia-quilt-column.category-card.category-card-4{
   }
   .lia-component-reply-list{
     .MessageView .lia-quilt-row-header .lia-component-message-view-widget-subject{
-      display: none;
+      .lia-message-subject h5{
+        font-size: 16px;
+      }
     }
     .lia-component-messages-stat-thread-replies-count{
       display: none;
@@ -2452,36 +2488,6 @@ a.lia-quilt-column.category-card.category-card-4{
             display:none;
           }
         }
-      }
-    }
-    .lia-message-view-display.lia-accepted-solution{
-      background-color: $np-gray;
-      border-top: 2px solid #008000;
-      border-bottom: 2px solid #008000;
-      .lia-message-state-indicator{
-          color: #448602;
-          &:before{
-            border-left: 40px solid transparent;
-            border-top: 40px solid #008000;
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 0;
-          }
-          &:after{
-            -webkit-font-smoothing: antialiased;
-            color: #fff;
-            content: "\f00c";
-            display: inline-block;
-            font-size: 15.5px;
-            font-size: inherit;
-            font: normal normal normal 16px/1 FontAwesome;
-            position: absolute;
-            right: 5px;
-            text-rendering: auto;
-            top: 4px;
-            transform: translate(0, 0);
-          }
       }
     } 
   }
