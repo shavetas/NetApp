@@ -2210,7 +2210,7 @@ a.lia-quilt-column.category-card.category-card-4{
           }
       }
     }
-  
+
   .lia-panel-message{
     border:0;
   }
@@ -2490,6 +2490,11 @@ a.lia-quilt-column.category-card.category-card-4{
         }
       }
     } 
+    .lia-message-view-display.lia-accepted-solution{
+      background-color: $np-gray;
+      border-top: 2px solid #008000;
+      border-bottom: 2px solid #008000;
+    }
   }
 }
 
@@ -3209,6 +3214,9 @@ a.lia-quilt-column.category-card.category-card-4{
 
 /* ProfilePage STARTS -- Tarun */
 #lia-body.ViewProfilePage{
+   .body_wrap .custom_detail_tab:last-child{
+      border-right: 1px solid #cecece;
+   }
   .lia-component-view-profile-banner .lia-user-avatar-profile{
     border-radius: 50%;
     padding: 5px;
@@ -3236,7 +3244,9 @@ a.lia-quilt-column.category-card.category-card-4{
     border: 1px solid #cecece;
   }
   .body_wrap .custom_detail_tab{
-    border: 1px solid #E5E5E5;
+    border: 1px solid #cecece;
+    border-top: 0;
+    border-right: 0;
   }
   .lia-user-badge-list 
   {
