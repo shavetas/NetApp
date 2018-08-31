@@ -1069,7 +1069,7 @@ a.lia-quilt-column.category-card.category-card-4{
         &:after{
           content: "";
           border: 12px solid;
-          border-color: transparent transparent #0097D7;
+          border-color: transparent transparent $np-light-blue;
           position: absolute;
           top: -22px;
           right: 9px;
@@ -2655,6 +2655,16 @@ a.lia-quilt-column.category-card.category-card-4{
     .lia-component-custom-grz-subcategory .lia-panel-content-wrapper .lia-panel-content .sub-category-wrapper .text-content-center.card-content .title.card-title{
       font-size:15px;
     }
+  .lia-quilt.header-banner-cum-search .banner-sub-title a{
+    display: block;
+    max-width: 200px;
+    margin: 12px auto 0;
+    border: 1px solid #fff;
+    padding: 5px 10px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
 }
 @media screen and (max-width:767px)
 {
@@ -2762,16 +2772,6 @@ a.lia-quilt-column.category-card.category-card-4{
         float:left;
       }
     }
-  }
-  .lia-quilt.header-banner-cum-search .banner-sub-title a{
-    display: block;
-    max-width: 200px;
-    margin: 12px auto 0;
-    border: 1px solid #fff;
-    padding: 5px 10px;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
   }
   .lia-body{
     .home-bottom-link-list li{
