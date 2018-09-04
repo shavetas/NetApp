@@ -152,6 +152,9 @@ a{
     background-repeat: no-repeat;
   }
 }
+.lia-quilt.header-wrapper .lia-quilt-header-content-wrapper .lia-quilt-column-single.lia-quilt-column-right .UserNavigation .lia-header-nav-component-widget.lia-component-notes-widget-summary-modern{
+  margin-top:10px;
+}
 .lia-top-quilt > .lia-quilt-row-footer{   
    margin-top:0;
    border:none;  
@@ -1871,7 +1874,7 @@ a.lia-quilt-column.category-card.category-card-4{
       .top-sub-category-wrapper {
         position: relative;
         display: none;
-        max-height: 160px;
+        max-height: 148px;
         /*overflow: hidden;*/
         transition: all 0.5s ease-in-out;
         &.height-auto{
@@ -3320,9 +3323,6 @@ a.lia-quilt-column.category-card.category-card-4{
   .lia-content .lia-form-labels-fieldset-toggle .lia-fieldset-title{
     display: inline-block;
     width: 29%;
-  }
-  .predefined-labels{
-    display: none;
   }
   .lia-form-tags-fieldset-toggle,
   .lia-form-kudos-fieldset-toggle{
