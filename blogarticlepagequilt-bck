@@ -1,0 +1,29 @@
+<quilt layout="one-column.message" nestable="false" disableTopCssClass="false">
+  <add to="footer-right">
+    <component id="comment-button"/>
+    <component id="share-button"/>
+  </add>
+  <add to="header-left">
+    <component id="author-avatar"/>
+    <component id="message-view.widget.author-username" wrapper="lia-message-author-with-avatar"/>
+    <component id="author-rank"/>
+    <component id="user-expert-topics"/>
+  </add>
+  <add to="main">
+    <component id="post-date"/>
+    <component id="message-view.widget.body"/>
+    <component id="source-device"/>
+    <component id="tags"/>
+    <component id="add-tags"/>
+  </add>
+  <add to="header-right">
+    <component id="message-view.widget.action-menu" renderOrder="blog-article-page-action-menu"/>
+  </add>
+  <add to="footer-left">
+    <component id="kudos-action"/>
+  </add>
+  <add to="mod-controls-main">
+    <component id="modbar-toggle"/>
+    <component id="modbar"/>
+  </add>
+</quilt>
