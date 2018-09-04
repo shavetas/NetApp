@@ -2152,6 +2152,11 @@ a.lia-quilt-column.category-card.category-card-4{
     .lia-quilt-column-single{
       flex:1;
     }
+    .content-heading{
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 600;
+    }
   }
   .lia-quilt-column.blog-card{
     background-color: $np-white;
