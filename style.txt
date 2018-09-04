@@ -284,7 +284,7 @@ Text Editor**/
 }
 ul.home-bottom-link-list{ 
   svg{
-    width: 25px;
+    width: 30px;
     height: 25px;
     vertical-align: middle;
   }
@@ -2633,7 +2633,6 @@ a.lia-quilt-column.category-card.category-card-4{
 .UserNavigation.lia-component-common-widget-user-navigation-combine {
   /*display: inline-block;*/
   float: right;
-  margin-top: 10px;
 }
 
 .user-navigation-parent-dropdown.user-navigation-parent-dropdown-combine {
@@ -3161,7 +3160,7 @@ a.lia-quilt-column.category-card.category-card-4{
           margin-top:10px;
         }
       }
-  .lia-component-custom-grz-featuredTopic{
+  .lia-body .lia-component-custom-grz-featuredTopic{
     .thread-wrapper-section .thread-wrapper{
       border-left: 1px solid #eee;
        border-top: 3px solid #7e5fd4;
@@ -3224,7 +3223,6 @@ a.lia-quilt-column.category-card.category-card-4{
     width:32.50%;
   }
   .lia-user-status-anonymous .UserNavigation.lia-component-common-widget-user-navigation-combine{
-    margin-top:0;
     li{
       padding-left: 0;
       padding-right: 1px;
