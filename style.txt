@@ -448,7 +448,7 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 .lia-component-custom-grz-featuredTopic{
-  .lia-custom-component .thread-wrapper-section .thread-wrapper{
+  .thread-wrapper-section .thread-wrapper{
     margin-bottom: 15px;
     border: 1px solid #eee;
     border-left: 3px solid #7e5fd4;
@@ -3186,7 +3186,7 @@ a.lia-quilt-column.category-card.category-card-4{
     margin-top:0;
     li{
       padding-left: 0;
-      padding-right: 3px;
+      padding-right: 1px;
       a{
         font-size: 13px;
       }
