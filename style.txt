@@ -1717,6 +1717,13 @@ a.lia-quilt-column.category-card.category-card-4{
 
       }
     }
+    .thread-wrapper.status-accepted:before{
+      border-left: 35px solid transparent;
+      border-top: 35px solid #448602;
+    }
+    .thread-wrapper.status-accepted:after{
+      font-size: 13px;
+    }
     .plus-minus-icon{
       letter-spacing: 2px;
       color: $np-light-blue;
@@ -1847,7 +1854,7 @@ a.lia-quilt-column.category-card.category-card-4{
         position: relative;
         display: none;
         max-height: 160px;
-        overflow: hidden;
+        /*overflow: hidden;*/
         transition: all 0.5s ease-in-out;
         &.height-auto{
           max-height: none;
