@@ -2186,10 +2186,6 @@ a.lia-quilt-column.category-card.category-card-4{
         margin-bottom: 5px;
         /*font-weight: 600;*/
       }
-      .content-sub-heading{
-        /*font-size: 14px;*/
-        /*line-height: 1.5;*/
-      }
       .read-more.content-sub-heading {
         margin-top: 10px;
         text-transform: uppercase;
