@@ -2131,8 +2131,17 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 .lia-note-subject .lia-link-navigation{
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
+}
+.lia-note-content{
+  padding-left: 35px;
+  .lia-note-body{
+    font-size: 14px;
+  }
+}
+.lia-notes-list .lia-note-view-display > .lia-quilt{
+  padding-left: 0;
 }
 /* Blog Section - HOMPAGE*/
 .lia-panel.lia-component-custom-grz-blog-section{
