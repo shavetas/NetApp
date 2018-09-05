@@ -805,7 +805,11 @@ a.lia-quilt-column.category-card.category-card-4{
 }
 
 
-
+#lia-body .lia-component-editor{
+  .lia-panel-heading-bar{
+    padding-bottom: 0;
+  }
+}
 /* Custom User Drop Down -- Anjali */
 
 .text-content-right {
@@ -2109,6 +2113,11 @@ a.lia-quilt-column.category-card.category-card-4{
 /*PrivateNotesPage**/
 
 .PrivateNotesPage{
+  .lia-component-primary-post-button{
+    .lia-button-primary{
+      margin-right: 15px;
+    }
+  }
   .lia-notes-list{
     margin: 0;
   }
@@ -2139,6 +2148,9 @@ a.lia-quilt-column.category-card.category-card-4{
   .lia-note-body{
     font-size: 14px;
   }
+}
+.lia-note-header{
+  padding-left: 5px;
 }
 .lia-notes-list .lia-note-view-display > .lia-quilt{
   padding-left: 0;
@@ -2839,6 +2851,10 @@ a.lia-quilt-column.category-card.category-card-4{
 }
 @media screen and (max-width:767px)
 {
+  .lia-form-subscriptions-fieldset-toggle{
+    float:left;
+    width:100%;
+  }
   .lia-panel.lia-component-custom-grz-blog-section{
     margin-bottom: 30px;
     .lia-decoration-border-bottom{
@@ -3152,7 +3168,11 @@ a.lia-quilt-column.category-card.category-card-4{
       }
     }
     .UserAvatar .lia-avatar-edit-action{
-      left:95px;
+      left:90px;
+      top:5px;
+    }
+    .lia-component-view-profile-banner .lia-user-avatar-profile{
+      left:10px;
     }
   }
   .lia-custom-component .thread-wrapper-section .thread-wrapper .thread-common-section .thread-detail .net-app-section{
@@ -3173,7 +3193,7 @@ a.lia-quilt-column.category-card.category-card-4{
           margin-top:10px;
         }
       }
-  .lia-body .lia-component-custom-grz-featuredTopic{
+  .lia-body .lia-quilt-layout-home-full-width-2-column-main .lia-component-custom-grz-featuredTopic{
     .thread-wrapper-section .thread-wrapper{
       border-left: 1px solid #eee;
        border-top: 3px solid #7e5fd4;
@@ -3194,15 +3214,6 @@ a.lia-quilt-column.category-card.category-card-4{
 }
 @media screen and (max-width:420px){
   .lia-quilt-column-main-content{
-    .lia-component-reply-list .lia-message-view-display.lia-accepted-solution .lia-message-state-indicator{
-      &:before{
-        top:0px;
-        right:50px;
-      }
-      &:after{
-        content:'';
-      }
-    }
     .MessageView .lia-quilt-row-header .lia-component-message-view-widget-subject .lia-message-subject{
       font-size: 16px;
     }
@@ -3401,6 +3412,42 @@ a.lia-quilt-column.category-card.category-card-4{
 
 /* ProfilePage STARTS -- Tarun */
 #lia-body.ViewProfilePage{
+  .add-friend-link.lia-button, .add-ignore-link.lia-button, .delete-friend-link.lia-button, .delete-ignore-link.lia-button{
+    padding-left: 0;
+  }
+  .dateLastVisited {
+    padding-left: 10px;
+  }
+  .profileInfoHolder{
+    span:before {
+      content: "|";
+      padding: 0 5px;
+    }
+    span:first-child:before{
+      content:"";
+    }
+  }
+   .admin-notes .lia-form-footer-outside-fieldset{
+    .lia-fieldset-title{
+      display: none;
+    }
+    .lia-form-footer{
+      .lia-quilt-column-left{
+        float:right;
+      }
+      .lia-quilt-column-right{
+        float:left;
+        padding-left: 0;
+        .lia-button-wrapper-Submit-action{
+          float:left;
+          padding-left: 0;
+        }
+      }
+      .lia-form-submit{
+        float:left;
+      }
+    }
+   }
    .body_wrap .custom_detail_tab:first-child{
       border-left: 1px solid #cecece;
    }
@@ -3489,7 +3536,7 @@ a.lia-quilt-column.category-card.category-card-4{
     text-align: left;
     border-bottom: 2px solid #ccc;
     .tablinks{
-      max-width: 195px;
+      max-width: 200px;
       color:#1171C7;
       box-shadow: none;
       margin-bottom: -4px;
