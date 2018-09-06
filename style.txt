@@ -1862,6 +1862,7 @@ a.lia-quilt-column.category-card.category-card-4{
       border-bottom: 10px solid #f6f6f6;
       /*top:131px;*/
       top:10px;
+      display: none;
     }
     .arrow1{
        left:12%;
