@@ -146,6 +146,8 @@ a{
 }
 .link-right-arrow{
   position: relative;
+  max-width: 70px;
+  line-height: 1;
   &:after{
     content: "";
     position: absolute;
@@ -2281,6 +2283,7 @@ a.lia-quilt-column.category-card.category-card-4{
   }
   .lia-panel-content{
     display: flex;
+    cursor: pointer;
     @media screen and (max-width: 767px){
       flex-flow: column;
     }
@@ -2298,6 +2301,7 @@ a.lia-quilt-column.category-card.category-card-4{
     margin-top: 10px;
     margin-bottom: 10px;
     height: 100%;
+    display: block;
     .content-section-top.content-section {
       width: 100%;
       height: 160px;
