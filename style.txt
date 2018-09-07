@@ -2441,8 +2441,8 @@ a.lia-quilt-column.category-card.category-card-4{
 .post-page-disclaimer-div{
   display:none;
 }
-.lia-component-message-view-widget-tags input#lia-tagsDelimitedByCommas {
-    font-size: 13px;
+.lia-component-message-view-widget-tags input.lia-form-tags-delimited-by-commas-input {
+    font-size: 13px !important;
 }
 /* TKB Article Page*/
 
@@ -3320,6 +3320,11 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 @media screen and (max-width:480px){
+  .lia-message-tags{
+    .lia-form{
+      width:100%;
+    }
+  }
   .SearchPage{
     .category-checkbox .panel-title>a.accordion-toggle span {
       display: inline-block;
@@ -4012,7 +4017,7 @@ border-bottom: 1px solid #c1c1c1;
 /*.filter-list .Filter-list-items:nth-child(odd){
 width:16.66%;
 }*/
-.filter-list .Filter-list-items:{
+.filter-list .Filter-list-items{
   width: 25%;
 }
 .ng-scope #showCanvasLoaderDefault .filter-list .Filter-list-items.head-category,
