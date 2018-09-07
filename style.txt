@@ -2170,11 +2170,16 @@ a.lia-quilt-column.category-card.category-card-4{
 /* Custom Component Join the commuinty */
 .lia-panel.lia-component-custom-grz-join-community{
   .lia-panel-content-wrapper{
-    background-image: url(/html/assets/join-the-community.png);
+      background-image: url(/html/assets/join-the-community.png);
       color: $np-white;
       background-position: center;
       background-size: cover; 
       background-repeat: no-repeat;
+      a,
+      &:hover,
+      &:active{
+        color:$np-white;
+      }
       .lia-panel-content{
         padding: 20px;
         .content-heading{
