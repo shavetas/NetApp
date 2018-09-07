@@ -406,7 +406,11 @@ a.lia-quilt-column.category-card.category-card-4{
     
   }
 }
-
+.lia-component-custom-homevideo{
+  iframe{
+    width: 100%;
+  }
+}
 /* layot */
 .lia-quilt-layout-home-full-width-2-column-main{
   .lia-quilt-row-top-row-full-width,
@@ -2998,7 +3002,7 @@ a.lia-quilt-column.category-card.category-card-4{
       }
     }
     .lia-component-custom-grz-subcategory .lia-panel-content-wrapper .lia-panel-content .sub-category-wrapper .text-content-center.card-content .title.card-title{
-      font-size:15px;
+      font-size:13px;
     }
   .external-header-wrppaer .lia-custom-component.lia-component-categoryPage-subCategory .lia-quilt-column.subcategory .cat-wrapper a{
     font-size: 12px;
@@ -3292,6 +3296,9 @@ a.lia-quilt-column.category-card.category-card-4{
         background: url(https://lithiumstage.netapp.com/html/assets/checkbox-filled.png?6B127C5EBC296711E0ABE34F465C8702) no-repeat 0 0;
         background-size: 16px;
     }
+  }
+  .banner-sub-title a{
+    display: block;
   }
   .lia-custom-component .thread-wrapper-section .thread-wrapper .thread-common-section .thread-detail .net-app-section.thread-meta-data-right .thread-meta-data{
     margin-left:16px;
