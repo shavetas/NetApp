@@ -140,7 +140,17 @@ a{
     margin-right: 0;
   }
 }
-
+body.SearchPage.lia-body{
+  font-family: 'Source Sans Pro', 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+  a.thread-label{
+    display: inline-block;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 16px;
+  }
+}
 .mobile-avatar{
   display:none;
 }
@@ -629,7 +639,7 @@ a.lia-quilt-column.category-card.category-card-4{
     } 
     .lia-link-navigation {
       display: inline-block;
-      max-width: 160px;
+      max-width: 120px;
       overflow: hidden;
       text-overflow: ellipsis;
       vertical-align: middle;
@@ -901,7 +911,7 @@ a.lia-quilt-column.category-card.category-card-4{
         font-weight: bold;
       }
     }
-    .lia-content .lia-notify-title{
+    .lia-notify-title{
       font-size: 18px;
     }
   }
@@ -909,7 +919,7 @@ a.lia-quilt-column.category-card.category-card-4{
   .lia-quilt-column-12.lia-quilt-column-left, .lia-quilt-column-12.lia-quilt-column-right{
     padding-left: 0;
     label{
-      padding-left: 5px;
+      margin-left: 5px;
     }
   }
 }
@@ -917,6 +927,15 @@ a.lia-quilt-column.category-card.category-card-4{
   .lia-panel-heading-bar{
     padding-bottom: 0;
   }
+}
+.lia-toast-container{
+  padding: 5px;
+}
+.lia-toast-item-image-wrapper{
+  padding-left:10px;
+}
+.lia-toast-item-close-wrapper{
+  padding-right: 10px;
 }
 /* Custom User Drop Down -- Anjali */
 
