@@ -909,7 +909,7 @@ a.lia-quilt-column.category-card.category-card-4{
     }
   }
 .MoveMessagesForm{
-  .lia-quilt-column-12.lia-quilt-column-left, .lia-quilt-column-12lia-quilt-column-right{
+  .lia-quilt-column-12.lia-quilt-column-left, .lia-quilt-column-12.lia-quilt-column-right{
     padding-left: 0;
     label{
       padding-left: 5px;
@@ -2475,6 +2475,9 @@ a.lia-quilt-column.category-card.category-card-4{
     content: "|";
     color: #d3d3d3;
     padding:0 5px;
+    font-size: 10px;
+    line-height: 14px;
+    vertical-align: middle;
   }
 }
 .lia-rating-control-active .ui-stars-star{
