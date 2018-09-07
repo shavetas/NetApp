@@ -4060,20 +4060,20 @@ border-left: 1px solid #c1c1c1;
 .filter-list .Filter-list-items:nth-child(2),
 .filter-list .Filter-list-items:nth-child(3),
 {
-width:33.33%;
+/*width:33.33%;*/
 }
 li#all,
 li#forums,
 li#netapp-blogs{
-width:32.33%;
+/*width:32.33%;*/
 }
 .filter-list .Filter-list-items:nth-child(4),
 .filter-list .Filter-list-items:nth-child(5)
 {
-width:50%;
+/*width:50%;*/
 }
 li#tech-ontap{
-width:49%;
+/*width:49%;*/
 }
 .filter-list .Filter-list-items:nth-child(4){
 border-left:1px solid #c1c1c1;
@@ -4104,7 +4104,7 @@ padding-left:0;
 .filter-list .Filter-list-items:last-child,
 li#all
 {
-width:10%;
+ /*width:10%;*/
 }
 .filter-list .Filter-list-items:nth-child(4),
 li#tech-ontap{
@@ -4196,13 +4196,13 @@ padding-right:0;
 font-size:14px;
 }
 .tab-pane .filter-list .Filter-list-items:nth-child(odd){
-width:15%;
+/*width:15%;*/
 }
 .tab-pane .filter-list .Filter-list-items:nth-child(2){
-width:23%;
+/*width:23%;*/
 }
 .tab-pane .filter-list .Filter-list-items:nth-child(4){
-width:32%;
+/*width:32%;*/
 }
 #lia-body .lia-content .lia-component-search-encapsulation {
 clear: both;
