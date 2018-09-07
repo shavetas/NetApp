@@ -383,6 +383,22 @@ a.lia-quilt-column.category-card.category-card-4{
 .lia-toast-container{
   padding: 10px;
 }
+.lia-component-menu-bar{
+  text-align: right;
+  .default-menu-option, 
+  .lia-common-dropdown-toggle{
+    color:#fff;
+    background-color: #146cac;
+    border-color: #146cac;
+    &:after{
+      color:#fff;
+    }
+  }
+  .lia-menu-dropdown-items{
+    left:unset;
+    right: 0;
+  }
+}
 
 
 
