@@ -3980,6 +3980,9 @@ a.lia-quilt-column.category-card.category-card-4{
 .search-app .filter-open-close{
   margin-top: 10px;
 }
+.search-app .suggestion-data-empty{
+  padding:10px 0;
+}
 
 .filter-list .Filter-list-items a{
 padding: 15px 10px 13px 10px;
