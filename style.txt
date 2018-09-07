@@ -3977,6 +3977,10 @@ a.lia-quilt-column.category-card.category-card-4{
 
 /* Search Page -- Kritika */
 
+.search-app .filter-open-close{
+  margin-top: 10px;
+}
+
 .filter-list .Filter-list-items a{
 padding: 15px 10px 13px 10px;
 border-right: 1px solid #c1c1c1;
