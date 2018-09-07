@@ -390,6 +390,14 @@ a.lia-quilt-column.category-card.category-card-4{
     color:#fff;
     background-color: #146cac;
     border-color: #146cac;
+    &:hover,
+    &:focus,
+    &:active:focus,
+    &:active:hover{
+      color:#fff;
+      background-color: #146cac;
+      border-color: #146cac;
+    }
     &:after{
       color:#fff;
     }
