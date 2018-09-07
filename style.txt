@@ -380,6 +380,9 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 
+.lia-toast-container{
+  padding: 10px;
+}
 
 
 
@@ -3993,16 +3996,25 @@ a.lia-quilt-column.category-card.category-card-4{
 
 /* Search Page -- Kritika */
 
+.search-app .filter-open-close{
+  margin-top: 10px;
+}
+.search-app .suggestion-data-empty{
+  padding:10px 0;
+}
+
 .filter-list .Filter-list-items a{
 padding: 15px 10px 13px 10px;
 border-right: 1px solid #c1c1c1;
 border-top: 1px solid #c1c1c1;
 border-bottom: 1px solid #c1c1c1;
 }
-.filter-list .Filter-list-items:nth-child(odd){
+/*.filter-list .Filter-list-items:nth-child(odd){
 width:16.66%;
+}*/
+.filter-list .Filter-list-items:{
+  width: 25%;
 }
-.filter-list .Filter-list-items:nth-child(even){width: 25%;}
 .ng-scope #showCanvasLoaderDefault .filter-list .Filter-list-items.head-category,
 #all a {
 margin-top:0px !important;
