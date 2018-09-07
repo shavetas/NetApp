@@ -149,6 +149,7 @@ body.SearchPage.lia-body{
     text-overflow: ellipsis;
     white-space: nowrap;
     line-height: 16px;
+    vertical-align: bottom;
   }
 }
 .mobile-avatar{
@@ -737,7 +738,13 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 
-
+/** Kudos Message Page **/
+.lia-quilt-kudos-message-page{
+  .lia-label-tabs-sort, .lia-tabs-sort{
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
 
 
 .lia-quilt.header-banner-cum-search{
@@ -1208,6 +1215,9 @@ a.lia-quilt-column.category-card.category-card-4{
       }
       .communityAdmin:before{
        content: "\f1d1";
+      }
+      .lsi:before {
+        content: "\f080";
       }
       .Logout a:before{
         content: "\f08b";
@@ -1969,17 +1979,6 @@ a.lia-quilt-column.category-card.category-card-4{
     .arrow4{
        right:4%;
     }
-    @media only screen and (max-width:767px){
-      #lia-body{
-        .arrow1,.arrow2,.arrow3,.arrow4{
-          left:45px;
-          top:0;
-        }
-        .grid2a{
-          padding-top:10px;
-        }
-      }
-    }
   }
   .top-card-wrapper.view-more-category{
     display: none;
@@ -2108,7 +2107,10 @@ a.lia-quilt-column.category-card.category-card-4{
   @media screen and (max-width:767px){
    .lia-panel-content-wrapper{
       padding: 0;
-      margin: 0 0 15px;
+      margin: 0;
+      .lia-panel-content{
+        margin:0 0 15px;
+      }
     }
     .lia-quilt-column-cs-5,
     .lia-quilt-column-cs-4, 
@@ -2344,6 +2346,7 @@ a.lia-quilt-column.category-card.category-card-4{
 .lia-body .lia-form-input-wrapper .lia-token-input-input-token > input {
   width: 100% !important;
 }
+
 /* Blog Section - HOMPAGE*/
 .lia-panel.lia-component-custom-grz-blog-section{
 
@@ -3072,6 +3075,24 @@ a.lia-quilt-column.category-card.category-card-4{
 }
 @media screen and (max-width:767px)
 {
+  .ContactsList{
+    .lia-list-wide{
+      .lia-list-row{
+        padding-left: 0;
+      }
+    }
+  }
+  #lia-body{
+    .lia-component-custom-grz-category .top-card-wrapper{
+    .arrow1, .arrow2, .arrow3, .arrow4{
+        left:4%;
+        top:-10px;
+      }
+    }
+    .grid2a{
+      padding-top:0;
+    }
+  }
   .add-friend-link.lia-button, .add-ignore-link.lia-button, .delete-friend-link.lia-button, .delete-ignore-link.lia-button{
     padding-top: 0;
   }
