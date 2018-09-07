@@ -409,6 +409,10 @@ a.lia-quilt-column.category-card.category-card-4{
 .lia-component-custom-homevideo{
   iframe{
     width: 100%;
+    height:200px;
+  }
+  .lia-panel-content{
+    padding-bottom: 0;
   }
 }
 /* layot */
@@ -870,19 +874,11 @@ a.lia-quilt-column.category-card.category-card-4{
     }
   }
   .ConfirmationPage{
-    .lia-content #confirmationform .lia-notify-title{
-      font-size: 18px;
-    }
     .delete-message-list{
       font-size: 18px;
       font-weight: bold;
     }
-    .MessageList{
-      .lia-list-wide > thead > tr > th{
-        font-size: 16px;
-        font-weight: bold;
-      }
-    }
+
     .lia-component-confirmation-form{
         .lia-quilt-column-16{
           width: 100%;
@@ -898,6 +894,25 @@ a.lia-quilt-column.category-card.category-card-4{
         }
     }
   }
+  .MoveMessagesForm, .ConfirmationPage{
+    .MessageList{
+      .lia-list-wide > thead > tr > th{
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+    .lia-content .lia-notify-title{
+      font-size: 18px;
+    }
+  }
+.MoveMessagesForm{
+  .lia-quilt-column-12.lia-quilt-column-left, .lia-quilt-column-12lia-quilt-column-right{
+    padding-left: 0;
+    label{
+      padding-left: 5px;
+    }
+  }
+}
 #lia-body .lia-component-editor{
   .lia-panel-heading-bar{
     padding-bottom: 0;
@@ -2521,7 +2536,7 @@ a.lia-quilt-column.category-card.category-card-4{
         right:0;
         .default-menu-option:active:hover, .default-menu-option:active:focus, .default-menu-option:hover{
           background: transparent;
-          border: 0;
+          border: 1px solid transparent;
           outline: 0;
         }
       }
@@ -3026,7 +3041,7 @@ a.lia-quilt-column.category-card.category-card-4{
       padding-right: 10px;
     }
   }
-  .MessageHistoryPage{
+  .MessageHistoryPage, .MoveMessagesPage{
     .MessageList{
       .lia-list-wide .lia-list-row{
         padding-left: 0;
