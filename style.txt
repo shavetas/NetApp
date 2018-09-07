@@ -228,7 +228,7 @@ a.header-right-link {
 .mobile {
   display: none;
 }
-@media screen and (max-width: 991px){
+@media screen and (max-width: 1024px){
   .mobile {
     display: block;
   }
@@ -406,7 +406,15 @@ a.lia-quilt-column.category-card.category-card-4{
     
   }
 }
-
+.lia-component-custom-homevideo{
+  iframe{
+    width: 100%;
+    height:200px;
+  }
+  .lia-panel-content{
+    padding-bottom: 0;
+  }
+}
 /* layot */
 .lia-quilt-layout-home-full-width-2-column-main{
   .lia-quilt-row-top-row-full-width,
@@ -866,19 +874,11 @@ a.lia-quilt-column.category-card.category-card-4{
     }
   }
   .ConfirmationPage{
-    .lia-content #confirmationform .lia-notify-title{
-      font-size: 18px;
-    }
     .delete-message-list{
       font-size: 18px;
       font-weight: bold;
     }
-    .MessageList{
-      .lia-list-wide > thead > tr > th{
-        font-size: 16px;
-        font-weight: bold;
-      }
-    }
+
     .lia-component-confirmation-form{
         .lia-quilt-column-16{
           width: 100%;
@@ -894,6 +894,25 @@ a.lia-quilt-column.category-card.category-card-4{
         }
     }
   }
+  .MoveMessagesForm, .ConfirmationPage{
+    .MessageList{
+      .lia-list-wide > thead > tr > th{
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+    .lia-content .lia-notify-title{
+      font-size: 18px;
+    }
+  }
+.MoveMessagesForm{
+  .lia-quilt-column-12.lia-quilt-column-left, .lia-quilt-column-12lia-quilt-column-right{
+    padding-left: 0;
+    label{
+      padding-left: 5px;
+    }
+  }
+}
 #lia-body .lia-component-editor{
   .lia-panel-heading-bar{
     padding-bottom: 0;
@@ -1595,7 +1614,9 @@ a.lia-quilt-column.category-card.category-card-4{
 
   }
 }
-
+.lia-form-error-text{
+  word-wrap: break-word;
+}
 #lia-body .lia-quilt-blog-message .lia-message-author-avatar, .lia-quilt-blog-topic-message .lia-message-author-avatar{
   position: static;
 }
@@ -1899,20 +1920,20 @@ a.lia-quilt-column.category-card.category-card-4{
       display: none;
     }
     .arrow1{
-       left:12%;
+       left:4%;
     }
     .arrow2{
-       left:37%;
+       left:30%;
     }
     .arrow3{
-       right:37%;
+       right:30%;
     }
     .arrow4{
-       right:12%;
+       right:4%;
     }
     @media only screen and (max-width:767px){
       #lia-body{
-        .arrow1,arrow2,arrow3,arrow4{
+        .arrow1,.arrow2,.arrow3,.arrow4{
           left:45px;
           top:0;
         }
@@ -2254,6 +2275,11 @@ a.lia-quilt-column.category-card.category-card-4{
   font-size: 20px;
   font-weight: bold;
 }
+.lia-quilt-private-notes-list-item{
+  .lia-note-content{
+    padding-left: 40px;
+  }
+}
 .lia-note-content{
   padding-left: 56px;
   .lia-note-body{
@@ -2261,6 +2287,9 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 .lia-note-header .lia-note-date{
+  vertical-align: middle;
+}
+.lia-note-header .lia-note-sent-date:before {
   vertical-align: middle;
 }
 .lia-quilt-notes-compose-page{
@@ -2273,6 +2302,9 @@ a.lia-quilt-column.category-card.category-card-4{
 }
 .lia-notes-list .lia-note-view-display > .lia-quilt{
   padding-left: 0;
+}
+.lia-body .lia-form-input-wrapper .lia-token-input-input-token > input {
+  width: 100% !important;
 }
 /* Blog Section - HOMPAGE*/
 .lia-panel.lia-component-custom-grz-blog-section{
@@ -2313,7 +2345,7 @@ a.lia-quilt-column.category-card.category-card-4{
       height: 160px;
       /*margin-bottom: 24px;*/
      /* background-size: 100%;*/
-      background-size: cover;
+      background-size: 100% 160px;
       background-repeat: no-repeat;
       background-position: center;
     }
@@ -2509,7 +2541,7 @@ a.lia-quilt-column.category-card.category-card-4{
         right:0;
         .default-menu-option:active:hover, .default-menu-option:active:focus, .default-menu-option:hover{
           background: transparent;
-          border: 0;
+          border: 1px solid transparent;
           outline: 0;
         }
       }
@@ -2856,6 +2888,7 @@ a.lia-quilt-column.category-card.category-card-4{
       position: fixed;
       bottom: 0;
       width: 100%;
+      z-index: 999;
   }
   .lia-body.ForumTopicPage .lia-menu-bar.lia-menu-bar-top.top-block {
     float: none;
@@ -2989,7 +3022,7 @@ a.lia-quilt-column.category-card.category-card-4{
       }
     }
     .lia-component-custom-grz-subcategory .lia-panel-content-wrapper .lia-panel-content .sub-category-wrapper .text-content-center.card-content .title.card-title{
-      font-size:15px;
+      font-size:13px;
     }
   .external-header-wrppaer .lia-custom-component.lia-component-categoryPage-subCategory .lia-quilt-column.subcategory .cat-wrapper a{
     font-size: 12px;
@@ -3013,7 +3046,7 @@ a.lia-quilt-column.category-card.category-card-4{
       padding-right: 10px;
     }
   }
-  .MessageHistoryPage{
+  .MessageHistoryPage, .MoveMessagesPage{
     .MessageList{
       .lia-list-wide .lia-list-row{
         padding-left: 0;
@@ -3176,6 +3209,20 @@ a.lia-quilt-column.category-card.category-card-4{
       display: none;
     }
   }
+    .lia-panel.lia-component-custom-grz-filterTopics .lia-panel-heading-bar-wrapper{
+      height:80px;
+        .lia-quilt-column-cs-2{
+          width: 100%;
+        }
+        .lia-quilt-column-cs-2.text-content-right{
+          text-align: left;
+          margin-top:10px;
+          max-width: 100%;
+          .lia-panel-heading-bar-page-option{
+            float: right;
+          }
+        }
+      }
 }
 @media screen and (max-width:640px){
   .lia-form-feedback-entry{
@@ -3246,19 +3293,6 @@ a.lia-quilt-column.category-card.category-card-4{
     display: inline-block;
     border-left: 1px solid #cecece;
   }
-    .lia-panel.lia-component-custom-grz-filterTopics .lia-panel-heading-bar-wrapper{
-      height:100px;
-        .lia-quilt-column-cs-2{
-          width: 100%;
-        }
-        .lia-quilt-column-cs-2.text-content-right{
-          text-align: left;
-          margin-top:10px;
-          .lia-panel-heading-bar-page-option{
-            float: right;
-          }
-        }
-      }
 }
 @media screen and (max-width:480px){
   .SearchPage{
@@ -3282,6 +3316,9 @@ a.lia-quilt-column.category-card.category-card-4{
         background: url(https://lithiumstage.netapp.com/html/assets/checkbox-filled.png?6B127C5EBC296711E0ABE34F465C8702) no-repeat 0 0;
         background-size: 16px;
     }
+  }
+  .banner-sub-title a{
+    display: block;
   }
   .lia-custom-component .thread-wrapper-section .thread-wrapper .thread-common-section .thread-detail .net-app-section.thread-meta-data-right .thread-meta-data{
     margin-left:16px;
@@ -3398,7 +3435,7 @@ a.lia-quilt-column.category-card.category-card-4{
     text-align: left;
   }
     .lia-panel.lia-component-custom-grz-filterTopics .lia-panel-heading-bar-wrapper{
-      height:130px;
+      height:110px;
         .lia-panel-heading-bar-filter{
           width: 100%;
         }
@@ -3866,7 +3903,9 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 @media(max-width:991px){
- 
+ .lia-component-message-view-widget-tags input#lia-tagsDelimitedByCommas{
+  font-size: 13px !important;
+ }
 #lia-body.ViewProfilePage{ 
   .lia-user-badge-list .lia-badge-list .lia-user-badge-display{
   padding: 10px 21px;
