@@ -175,6 +175,10 @@ body.SearchPage.lia-body{
 .lia-quilt.header-wrapper .lia-quilt-header-content-wrapper .lia-quilt-column-single.lia-quilt-column-right .UserNavigation .lia-header-nav-component-widget.lia-component-notes-widget-summary-modern{
   margin-top:10px;
 }
+.lia-header-nav-component-widget .lia-header-nav-component-unread-count{
+  padding: 3px 7px;
+  top: -5px;
+}
 .lia-top-quilt > .lia-quilt-row-footer{   
    margin-top:0;
    border:none;  
@@ -3085,8 +3089,12 @@ a.lia-quilt-column.category-card.category-card-4{
 {
   .ContactsList{
     .lia-list-wide{
+      border-top:0;
       .lia-list-row{
-        padding-left: 0;
+        padding:5px;
+      }
+      .UserProfileSummary .lia-component-common-widget-user-avatar{
+        width:auto;
       }
     }
   }
