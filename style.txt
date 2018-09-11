@@ -3099,7 +3099,7 @@ a.lia-quilt-column.category-card.category-card-4{
 @media screen and (max-width:767px)
 {
   .lia-body .lia-quilt-column-main-content .MessageView .lia-component-message-view-widget-tags .lia-message-tags .lia-form {
-    width: 50%;
+    width: 40%;
   }
   .ContactsList{
     .lia-list-wide{
@@ -3314,7 +3314,7 @@ a.lia-quilt-column.category-card.category-card-4{
 }
 @media screen and (max-width:640px){
   .lia-body .lia-quilt-column-main-content .MessageView .lia-component-message-view-widget-tags .lia-message-tags .lia-form {
-    width: 60%;
+    width: 50%;
   }
   .lia-form-feedback-entry{
     .lia-form-label{
@@ -3564,7 +3564,7 @@ a.lia-quilt-column.category-card.category-card-4{
 }
 @media screen and (max-width:420px){
   .lia-body .lia-quilt-column-main-content .MessageView .lia-component-message-view-widget-tags .lia-message-tags .lia-form {
-    width: 80%;
+    width: 75%;
   }
   .lia-quilt-column-main-content{
     .MessageView .lia-quilt-row-header .lia-component-message-view-widget-subject .lia-message-subject{
@@ -3592,6 +3592,8 @@ a.lia-quilt-column.category-card.category-card-4{
   }
   .lia-body .lia-quilt-column-main-content .MessageView .lia-component-me-too{
     display: block;
+    float:left;
+    width: 100%;
     .lia-button-secondary:before{
       content:none;
     }
