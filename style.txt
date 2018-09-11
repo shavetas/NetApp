@@ -179,6 +179,10 @@ body.SearchPage.lia-body{
    margin-top:0;
    border:none;  
 }
+.lia-header-nav-component-widget .lia-header-nav-component-unread-count{
+  padding: 3px 7px;
+  top: -5px;
+}
 #lia-body .lia-content {
     min-width: 300px;
 }
@@ -1429,10 +1433,14 @@ a.lia-quilt-column.category-card.category-card-4{
       span{
         /*margin-right:10px; */
       }
+      span.social-icon a {
+        font-size: 16px;
+        padding: 0 5px;
+      }
       .footer-icon{
-        width: 30px;
+        width: 16px;
         display: inline-block;
-        height: 18px;
+        height: 16px;
         margin: 0;
         background-repeat: no-repeat;
         background-position: center;
@@ -2359,7 +2367,9 @@ a.lia-quilt-column.category-card.category-card-4{
 .lia-body .lia-form-input-wrapper .lia-token-input-input-token > input {
   width: 100% !important;
 }
-
+.lia-notes-list .lia-note-body-truncated, .lia-note-search .lia-note-body-truncated{
+  max-height:70px;
+}
 /* Blog Section - HOMPAGE*/
 .lia-panel.lia-component-custom-grz-blog-section{
 
