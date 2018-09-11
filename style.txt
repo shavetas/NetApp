@@ -1916,7 +1916,7 @@ a.lia-quilt-column.category-card.category-card-4{
         font-size: 12px;
         line-height: 12px;
         letter-spacing: 1px;
-        vertical-align: middle;
+        vertical-align: baseline;
         padding-bottom: 0;
 
       }
