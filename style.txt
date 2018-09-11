@@ -1918,7 +1918,6 @@ a.lia-quilt-column.category-card.category-card-4{
         letter-spacing: 1px;
         vertical-align: baseline;
         padding-bottom: 0;
-
       }
     }
     .thread-wrapper.status-accepted:before{
@@ -2231,7 +2230,7 @@ a.lia-quilt-column.category-card.category-card-4{
 /* Custom Component Join the commuinty */
 .lia-panel.lia-component-custom-grz-join-community{
   .lia-panel-content-wrapper{
-      background-image: url(/html/assets/join-the-community.png);
+      /*background-image: url(/html/assets/join-the-community.png);*/
       color: $np-white;
       background-position: center;
       background-size: cover; 
@@ -2242,7 +2241,7 @@ a.lia-quilt-column.category-card.category-card-4{
         color:$np-white;
       }
       .lia-panel-content{
-        padding: 20px;
+        /*padding: 20px;*/
         .content-heading{
           padding: 5px 0;
           border-top: 1px solid $np-white;
