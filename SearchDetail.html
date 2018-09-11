@@ -1,0 +1,1132 @@
+<#-- <html> -->
+<script type="text/javascript">
+var userip;
+</script>
+<#--
+<script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
+-->
+<#-- <head> -->
+    <#-- <meta charset="utf-8"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <#--
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    -->
+    
+<#-- </head> -->
+<style type="text/css">
+.nopad{
+    padding:0px;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #000;
+    background-color: #f8f8f8;
+}
+.navbar {
+    margin-bottom: 0px;
+}
+.autocomplete-text {
+    border-radius: 0px;
+    border: none;
+    padding: 0px 8px!important;
+}
+.search-button {
+    border-radius: 0px;
+    color: #fff;
+    border: none;
+    background:  #3C28CC;
+    font-weight: bold;
+}
+.loader-span {
+    position: absolute;
+    margin-top: -30px;
+    margin-left: -30px;
+}
+.suggLoader{
+    height: 30px;
+    position: relative;
+    top: 20%;
+    left: 44%;
+    z-index: 9999;
+}
+.suggLoaderContainer{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+.containerHead {
+    background: #eaeaea;
+}
+.ListHeadItems{
+    margin: 0px 2px;
+    background-color: #0067c5;
+}
+.active .ListHeadItems{
+   background-color: #f8f8f8;
+}
+.detail-row{
+    overflow: hidden;
+    font-size: 15px;
+    padding-bottom: 7px;
+    padding-top: 7px;
+}
+.selectParent{
+    /*margin:5px 0px;*/
+    padding: 0px;
+    text-align: right;
+    z-index:1;
+}
+.case-info {
+    color: #606060;
+    font-size: 12px;
+    padding: 15px 25px;
+    text-transform: uppercase;
+}
+.selectParent select {
+    display: inline-flex;
+    color: #000;
+}
+.selectpicker {
+    width: 220px;
+    height: 33px;
+    margin: 0px 5px;
+    color: #000;
+    font-size: 15px;
+    -webkit-appearance: none;
+    padding:0px 12px;
+    border-radius: 0px;
+}
+.case-label {
+    text-align: right;
+    font-weight: bold;
+}
+.selectpicker {
+    width: 220px;
+    height: 33px;
+    margin: 0px 5px;
+    color: #000;
+    font-size: 15px;
+    -webkit-appearance: none;
+    padding:0px 12px;
+    border-radius: 0px;
+}
+.sort-by-span {
+    color: #333;
+    font-size: 13px;
+    /*float:left;*/
+}
+.tab-content{
+     padding: 25px 0px;
+}
+.search-app label{
+ font-size: 18px;
+ font-weight: 500;
+ color: #454545;
+} 
+.tab-content  .tab-pane .col-lg-3{
+    width:20%;
+}
+.tabs-data{
+    background: #fafafa;
+    border: 1px solid #d3d3d3;
+ /*   margin-top: 25px;*/
+  border-radius: 4px;
+}
+.SearchResultTab{
+    border-bottom: 2px solid #a0a0a0; 
+    padding-bottom: 20px;
+}
+.SearchResults{
+ display: inline-block; 
+ margin-top: 5px;
+}
+.resultsCountTabs{
+    padding-top: 20px;
+    color: #0067c5;
+    font-size: 15px;
+
+    font-weight: 600;
+}
+.glyphicon.glyphicon-sort {
+    position: absolute;
+    right: 23px;
+    font-size: 12px;
+    top: 7px;
+    color:#87CEEB
+}
+input[type="radio"] {
+  margin-top: 4px;
+  /*vertical-align: middle;*/
+}
+.CollapseData{
+    padding:5px 0px;
+}
+.CollapseDataSpan{
+    font-size:14px;
+}
+.SearchTab{
+    font-size: 20px;
+    font-weight: 600;
+}
+.suggestion-data{
+    border-radius: 0px;
+    border: 0px;
+    /*padding: 20px 14px;*/
+    /*border-bottom: 1px solid #c2c2c2;*/
+}
+.suggestion-data:last-child{
+    border-bottom:none;
+}
+.SerachresultsDataShw{
+    font-size: 16px;
+    font-weight: bold;
+}
+.description{
+    padding: 5px 0px;
+    font-size: 14px;
+}
+#created_at{
+    color:#5e5e5e
+}
+.article-suggestions-block {
+    padding-bottom: 20px;
+}
+.trendingResults{
+    padding: 11px 12px;
+    color: white;
+    background-color: #0067c5;
+    font-size: 16px;
+    font-weight: 600;
+}
+.trendingArticleresults{
+    background-color: #fafafa;
+    border: 1px solid #ededed;
+}
+.glyphicon-play{
+    font-size: 10px;
+    color: #0067c5;
+    top: -1px;
+}
+.TrenDdata{
+    font-size: 15px;
+    padding-left: 10px;
+    color: #0067c5;
+}
+.Articlesdata{
+     padding: 6px 10px
+}
+.SortOrder{
+    font-weight: 400;
+    font-size: 14px;
+    float: right;
+    display: inline-block;
+}
+#subject,#attachments,#body{
+    display:none;
+}
+.highlight{
+    background-color: #ffff00;
+}
+.ui-menu .ui-menu-item a .highlight{
+font-weight: 900;
+    background-color:transparent;
+}
+.navbar-container{
+    background-color: #eaeaea;
+    padding: 0px 85px;
+}
+.nav.navbar-nav li a {
+    color: #a9a9a9;
+}
+.sugg-block{
+    clear: both;
+}
+.create-container .row{
+    margin:-20px;
+}
+img.imgdoc.imgSales {
+    margin-right: 10px;
+}
+.nav.navbar-nav li a {
+    color: #eaeaea;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:active, .navbar-nav>li.active>a {
+    color: #000;
+    background-color: #f8f8f8;
+    text-decoration: none;
+}
+.scrollbar-dynamic {
+    max-height: 300px;
+    overflow: auto;
+}
+.ajax-loader {
+    position: fixed;
+    height: 100%;
+    left: 50%;
+    top: 40%;
+    z-index:1000;
+}
+.search-bar{
+    /*padding:25px 210px;*/
+    background: #eaeaea; 
+    border-radius: 5px;
+}
+.form-group {
+    margin-bottom: 0px !important;
+}
+.filter-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+}
+
+.Filter-list-items  {
+    float: left;
+    font-size: 17px;
+    /*flex:1;*/
+}
+
+.Filter-list-items a {
+    display: block;
+    color: #555555;
+    text-align: center;
+    text-decoration: none;
+    padding:15px 15px 0px 15px;
+    height: 100%;
+}
+.clear-filter, .clear-filter-span {
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    color:grey;
+    float:right;
+    text-transform: none;
+}
+.Inside-Filter{
+    margin: 0px 5px;
+    border: 2px solid #ededed;
+    /*padding-left: 40px;*/
+}
+.filter-check{
+  padding:20px 0px;
+  border-bottom:2px solid #ededed;
+
+}
+.checkbox-inline{
+  min-width:15%;
+
+}
+.checkbox-inline, .radio-inline {
+    padding-left: 0px!important;
+}
+.filter-data{
+  padding: 25px 0px;
+}
+label{
+  font-size: 16px;
+  color: #555555;
+}
+span.filter-data-headings {
+    font-size: 18px;
+    font-weight: 500;
+
+}
+.Filter-list-items a {
+    color: #000!important;
+}
+.containerLithium{
+    padding:0;
+    min-height:300px;
+}
+.checkbox label,
+.radio label{
+    padding-left:0px;
+    display: inline;
+    font-size: 14px;
+    vertical-align: -webkit-baseline-middle;
+    line-height: 20px;
+}
+.filter-list .Filter-list-items a:active, .filter-list .Filter-list-items a.active {
+    color: #000!important;
+    border-bottom: 0px solid #0067c5;
+    box-shadow: inset 0px -5px 0px 0px #0067c5;
+    padding-bottom:13px;
+}
+.glyphicon-filter{top:4px;color:#0067c5 !important;}
+.search-area input{
+  height: 60px !important;
+}
+.search-filter-icon{
+    background-image:url('${asset.get("/html/assets/searchUnify_search-icon.png")}');
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: center;
+    height: 60px;
+    background-size: 28px;
+    /*border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;*/
+}
+#showCanvasLoaderDefault input[type=button].showSubCat {
+    border: none;
+    color: #0067c5;
+    padding: 0 2px;
+    background-color: unset;
+    font-size: 21px;
+    outline: none;
+}
+#showCanvasLoaderDefault input[type=button].showSubCat.collapseBtn{
+    padding: 0 4px;
+}
+.input-group.date .filterDatepicker{
+    padding: 8px 8px 9px!important;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border: 1px solid #dedede;
+}
+.Filter-list-items a,.Filter-list-items a:hover,.Filter-list-items a:link{
+    text-decoration:none;
+}
+.panel-subcategory {
+    margin-left: 5%;
+}
+.panel-subcategory-heading{
+    /*display: flex;*/
+    position: relative;
+    left: 7px;
+    vertical-align: bottom;
+    top:3px;
+}
+.myCheckbox{
+    display: inline;
+}
+.myCheckbox input {
+    position: relative;
+    z-index: -9999;
+}
+/* Radio and checkbox css */
+.myCheckbox span, input[type="checkbox"] + label::before{
+    background: url('${asset.get("/html/assets/checkbox-icon.png")}') no-repeat 0 0;
+    background-size:26px;
+}
+input[type="radio"] + label::before{
+    background: url('${asset.get("/html/assets/radio-btn.png")}') no-repeat 0 0;
+    background-size:24px;
+}
+.myCheckbox span {
+    width: 27px;
+    height: 30px;
+    float: left;
+}
+.myCheckbox input:checked + span, input[type="checkbox"]:checked + label::before, .activeCheck  {
+    background: url('${asset.get("/html/assets/checkbox-filled.png")}') no-repeat 0 0;
+    background-size:24px;
+}
+input[type="radio"]:checked + label::before, .activeCheck{
+    background: url('${asset.get("/html/assets/radio-btn-filled.png")}') no-repeat 0 0;
+    background-size:24px;
+}
+.containerLithium input[type="radio"], .containerLithium input[type="checkbox"] {
+    display: none;
+}
+input[type="radio"] + label::before, input[type="checkbox"] + label::before
+{
+    content: "";
+    display: inline-block;
+    line-height: 13px;
+    margin: -1px 8px 0px 0;
+    vertical-align: middle;
+}
+input[type="radio"] + label::before{
+    width: 25px;
+    height: 25px;
+}
+input[type="checkbox"] + label::before{
+    width: 28px;
+    height: 28px;
+}
+/* End checkbox and radio css */
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none!important;
+}
+#showCanvasLoaderDefault .disableStyle input.showSubCat.ng-scope {
+    background-color: #dedede;
+    border-color: #dedede;
+}
+.error {
+    color: #c8102e;
+}
+img.profileImg {
+    height: 22px;
+}
+.users-list {
+    background-color: #dedede;
+    padding: 10px;
+    margin-bottom:10px;
+}
+.user-name{
+    font-size: 14px;
+    overflow: hidden;
+    color: #0067c5;
+    position: absolute;
+    margin-left: 10px;
+    width: 75%;
+}
+.pagination-sm{
+    /*float:right;*/
+  margin: 10px 0;
+}
+.pagination-sm li a:hover, .pagination-sm li.active>a, .pagination-sm li.active>a:hover, .pagination>.disabled>a{
+    color: #666666!important;
+    background: #fff;
+    border:none;
+}
+#showCanvasLoaderDefault .pagination>li>a {
+    border:none;
+    font-size: 16px;
+}
+.lia-body .lia-content a, .lia-body .lia-content a:link, .lia-body .lia-content a:visited, .lia-body .lia-content a:hover, .lia-body .lia-content a:active, .lia-body .lia-content a:focus{
+    color: #0067c5;
+    font-weight: 500;
+}
+.blurBack{
+    opacity: 0.3;
+}
+.disabledText{
+    color:#dedede;
+}
+ul.autocomplete-result li {
+    font-size: 14px;
+    line-height: 0.8;
+    background: #eaeaea;
+    color: #454545;
+    padding: 12px 24px!important;
+    text-align: left;
+    text-transform: capitalize;
+}
+ul.autocomplete-result li:nth-child(even) {
+    background: #f2f2f2;
+}
+ul.autocomplete-result{
+    border-left: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+    background-color: #fff;
+    z-index: 1000;
+    position: absolute;
+    width: 100%;
+}
+ul.autocomplete-result li:active, ul.autocomplete-result li:nth-child(even):active,ul.autocomplete-result li:hover, ul.autocomplete-result li:nth-child(even):hover{
+    background-color:#0067c5;
+    color:#fff
+}
+.disableStyle .showSubCat {     
+    cursor: not-allowed;        
+}
+.filter-container {
+    border: 1px solid #dedede;
+    height: 100px;
+    overflow-y: scroll;
+}
+.filter-container::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+.filter-container::-webkit-scrollbar
+{
+    width: 7px;
+    background-color: #F5F5F5;
+}
+
+.filter-container::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: #adadad;
+}
+.filter-label{
+        font-size: 14px;
+        font-weight:500;
+        margin-top:3px;
+}
+.filter-advanced-headings{
+    padding: 11px 0px 15px;
+    font-size: 15px;
+    float: left;
+    width: 94%;
+    font-weight: 600;
+}
+.filter-field:first-child {
+    padding-top: 9px;
+}
+.filter-advanced-check{
+    padding: 11px 0px 15px;
+}
+.filter-user-headings{
+    font-size:13px;
+    padding-bottom: 4px;
+}
+.styled-select {
+   background: url('${asset.get("/html/assets/dropdown-icon.png")}') no-repeat 96% 0;
+   height: 29px;
+   overflow: hidden;
+   width: 240px;
+}
+
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 268px;
+}
+
+.styled-select.slate {
+    background: url('${asset.get("/html/assets/dropdown-icon.png")}') no-repeat right center;
+    height: 32px;
+    width: 240px;
+    padding: 0px 10px;
+    border-radius: 4px;
+    border-color: #dedede;
+}
+
+.styled-select.slate select {
+   border: 1px solid #ccc;
+   font-size: 16px;
+   height: 34px;
+   width: 268px;
+}
+select::-ms-expand {
+    display: none;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+#showCanvasLoaderDefault .btn-filter a.resetBtn {
+    color: #0067c5;
+}
+.filter-data .btn-filter {
+    margin-top: 20px;
+    padding-left: 0px;
+}
+a.advancedSearch{
+    margin-left:25px;
+}
+.Filter-list-items a.active .glyphicon-filter {
+    color: #adadad!important;
+}
+.btn-calendar{
+    background-image: url('${asset.get("/html/assets/calendar-icon.png")}');
+    height: 34px;
+    width: 38px;
+    border: 0px;
+}
+.btn-calendar.activeDatePicker{
+    background-image: url('${asset.get("/html/assets/calender-blue-icon.png")}');
+    height: 34px;
+    width: 38px;
+}
+.pagination-first a, .pagination-prev a, .pagination-next a, .pagination-last a {
+    color: #666!important;
+}
+button.btn.btn-sm.btn-info.uib-datepicker-current, button.btn.btn-sm.btn-success.pull-right.uib-close {
+    background-color: #0067c5;
+    border-color:#0067c5;
+}
+small {
+    padding-left: 6px;
+}
+.panel-subcategory div {
+    margin-top: 10px;
+}
+#showCanvasLoaderDefault .filter-list .Filter-list-items.head-category {
+    margin-top: 3px;
+}
+
+/*Dropdown css*/
+.form-group .dropdown ul {
+    width: auto;
+}
+.form-group .dropdown {
+    border-left: 0px;
+    position: relative;
+    bottom:1px;
+    display: inline;
+    padding-left: 20px;
+}
+button#single-button {
+    color: #0067c5;
+    background-color: transparent;
+    border: 0px;
+    padding: 0;
+    /*float: right;*/
+    font-size: 12px;
+    box-shadow: none;
+    line-height:20px;
+}
+.selectParent.form-group .dropdown {
+    padding-left: 5px;
+    padding-top:2px;
+}
+.dropdown-container{
+    float: left;
+}
+i.pull-right.glyphicon.glyphicon-chevron-up, i.pull-right.glyphicon.glyphicon-chevron-down {
+    left: 5px;
+    top: 3px;
+}
+#showCanvasLoaderDefault .dropdown-menu a {
+    text-transform: none;
+    color: #333333;
+}
+#showCanvasLoaderDefault .dropdown ul:after,#showCanvasLoaderDefault .dropdown ul:before{
+    display:none;
+}
+.result-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.replies-text{
+    /*color:#0067c5;*/
+    margin: 10px 0px 3px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.replies-link{
+    font-size: 12px;
+}
+.result-dir{
+    top: 4px;
+}
+.filter-icon{
+    position: relative;
+    top: 4px;
+}
+.chevron-down{
+    background: transparent url(/html/assets/caret-down.png) no-repeat scroll center;
+}
+.chevron-up{
+    background: transparent url(/html/assets/caret-up-hover.png) no-repeat scroll center;
+}
+.chevron-down:hover{
+    background: transparent url(/html/assets/caret-down-hover.png) no-repeat scroll center;
+}
+.n-top-hat__link {
+    font-size: 1.25rem;
+}
+#showCanvasLoaderDefault .input-group input.form-control {
+    padding-left: 8px;
+}
+.description span {
+    font-weight: 300;
+    line-height: 22px;
+}
+.filter-check.filter-check-clear{
+    padding-bottom:30px;
+}
+.panel-group .panel {
+    box-shadow: 0 0px 0px rgba(0,0,0,.05);
+}
+.filter-icon img {
+    height: 18px;
+    vertical-align: baseline;
+}
+#showCanvasLoaderDefault li.Filter-list-items a {
+    font-weight: 300;
+}
+#showCanvasLoaderDefault .description a {
+    font-weight: 400;
+}
+.error.errMsg {
+    top: 20px;
+}
+#showCanvasLoaderDefault li.Filter-list-items a.active {
+    font-weight: 400;
+}
+/*input[type="checkbox"] + label.labelCat::before {
+    margin-left: 40px;
+    float: left;
+}*/
+.dropdown-toggle img.subscribe-img {
+    width: 10px;
+    height: 10px;
+    vertical-align: baseline;
+}
+#lia-body .panel-collapse .panel-body {
+    border: 0px;
+    padding-top: 0px;
+}
+.minBtn {
+    height: 30px;
+    width: 30px;
+    float: right;
+    cursor:pointer;
+    margin: 3px 0px;
+}
+.expand-text {
+    float: right;
+    padding: 10px 4px;
+}
+#showCanvasLoaderDefault li.Filter-list-items a span:hover, #showCanvasLoaderDefault li.Filter-list-items a span.hover {
+    color: #0067c5;
+}
+.dropdown-container a {
+    margin-left: 3px;
+}
+.category-checkbox .panel-title>a.accordion-toggle{
+    display:inline-block;
+}
+.SearchPage .panel-heading {
+    /*padding: 2px 15px;*/
+    padding: 2px 0;
+}
+.search-doc-icon{
+    max-width:45px;
+}
+.sort-by-wrapper {
+    /*width: 130px;*/
+    /*margin-left: 100%;*/
+    /*translateX: -100%;*/
+   /* transform: translateX(-100%);*/
+}
+.sort-by-wrapper .dropdown{
+  display:inline-block;
+}
+.sort-by-wrapper .dropdown .dropdown-menu{
+  top:20px;
+  left:unset;
+  right: 0;
+}
+input[type="checkbox"] + label.labelCat::before {
+    margin-left: 32px;
+    float: left;
+}
+#showCanvasLoaderDefault .input-group input.form-control {
+    padding-left: 8px;
+    height: 34px;
+}
+@media screen and (max-width: 1200px){
+    .search-bar{
+        padding:0px;
+    }
+    
+}
+@media screen and (max-width: 767px){
+    .filter-list {
+        display: flex;
+        flex-flow: wrap;
+    }
+}
+</style>
+<div ng-app="searchApp">
+    <div ng-controller="searchController" class="search-app">
+        <div id="showCanvasLoaderDefault">
+            <#include "*/common-macros">
+            <#-- <@checkAdminAccess />
+            <#if hasAdminAccess>
+              <div ng-click="containerAdmin()" class="expandIcon" ng-init="showContainer=false"><img class="minBtn" ng-src="{{showContainer?'${asset.get('/html/assets/plus.svg')}':'${asset.get('/html/assets/minus.svg')}'}}"/><span class="error expand-text" ng-if="!showContainer">This view is only limited to users with SearchAdmin role.</span></div>
+            </#if> -->
+            <div ng-class="create-container" ng-show="showContainer" class="ng-cloak col-lg-12 col-md-12 col-sm-12 col-xs-12 containerLithium">
+                    <div>
+                        <form ng-submit="clickSearch()">
+                            <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 search-bar nopad">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ui-widget search_box nopad">
+                                    <div class="col-md-11 col-sm-11 col-lg-11 col-xs-11 search-area nopad">
+                                        <input autocomplete="off" class="autocomplete-text ng-cloak form-control ui-autocomplete-input" id="autoComplete" maxlength="255" ng-disabled="false" ng-model="caseCreateElements.subject" ng-model-options="{ debounce: 1000 }" placeholder="Type to search content.." type="text">
+                                    </div>
+                                    <div class="col-md-1 col-sm-1 col-lg-1 col-xs-1 form-group nopad">
+                                        <input class="search-button form-control search-filter-icon" type="submit" value="">
+                                        <span ng-if="isLoading" class="loader-span">
+                                            <img style="width: 25px;" src='${asset.get("/html/assets/searchUnify_ajax-loader.gif")}'>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div>
+                        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 tab-content ng-cloak">
+                            <div class="tab-pane fade in active">
+                                <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+                                    <ul class="filter-list">
+                                        <li class="Filter-list-items" ng-repeat="documentType in contentTypes track by $index" ng-class="documentType._name=='allTypes'?'head-category':''"  ng-click="documentType._name=='users'?showSearchContent='false':getFilters(documentType._name)">
+                                            <a ng-init="imgsrc='${asset.get('/html/assets/filter-selected.svg')}';elmHover=false" ng-mouseover="imgsrc='${asset.get('/html/assets/filter.svg')}';elmHover=true" ng-mouseout="imgsrc='${asset.get('/html/assets/filter-selected.svg')}';elmHover=false" ng-href="{{documentType._name=='users'?'/t5/forums/searchpage/tab/user?q='+caseCreateElements.subject:''}}" ng-class="{active : typeHighlight==$index}">
+                                                <span ng-if="documentType._name=='allTypes'" ng-class="{'hover':elmHover  && typeHighlight==$index}">{{documentType.name + ' '}}<span ng-if="counts.allCount">({{counts.allCount}})</span></span>
+                                                <span ng-if="documentType._name=='forums'" ng-class="{'hover':elmHover  && typeHighlight==$index}">{{documentType.name + ' '}}<span ng-if="counts.discussionCount">({{counts.discussionCount}})</span></span>
+                                                <span ng-if="documentType._name=='netapp-blogs'" ng-class="{'hover':elmHover && typeHighlight==$index}">{{documentType.name + ' '}}<span ng-if="counts.blogsCount">({{counts.blogsCount}})</span></span>
+                                                <span ng-if="documentType._name=='tech-ontap'" ng-class="{'hover':elmHover && typeHighlight==$index}">{{documentType.name + ' '}}<span ng-if="counts.tkbCount">({{counts.tkbCount}})</span></span>
+                                                <span ng-if="documentType._name=='users'" ng-class="{'hover':elmHover && typeHighlight==$index}">{{documentType.name + ' '}}</span>
+                                                <span ng-if="documentType._name!='allTypes' && typeHighlight!=$index" class="filter-icon">
+                                                    <img src="${asset.get("/html/assets/filter.svg")}">
+                                                </span> 
+                                                <span ng-if="documentType._name!='allTypes' && typeHighlight==$index" class="filter-icon">
+                                                    <span>
+                                                        <img ng-src="{{imgsrc}}">
+                                                    </span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                     <!--<div ng-if="lithium.showLithiumLoader"  class="ajax-loader">
+                                        <img style="width: 25px;" src='${asset.get("/html/assets/searchUnify_ajax-loader.gif")}'>
+                                    </div>-->
+                                    
+                                    <div class="show-hide advance-search text-content-right">
+                                        <span class="filter-open-close lia-button lia-button-more" ng-if="!showFilterBox" ng-click="showHideFilter()">
+                                            <span class="open"  >Advanced Search</span>
+                                            <#-- <span class="close" ng-if="showFilterBox" >Close Filter</span> -->
+                                        </span>
+                                    </div>
+                                    <div class="col-lg 12 col-md-12 col-sm-12 col-xs-12 Inside-Filter" ng-show="showFilterBox">
+                                        <div class="filter-check" ng-if="selectedType=='forums'">
+                                            <label class="data-label checkbox-inline" ng-repeat="p in ['1','0']">
+                                                <input type="checkbox" ng-checked="isSolved==p" ng-click="filterSolvedData(isSolved)" ng-model="$parent.$parent.isSolved" ng-true-value="{{p}}" ng-false-value="" id="{{p}}">
+                                                <label for="{{p}}" ng-if="p==1">Solved</label>
+                                                <label for="{{p}}" ng-if="p==0">Unsolved</label>
+                                            </label>
+                                            <span class="clear-filter-span">
+                                                <input type="submit" class="button clear-filter" value="Close Filters X" ng-click="clearAllFilters()"/>
+                                            </span>
+                                        </div>
+                                        <div class="filter-check filter-check-clear" ng-if="selectedType!='forums'">
+                                            <span class="clear-filter-span">
+                                                <input type="submit" class="button clear-filter" value="Close Filters X" ng-click="clearAllFilters()"/>
+                                            </span>
+                                        </div>
+                                        <div class="col-lg 12 col-md-12 col-sm-12 col-xs-12 filter-data" ng-if="!showAdvanceSearch">
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 category-div nopad" style="/*padding-right: 42px*/">
+                                                <span class="filter-data-headings">Category</span>
+                                                <uib-accordion close-others="true">
+                                                    <div class="checkbox category-checkbox" ng-repeat="filter in categoryFilter">
+                                                        <span class="data-label">
+                                                            <div uib-accordion-group is-open="status.open">
+                                                                <uib-accordion-heading>      
+                                                                    <span ng-class="disableExpand?'disableStyle':''">                                                             
+                                                                        <input type="button" value="{{!status.open?'[+]':'[-]'}}" class="showSubCat" ng-if="!filter.type && filter.boards.data.items.length>1" ng-class="{collapseBtn:status.open}">
+                                                                        <input type="checkbox" ng-checked="filter.isChecked" ng-disabled="filter.isDisabled" name="{{filter.id}}" id="{{filter.id}}" ng-click="status.open=false;$event.stopPropagation();filteredData(filter)" checkbox-group/> 
+                                                                        <label for="{{filter.id}}" ng-class="{'labelCat':filter.boards.data.items.length<=1 || filter.type, 'disabledText':filter.isDisabled}" ng-click="$event.stopPropagation();">{{filter.title}}</label> 
+                                                                    </span>                                                                   
+                                                                </uib-accordion-heading>
+                                                                <div class="panel-subcategory col-lg-offset-1 col-lg-10">
+                                                                    <div ng-repeat="board in filter.boards.data.items track by $index" ng-if="filter.boards">
+                                                                        <label class="myCheckbox">
+                                                                            <input type="checkbox" ng-checked="board.isBoardChecked" ng-disabled="board.isBoardDisabled" class="cat-cb" name="{{board.id}}" id="{{board.id}}" ng-click="$event.stopPropagation();filteredData(board)" checkbox-group/>
+                                                                            <span></span>
+                                                                            <div class="panel-subcategory-heading" ng-class="board.isBoardDisabled?'disabledText':''">{{board.title}}</div>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </span>              
+                                                    </div>
+                                                </uib-accordion>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 date-div nopad">
+                                                <span class="filter-data-headings">Date</span>
+                                                <div class="radio date-radio" ng-repeat="time in publishTime">
+                                                    <span class="data-label">
+                                                        <input type="radio" ng-model="$parent.$parent.selectedPublishTime" name="{{time._name}}" value="{{time._name}}" id="{{time._name}}" ng-click="getResultsFromDate(selectedPublishTime)">
+                                                        <label for="{{time._name}}">{{time.name}}</label>
+                                                    </span>                 
+                                                </div>
+                                                <div class="form-group">
+                                                    <span class="date-pic filter-data-headings">From</span>
+                                                    <p class="input-group">
+                                                        <input type="text" class="form-control" onkeydown="return false" uib-datepicker-popup ng-model="$parent.fromSelectedDate" is-open="fromDate.opened" datepicker-options="dateOptions" close-text="Close" alt-input-formats="altInputFormats" ng-change="validateDates()" ng-focus="openFromDate();enableCustomDate()" />
+                                                        <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-calendar" ng-disabled="disableDatePicker" ng-class="selectedPublishTime == 'custom'?'activeDatePicker':''" ng-click="openFromDate()"></button>
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <span class="date-pic filter-data-headings">To</span>
+                                                    <p class="input-group">
+                                                        <input type="text" class="form-control" onkeydown="return false" uib-datepicker-popup ng-model="$parent.toSelectedDate" is-open="toDate.opened" datepicker-options="dateOptions" close-text="Close" alt-input-formats="altInputFormats" ng-change="validateDates()"  ng-focus="openToDate();enableCustomDate()"/>
+                                                        <span class="input-group-btn">
+                                                          <button type="button" class="btn btn-default btn-calendar" ng-disabled="disableDatePicker" ng-class="selectedPublishTime == 'custom'?'activeDatePicker':''" ng-click="openToDate()"></button>
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <div class="error">{{errMessage}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 nopad error errMsg" ng-if="!isLoggedIn">
+                                         Empty search query. Please enter one or more keywords and try again.
+                                     </div>
+                                <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 nopad lia-custom-component lia-custom-component-search-result" ng-if="isLoggedIn">
+                                    <div ng-class="lithium.showLithiumLoader?'blurBack':''" >
+                                        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 nopad lia-pannel-heading">
+                                          Search Results
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12 nopad lia-pannel-heading bottom-section" ng-if="dataLoaded">
+                                            <div class="col-md-10 col-sm-8 col-lg-10 col-xs-7 form-group ng-cloak nopad">
+                                                <span class="search-result-label" style="float:left;margin-right: 10px;">
+                                                  Results: {{totalItems==0?'0':startPage}} to {{endPage}} of {{totalItems}} 
+                                                  <span ng-if="caseCreateElements.subject!=''">
+                                                    for {{caseCreateElements.subject}}
+                                                  </span>
+                                              </span>
+                                                
+                                                <!-- boards_page_subscribe -->
+                                                <#if !user.anonymous>                                       
+                                                    <span class="dropdown-container" ng-if="caseCreateElements.subject!=''">
+                                                        <div class="btn-group" uib-dropdown is-open="options.isopen">
+                                                            <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+                                                              <img src="${asset.get("/html/assets/subscribe.svg")}" class="subscribe-img"><a ng-href="/fukiw75442/rss/search?q={{caseCreateElements.subject}}&filter=labels&search_type=thread" class="">Subscribe RSS Feed for this Search</a>
+                                                            </button>
+                                                            <!--<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                                                              <li role="menuitem" class="board_subscription"></li>
+                                                              <li role="menuitem" class="rss_subscription"><a ng-href="/fukiw75442/rss/search?q={{caseCreateElements.subject}}&filter=labels&search_type=thread" class="">Subscribe RSS Feed for this Search</a></li>
+                                                            </ul>-->
+                                                        </div>
+                                                    </span>                                                
+                                                <@liaAddScript>
+                                                    (function( $ ) {
+                                                        $(document).ready(function(){                                                            
+                                                            if($('.SearchForm.lia-search-form-wrapper .lia-form.lia-form-inline.SearchForm .lia-list-standard-inline.lia-search-form-links-secondary .lia-link-navigation.lia-search-action-subscribe-to-search.lia-link-ticket-post-action').length){
+                                                              var boards_subscribe_opt = $('.SearchForm.lia-search-form-wrapper .lia-form.lia-form-inline.SearchForm .lia-list-standard-inline.lia-search-form-links-secondary         .lia-link-navigation.lia-search-action-subscribe-to-search.lia-link-ticket-post-action').attr('href');
+                                                              var boards_subscribe_token = $('.SearchForm.lia-search-form-wrapper .lia-form.lia-form-inline.SearchForm .lia-list-standard-inline.lia-search-form-links-secondary           .lia-link-navigation.lia-search-action-subscribe-to-search.lia-link-ticket-post-action').attr('data-lia-action-token');
+                                                              var SubscribeLinkTxt = 'Subscribe to this search';
+                                                              var subscribeLink = '<a class="subscribe_link subscribed lia-link-ticket-post-action boards_subscribe_opt" data-lia-action-token= "'+boards_subscribe_token+'" href="'+boards_subscribe_opt+'">'+SubscribeLinkTxt+'</a>';
+                                                            }
+                                                            $('.board_subscription').html(subscribeLink);
+                                                        });
+                                                    })(LITHIUM.jQuery);
+                                                </@liaAddScript>
+                                                </#if>
+                                            </div>
+                                            <div class="col-md-2 col-sm-4 col-lg-2 col-xs-5 form-group selectParent" ng-if="selectedType!='users'">
+                                                <div class="sort-by-wrapper text-content-right">
+                                                    <span class="sort-by-span">Sort by:</span>
+                                                    <div class="btn-group" uib-dropdown is-open="sortDropdown.isopen" >
+                                                        <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+                                                            {{sortSelect}} <span class="custom-dropdown-indicator" ng-class="{'chevron-up': sortDropdown.isopen, 'chevron-down': !sortDropdown.isopen}"></span>
+                                                        </button>
+                                                        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                                                          <li ng-repeat="sorting in sortData" role="menuitem"><a href ng-click="sortingChanged(sorting.method_name)">{{sorting.method_name}}</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div ng-if="!usersResult" class="ng-cloak">
+                                            <div ng-if="results.length<=0 && dataLoaded" class="ng-cloak suggestion-data suggestion-data-empty col-md-12 col-lg-12 col-sm-12 col-xs-12 ng-scope">
+                                                <div class="sugg-block">Sorry, we couldn't find a match for your search. Please check your spelling or try again using different keywords.</div>
+                                                <div class="products-link"><a href="/t5/Products-and-Solutions/ct-p/products-and-solutions">View All Products</a></div>
+                                            </div>
+                                            <div ng-if="results.length>0" class="thread-wrapper-section">
+                                                <div ng-repeat="result in filteredResults track by $index" class="suggestion-data col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                                    <div class="header-suggest">
+                                                        <div>
+                                                            <div class="thread-wrapper status-accepted-X moderation-status-NA" ng-class="{'status-accepted': result.is_solution == '1'}" >
+                                                               <#--  <div class="profile-section thread-common-section net-app-section forum">
+                                                                    <div class="avatar">
+                                                                        <img class="avatar-icon" src="https://lithiumstage.netapp.com/t5/image/serverpage/avatar-name/toyrocket/avatar-theme/candy/avatar-collection/toys/avatar-display-size/profile/version/2?xdesc=1.0">
+                                                                        <img class="doc-type-icon" src="${asset.get('/html/assets/ic_search_checkmark_22x22.png')}" ng-if="result.is_solution=='1' && result.conversation_style=='forum'" class='imgdoc imgSales'  alt='Solved' />                  
+                                                                        <img class="doc-type-icon" src="${asset.get('/html/assets/ic_search_question_22x22.png')}" ng-if="result.is_solution=='0' && result.conversation_style=='forum'" class='imgdoc imgSales'  alt='Unsolved' />       
+                                                                        <img class="doc-type-icon" src="${asset.get('/html/assets/ic_search_blog_22x22.png')}" ng-if="result.conversation_style=='blog'" class='imgdoc imgSales'  alt='Blog' />       
+                                                                        <img class="doc-type-icon" src="${asset.get('/html/assets/ic_search_article_18x22.png')}" ng-if="result.conversation_style=='tkb'" class='imgdoc imgSales'  alt='tkb' />
+                                                                    </div>
+                                                                </div> -->
+                                                                <div class="thread-section thread-common-section net-app-section padding-left-0">
+                                                                    <#-- <div class="avatar mobile-avatar">
+                                                                        <img class="avatar-icon" src="https://lithiumstage.netapp.com/t5/image/serverpage/avatar-name/toyrocket/avatar-theme/candy/avatar-collection/toys/avatar-display-size/profile/version/2?xdesc=1.0">
+                                                                        <img class="doc-type-icon" src="${asset.get('/html/assets/ic_search_checkmark_22x22.png')}" ng-if="result.is_solution=='1' && result.conversation_style=='forum'" class='imgdoc imgSales'  alt='Solved' />                  
+                                                                        <img class="doc-type-icon" src="${asset.get('/html/assets/ic_search_question_22x22.png')}" ng-if="result.is_solution=='0' && result.conversation_style=='forum'" class='imgdoc imgSales'  alt='Unsolved' />       
+                                                                        <img class="doc-type-icon" src="${asset.get('/html/assets/ic_search_blog_22x22.png')}" ng-if="result.conversation_style=='blog'" class='imgdoc imgSales'  alt='Blog' />       
+                                                                        <img class="doc-type-icon" src="${asset.get('/html/assets/ic_search_article_18x22.png')}" ng-if="result.conversation_style=='tkb'" class='imgdoc imgSales'  alt='tkb' />
+                                                                    </div> -->
+                                                                    <div class="thread-subject padding-left-0">
+                                                                        <span class="subject-wrapper">
+                                                                            <a class="small-section subject solved" target="_blank" ng-href="{{result.subject_href}}">
+                                                                                <span ng-bind-html="result['subject']"></span>
+                                                                            </a>
+                                                                          <#-- <a href="/t5/Cloud-Volumes-and-ONTAP-Cloud-Discussions/Testing-Related/m-p/1521#M29" class="small-section subject solved "> Testing Related </a> -->
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="thread-detail thread-detail-author-stats">
+                                                                        <div class="net-app-section thread-meta-data-left ">
+                                                                            <span class="thread-meta-data">
+                                                                                By <a ng-href="{{result['author_href']}}">{{result['author']}}</a>
+                                                                                in <a ng-href="{{result['posted_in_href']}}"> {{result['postedIn']}}</a>
+                                                                             </span>                                                                                
+                                                                        </div>
+                                                                        <div class="net-app-section thread-meta-data-right text-content-left">
+                                                                            <span class="thread-meta-data">
+                                                                                <span class="date-icon meta-detail"></span> 
+                                                                                {{result['post_date']| date:"yyyy-MM-dd"}}
+                                                                            </span>
+                                                                            <span class="thread-meta-data">
+                                                                                <span class="kudos-icon meta-detail"></span>
+                                                                                <span>{{result['kudos']}}</span> Likes
+                                                                            </span>
+                                                                            <span class="thread-meta-data">
+                                                                                <span class="replies-icon meta-detail"></span>
+                                                                                <span>{{result['replies']}}</span> Replies
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="thread-detail label-detail">
+                                                                        <div class="net-app-section thread-meta-data-left text-content-left" ng-if="!result.labels_list.length">
+                                                                            <span class="thread-meta-data label-section-wrapper">
+                                                                                <span>Labels: {{result.labels_list.length}} </span>
+                                                                                <span class="label-list-wrapper" ng-repeat="label in result.labels_list track by $index">
+                                                                                    <a class="thread-label" ng-href="{{label.href}}">{{label.text}}<!-- <span ng-if="result.labels_list[$index+1]"></span> --></a>
+                                                                                </span>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="thread-body">
+                                                                        <span ng-bind-html="result['body']"></span>
+                                                                    </div>
+                                                                    <div class="replies-section" ng-hide="result.replies_list.data | isEmpty" ng-init="showReplies=false">
+                                                                        <div ng-click="showReplies=true" ng-hide="showReplies" class="replies-text">Show results in replies ({{result.replies_list.counts}}) <span class="plus-minus-icon icon-plus">[+]</span><!-- <i class="result-dir glyphicon glyphicon-chevron-up"></i> --></div>
+                                                                        <div ng-show="showReplies">
+                                                                            <div ng-click="showReplies=false" class="replies-text">Hide results in replies ({{result.replies_list.counts}}) <span class="plus-minus-icon icon-minus">[-]</span> <!-- <i class="result-dir glyphicon glyphicon-chevron-down"></i> --></div>
+                                                                            <div ng-repeat="reply in result.replies_list.data">
+                                                                                <a class="replies-link" ng-href="{{reply.subject_href}}">
+                                                                                  <span class="reply-icon">
+                                                                                    >
+                                                                                  </span>
+                                                                                {{reply.subject}}
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="search-page-pagination text-content-left">
+                                          <pagination uib-pagination ng-show="showPager" boundary-links="true" total-items="totalItems" ng-model="pagingOptions.currentPage" ng-change="getSearchResults()" items-per-page="itemsPage"  max-size="5"  class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="suggLoaderContainer" ng-show="showSuggestionLoader"></div>                
+                </div>
+            </div>
+        </div>
+</div> 
+<#-- </html> -->
+<#--
+<@component id="custom.detailSearchAppJs" />
+-->
