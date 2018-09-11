@@ -1,0 +1,713 @@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.2.0.js"></script>
+<script>
+    //module initilisation
+    var app = angular.module('searchApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap', 'ngRoute']);
+    app.run(['$route', '$rootScope', '$location', function ($route, $rootScope, $location) {
+        var original = $location.path;
+        $location.path = function (path, reload) {
+            if (reload === false) {
+                var lastRoute = $route.current;
+                var un = $rootScope.$on('$locationChangeSuccess', function () {
+                    $route.current = lastRoute;
+                    un();
+                });
+            }
+            return original.apply($location, [path]);
+        };
+        window.dataLayer = window.dataLayer || [];
+    }])
+    app.controller('searchController', ['$scope', '$http','$parse' ,'$location','$timeout',function($scope, $http, $parse,$location,$timeout) {
+        // Variable initialization
+        console.log('In app');
+        $scope.showContainer = true;
+        $scope.selectedPublishTime = "AllTime";
+        $scope.typeHighlight = 0;
+        $scope.selectedCategories = [];
+        $scope.categoryFilter = [];
+        $scope.caseCreateElements = {subject:''};
+        $scope.showSearchContent = false;
+        $scope.results = [];
+        $scope.dataLoaded = false;
+        $scope.filterTypeSelected = '';
+        $scope.selectedType = '';
+        $scope.isSolved = '';
+        $scope.lithium = {
+            showLithiumLoader : false
+        }
+        $scope.showAdvanceSearch = false;
+        $scope.selectedTypeIndex = 0;
+        $scope.advancedFilter = [
+            {id: "1",name: "First Name"},
+            {id: "2",name: "Last Name"},
+            {id: "3",name: "Rank"},
+            {id: "4",name: "Username"},
+            {id: "5",name: "IP Address"}
+        ];
+        $scope.fromDate = {
+            opened: false
+        };
+        $scope.toDate = {
+            opened: false
+        };
+        $scope.contentTypes = [
+            {name: "All",_name: "allTypes"}, 
+            {name: "Discussions",_name: "forums"}, 
+            /*{name: "Blogs",_name: "netapp-blogs"},*/
+            {name: "Articles and Resources",_name: "tech-ontap"}, 
+            {name: "Users",_name: "users"}
+         ];
+        $scope.publishTime = [
+            {name: "Any Date",_name: "AllTime"}, 
+            {name: "Today",_name: "today"},
+            {name: "Past Week",_name: "PastWeek"}, 
+            {name: "Past Month",_name: "PastMonth"}, 
+            {name: "Past Year",_name: "PastYear"},
+            {name: "Custom Date",_name: "custom"}
+         ];
+        $scope.sortData = [
+            {method_name: "Best Match"},
+            {method_name: "Most Recent"},
+            {method_name: "Oldest"},
+            {method_name: "Most Replies"},
+            {method_name: "Least Replies"},
+            {method_name: "Most Kudos"}
+         ];
+        $scope.sortSelect = "Best Match";
+        $scope.sortSelectUser = "Username";
+        $scope.dateOptions = {
+            formatYear: 'yy',
+            maxDate: new Date(),
+            startingDay: 1,
+            showWeeks:false
+        };
+        $scope.openFromDate = function() {
+            $scope.fromDate.opened = true;
+        };
+        $scope.openToDate = function() {
+            $scope.toDate.opened = true;
+        };
+        $scope.suggest = [];
+        $scope.showAutocomplete = false;
+        $scope.selectionFlag = 0;
+        $scope.disableDatePicker = true;
+        $scope.urlResults = '/plugins/custom/netapp/netapp/custom-search-ep';
+        var timer=false;
+        // Pagination variables
+        $scope.showPager = false;
+        $scope.pagingOptions = {
+            pageSize: 10,
+            currentPage: 1
+        };
+        $scope.totalItems = 50;
+        $scope.itemsPage = 10;
+        // Watches subject text and return autocomplete results
+        $scope.$watch('caseCreateElements.subject', function(){
+            $scope.isLoggedIn = ${user.id} == -1?false:true;
+            if($scope.isLoggedIn){
+                $scope.getSearchResults();
+            }
+            else{
+                if($scope.caseCreateElements.subject!=""){
+                    $scope.isLoggedIn = true;
+                    $scope.getSearchResults();
+                }
+            }
+        });
+        // Update index on basis of content name selected
+        var checkIndex = function(contentName) {
+            var index = '';
+            if (contentName == 'forums') {
+                index = 1;
+            } else if (contentName == 'netapp-blogs') {
+                index = 2;
+            } else if (contentName == 'tech-ontap') {
+                index = 3;
+            } else if (contentName == 'users') {
+                $scope.showFilterBox = false;
+                index = 4;
+            } else {
+                index = 0;
+            }
+            return index;
+        }
+        var checkSortMethod = function(sort){
+            var sortQuery;
+            switch (sort) {
+                case 'Best Match':
+                    sortQuery = "";
+                    break;
+                case 'Most Recent':
+                    sortQuery = "ORDER BY post_time DESC";
+                    break;
+                case 'Oldest':
+                    sortQuery = " ORDER BY post_time ASC";
+                    break;
+                case 'Most Replies':
+                    sortQuery = "and depth=0 ORDER BY replies.count(*) DESC";
+                    break;
+                case 'Least Replies':
+                    sortQuery = "and depth=0 ORDER BY replies.count(*) ASC";
+                    break;
+                case 'Most Kudos':
+                    sortQuery = "ORDER BY kudos.sum(weight) DESC";
+                    break;
+                case 'Username':
+                    sortQuery = "ORDER BY login";
+                    break;
+                case 'Registration Date':
+                    sortQuery = "ORDER BY registration_data.registration_time DESC";
+                    break;
+                default:
+                    console.log('Something Went Wrong in Date Selection')
+            }
+            return sortQuery;
+        }
+        $scope.showHideFilter = function(){
+        	$scope.showFilterBox = !$scope.showFilterBox
+        }
+        // Show and hide filter box of all categories
+        $scope.getFilters = function(contentName,condition){
+            if(condition!='reload'){
+                $scope.selectedPublishTime = "AllTime";
+            }
+            $scope.selectedCategories = [];
+            $scope.disableDatePicker = true;
+            $scope.fromSelectedDate = '';
+            $scope.toSelectedDate = '';
+            $scope.selectedType = '';
+            $scope.errMessage = '';
+            $scope.isSolved = '';
+            $scope.sortSelect = "Best Match";
+            $scope.sortSelectUser = "Username";
+            if (!$scope.$$phase) {
+                $scope.$apply();
+            }
+            if(contentName!='allTypes'){
+                if(contentName!='users'){
+                    if($scope.contentTypeClicked==contentName){
+                        $scope.showFilterBox = !$scope.showFilterBox;
+                    }
+                    else{
+                        $scope.contentTypeClicked = contentName;
+                        //$scope.showFilterBox = true;
+                    }
+                }
+                getCategories(contentName);
+            }
+            else{
+                $scope.showFilterBox = false;
+            }
+            if($scope.showAdvanceSearch && contentName!='allTypes'){
+                $scope.showFilterBox = true;
+                $scope.showAdvanceSearch = false;
+            }
+            $scope.filterTypeSelected = '';
+            var index = checkIndex(contentName);
+            $scope.typeHighlight=index;
+            $scope.selectedTypeIndex = index;
+            if(contentName!='users'){
+                $scope.getSearchResults();
+            }
+        }
+        // Get all the categories and boards of type selected
+        var getCategories = function(type) {
+            $scope.pagingOptions.currentPage = 1;
+            $scope.showAdvanceSearch = false;
+            $scope.allTabActive = 0;
+            $scope.selectedType = type;
+            if(type != 'users'){
+                $http({
+                    method: 'GET',
+                    url:  '/plugins/custom/netapp/netapp/criteria-html-ep?rootId=' + type
+                }).then(function successCallback(response) {
+                    $scope.categoryFilter = [];
+                    if(response.data.cats){
+                        if(type == 'tech-ontap' &&response.data.extraCats){
+                            var extraArray = [];
+                            var extraData = response.data.extraCats
+                            for(var key in extraData){
+                                if(!extraData.hasOwnProperty(key)){
+                                    continue;
+                                }
+                                extraArray.push(extraData[key])
+                            }
+                            $scope.categoryFilter = $scope.categoryFilter.concat(extraArray); 
+                        }
+                        var array = [];
+                        var data = response.data.cats
+                        for(var key in data){
+                            if(!data.hasOwnProperty(key)){
+                                continue;
+                            }
+                            array.push(data[key])
+                        }
+                        $scope.categoryFilter = $scope.categoryFilter.concat(array);
+                        $scope.categoryFilter = $scope.categoryFilter.concat(response.data.boards?response.data.boards.data.items:'');
+                        if(type == 'tech-ontap'){$scope.categoryFilter = $scope.categoryFilter.concat(response.data.ExtraBoards?response.data.ExtraBoards.data.items:'');}
+                        }
+                    else{
+                        if(type == 'tech-ontap' && response.data.extraCats){
+                            var extraArray = [];
+                            var extraData = response.data.extraCats
+                            for(var key in extraData){
+                                if(!extraData.hasOwnProperty(key)){
+                                    continue;
+                                }
+                                extraArray.push(extraData[key])
+                            }
+                            $scope.categoryFilter = extraArray; 
+                        }
+                        if(type == 'tech-ontap'){$scope.categoryFilter = $scope.categoryFilter.concat(response.data.ExtraBoards.data.items?response.data.ExtraBoards.data.items:'')};
+                        $scope.categoryFilter = response.data.boards?response.data.boards.data.items:''; 
+                    }
+                    for(var i =0;i<$scope.categoryFilter.length;i++){
+                        $scope.categoryFilter[i].isChecked = false;
+                        if($scope.categoryFilter[i].boards){
+                            for(var j=0;j<$scope.categoryFilter[i].boards.data.items.length;j++){
+                                $scope.categoryFilter[i].boards.data.items[j].isBoardDisabled = false;
+                                $scope.categoryFilter[i].boards.data.items[j].isBoardChecked = false;
+                            }
+                        }
+                    }
+                }, function errorCallback(response) {
+                    console.log('Something Went Wrong');
+                });
+            }
+        }
+        // Set category and board disable or checked on selection of any board or category
+        $scope.filteredData = function(filter){
+            $scope.pagingOptions.currentPage = 1;
+            $timeout(function(){
+                filter.isChecked = !filter.isChecked;
+                if($scope.selectedCategories.length==0){
+                    for(var i =0;i<$scope.categoryFilter.length;i++){
+                        if($scope.categoryFilter[i].boards){
+                            for(var j=0;j<$scope.categoryFilter[i].boards.data.items.length;j++){
+                                $scope.categoryFilter[i].boards.data.items[j].isBoardDisabled = false;
+                            }
+                        }
+                        $scope.categoryFilter[i].isDisabled = false;
+                        $scope.filterTypeSelected = '';
+                    }
+                }            
+                if(($scope.selectedCategories.length==1 && filter.isChecked) || filter.firstLoadCall){
+                    if(filter.boards){
+                        for(var i =0;i<$scope.categoryFilter.length;i++){
+                            if($scope.categoryFilter[i].boards){
+                                for(var j=0;j<$scope.categoryFilter[i].boards.data.items.length;j++){
+                                    $scope.categoryFilter[i].boards.data.items[j].isBoardDisabled = true;
+                                }
+                            }
+                            else{
+                                $scope.categoryFilter[i].isDisabled = true;
+                            }
+                            if(filter.id == $scope.categoryFilter[i].id){
+                                $scope.categoryFilter[i].isChecked = true;
+                            }
+                        }
+                        $scope.filterTypeSelected = 'category';
+                    }
+                    else{
+                        for(var i =0;i<$scope.categoryFilter.length;i++){
+                            if($scope.categoryFilter[i].boards){
+                                $scope.categoryFilter[i].isDisabled = true;
+                            }
+                            if($scope.categoryFilter[i].boards){
+                                for(var j=0;j<$scope.categoryFilter[i].boards.data.items.length;j++){
+                                    $scope.categoryFilter[i].boards.data.items[j].isBoardDisabled = false;
+                                    if(filter.id == $scope.categoryFilter[i].boards.data.items[j].id){
+                                        $scope.categoryFilter[i].boards.data.items[j].isBoardChecked = true;
+                                    }
+                                }
+                            }
+                            else{
+                                if(filter.id == $scope.categoryFilter[i].id){
+                                    $scope.categoryFilter[i].isChecked = true;
+                                }
+                            }                            
+                        }
+                        $scope.filterTypeSelected = 'board';
+                    }
+                }
+                $scope.getSearchResults();
+            },500);
+        }
+        // Get results on basis of search text and filter selected
+        $scope.getSearchResults = function(){
+            if($scope.isLoggedIn){
+                $scope.lithium.showLithiumLoader = true;
+                $scope.errMessage = '';
+                $scope.showAutocomplete = false;
+                $scope.selectionFlag = 1;
+                var data = {};
+                data.keyword = $scope.caseCreateElements.subject;
+                data.id = $scope.selectedCategories.join();
+                data.search_in = $scope.selectedTypeIndex;
+                data.rootId = $scope.selectedType;
+                data.filterType = $scope.filterTypeSelected;
+                setDate();
+                data.from = $scope.startDate;
+                data.to = $scope.endDate;
+                data.page_no = $scope.pagingOptions.currentPage;
+                if($scope.selectedTypeIndex == 4){
+                    data.orderBy = checkSortMethod($scope.sortSelectUser);
+                }
+                else{
+                    data.orderBy = checkSortMethod($scope.sortSelect);
+                }
+                data.isSolved = $scope.isSolved=='1'?'AND conversation.solved = true AND depth = 0':($scope.isSolved=='0'?'AND conversation.solved = false AND depth = 0':'');
+                if($scope.selectedPublishTime!= 'AllTime'){                
+                    $scope.urlResults = '/plugins/custom/netapp/netapp/custom-search-with-date-ep';
+                }
+                else{
+                    $scope.urlResults =  '/plugins/custom/netapp/netapp/custom-search-ep';
+                }
+                if($scope.selectedPublishTime != 'custom'){
+                    $scope.fromSelectedDate = '';
+                    $scope.toSelectedDate = '';
+                }
+                var q = data.keyword? 'q=' + data.keyword:'';
+                var type = $scope.contentTypeClicked? '&type=' + $scope.contentTypeClicked:'';
+                var filter = $scope.selectedCategories.length>0?'&filter='+$scope.selectedCategories:'';
+                var filterType = $scope.filterTypeSelected?'&filterType='+$scope.filterTypeSelected:'';
+                var time = $scope.selectedPublishTime?'&time='+$scope.selectedPublishTime:'';
+                var solved = ($scope.isSolved=='0' || $scope.isSolved=='1')?'&solved='+$scope.isSolved:''
+                $location.path(q + type +filter + filterType + time + solved);            
+                $.ajax({
+                    method: 'POST',
+                    url: $scope.urlResults,
+                    data: data
+                }).then(function successCallback(response) {
+                    $scope.$apply(function(){
+                        $scope.lithium.showLithiumLoader = false;
+                        $scope.usersResult = false;
+                        $scope.noSearchResult = false;
+                    })
+                    if($scope.selectedTypeIndex == 4){
+                        $scope.$apply(function(){
+                            $scope.usersResult = true;
+                            var array = [];
+                            var data = JSON.parse(response);
+                            var dataUser = data.users;
+                            $scope.totalItems = data.count;
+                            for(var key in dataUser){
+                                if(!dataUser.hasOwnProperty(key)){
+                                    continue;
+                                }
+                                array.push(dataUser[key])
+                            }
+                            $scope.users = array;
+                            $scope.showPager = ($scope.totalItems<=12?false:true);
+                            $scope.getPagedDataAsync($scope.users,12, $scope.pagingOptions.currentPage, $scope.totalItems);
+                        })
+                    }
+                    else{
+                        if(response.error){
+                            $scope.$apply(function(){
+                                $scope.noSearchResult = true;
+                            })
+                        }
+                        else{
+                            $scope.dataLoaded = true;
+                            var data = JSON.parse(response);
+                            $scope.counts = data.counts;
+                            if ($scope.selectedType == 'forums') {
+                                $scope.totalItems = parseInt(data.counts.discussionCount);
+                            } else if ($scope.selectedType == 'netapp-blogs') {
+                                $scope.totalItems = parseInt(data.counts.blogsCount);
+                            } else if ($scope.selectedType == 'tech-ontap') {
+                                $scope.totalItems = parseInt(data.counts.tkbCount);
+                            } else {
+                                $scope.totalItems = parseInt(data.counts.allCount);
+                            }
+                            var dataSearch = data.data;
+                            var array = [];
+                            for(var key in dataSearch){
+                                if(!dataSearch.hasOwnProperty(key)){
+                                    continue;
+                                }
+                                array.push(dataSearch[key])
+                            }
+                            $scope.results = array;
+                            if($scope.selectedType == 'forums' && ( $scope.isSolved=='0' || $scope.isSolved=='1')){
+                                var newArr = [];
+                                for(var i=0;i<$scope.results.length;i++){
+                                    if($scope.results[i].is_solution == $scope.isSolved){
+                                        newArr.push($scope.results[i]);
+                                    }
+                                }
+                                $scope.resultsPosts = newArr;
+                            }
+                            $scope.showPager = ($scope.totalItems<=10?false:true);
+                            $scope.getPagedDataAsync($scope.results,$scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage, $scope.totalItems);
+                        }
+                    }
+                }, function errorCallback(response) {
+                    console.log('Something Went Wrong');
+                });
+            }
+        }
+        // Sets start date and end date on publish date selectionSort
+        function setDate(){
+            $scope.startDate = new Date();
+            $scope.endDate = new Date();
+            switch ($scope.selectedPublishTime) {
+                case 'AllTime':
+                    $scope.startDate = 'NA';
+                    $scope.endDate = 'NA';
+                    break;
+                case 'PastWeek':
+                    $scope.startDate.setDate($scope.startDate.getDate() - 7);
+                    break;
+                case 'PastMonth':
+                    $scope.startDate.setDate($scope.startDate.getDate() - 30);
+                    break;
+                case 'PastYear':
+                    $scope.startDate.setDate($scope.startDate.getDate() - 365);
+                    break;
+                case 'custom':
+                    $scope.startDate = $scope.fromSelectedDate?$scope.fromSelectedDate:$scope.startDate;
+                    $scope.endDate = $scope.toSelectedDate?$scope.toSelectedDate:$scope.endDate;
+                    break;
+                default:
+                    console.log('Something Went Wrong in Date Selection')
+            }
+            if($scope.selectedPublishTime!='AllTime'){
+                $scope.startDate = $scope.startDate?getFormatedDate($scope.startDate)+ 'T00:00:00.700-07:00':'';
+                $scope.endDate = $scope.endDate?getFormatedDate($scope.endDate)+ 'T00:00:00.700-07:00':'';            
+            }            
+        }
+        // Format selected date
+        function getFormatedDate(date) {
+            var dd = date.getDate();
+            if (dd.toString().length < 2)
+                dd = '0' + dd;
+            var mm = date.getMonth() + 1;
+            if (mm.toString().length < 2)
+                mm = '0' + mm;
+            var yy = date.getFullYear();
+            return date = yy + '-' + mm + '-' + dd;
+        }
+        // Show error if end date is less than start date
+        $scope.validateDates = function() {
+            $scope.errMessage = '';
+            var curDate = new Date();
+            $scope.selectedPublishTime = 'custom';        
+            if(new Date($scope.fromSelectedDate) > new Date($scope.toSelectedDate)){
+              $scope.errMessage = 'End Date should be greater than start date';
+              return false;
+            }
+            $scope.getSearchResults();
+        };
+
+        // Call search result function on search button click
+        $scope.clickSearch = function(){
+            if($scope.caseCreateElements.subject!=''){
+                $scope.showSearchContent = true;
+                $scope.getSearchResults();
+            }
+        }
+
+        //Clear all filters
+        $scope.clearAllFilters = function(){
+            $scope.selectedPublishTime = "AllTime";
+            $scope.selectedCategories = '';
+            $scope.isSolved = '';
+            $scope.getFilters($scope.selectedType);
+            $scope.clickSearch();
+        }
+        //Set pagination data and total pages
+        $scope.getPagedDataAsync = function(data, pageSize, page, total) {
+            setTimeout(function() {
+                $scope.startPage = (page-1) * pageSize + 1;            
+                $scope.totalItems = total;
+                var pagedData = data;
+                $scope.endPage = $scope.startPage + (pagedData.length - 1);
+                if($scope.selectedTypeIndex != 4){
+                    $scope.filteredResults = pagedData;
+                }
+                else{
+                    $scope.filteredUsers = pagedData;           
+                }
+                if (!$scope.$$phase) {
+                    $scope.$apply();
+                }
+            }, 100);
+        };
+        // Filtered data according to solved or unsolved selected in forums
+        $scope.filterSolvedData = function(value){
+            $scope.pagingOptions.currentPage = 1;
+            $scope.isSolved = value;
+            $scope.getSearchResults();
+        }
+        // Split url path to get parameters and maintain state on refresh
+        $scope.splitUrl = function(){
+            var hash = $location.url();
+            if(hash==''){
+                var hash = $location.absUrl();
+                hash = hash.split('?')[1]?hash.split('?')[1]:'';
+            }
+            var separators = ['\\\=', '\\&'];
+            var arr = hash.split(new RegExp(separators.join('|'), 'g'));
+            var type,filter,filterType,time,solved,index;
+            if(arr.length>1){
+                if(arr[0]=='/'){
+                    index = 1;
+                }
+                else{
+                    index = 0;
+                }
+                for(var i =index; i<arr.length; i+=2){
+                    (arr[i] == '/q' || arr[i] == 'q')?$scope.caseCreateElements.subject = unescape(arr[i+1].replace(/\+/g, '%20')):'';
+                    arr[i] == 'type'?type = arr[i+1]:'';
+                    arr[i] == 'filter'?filter = arr[i+1]:'';
+                    arr[i] == 'filterType'?filterType = arr[i+1]:'';
+                    arr[i] == 'time'?time=arr[i+1]:'';
+                    arr[i] == 'solved'?solved=arr[i+1]:'';
+                }
+                if(type){$scope.getFilters(type,'reload');solved?$scope.filterSolvedData(solved):''} 
+                if(time){
+                    $scope.selectedPublishTime = time;
+                    if(time == 'custom'){
+                        $scope.disableDatePicker = false;
+                    }
+                    setDate();
+                }
+                $timeout(function(){
+                    if(filter){
+                        var splitFilter = filter.split(',');
+                        for(var i=0;i<splitFilter.length;i++){
+                            $scope.selectedCategories.push(splitFilter[i]);
+                            var filterObj = {};
+                            filterObj.isChecked = false;
+                            filterObj.id = splitFilter[i];
+                            filterObj.firstLoadCall = true;
+                            filterObj.boards = filterType == 'category'?true:false;
+                            $scope.filteredData(filterObj);
+                        }
+                    }
+                    $scope.clickSearch();
+                },2000);
+            }                   
+            if($scope.caseCreateElements.subject==""){
+                $scope.isLoggedIn = ${user.id} == -1?false:true;
+            }        
+            else{
+                $scope.isLoggedIn = true;
+            }
+        }
+        // On selecting autocomplete results, hide list and search results
+        $scope.selectAutocomplete = function(suggestionText){
+            if(suggestionText!='No results'){
+                $scope.caseCreateElements.subject = suggestionText;
+                $timeout(function(){
+                    $scope.selectionFlag = 1;
+                },500);
+                $scope.clickSearch();
+            }
+        }
+        // Show advance search filter on button click
+        $scope.userFilterBox = function(){
+            $scope.showAdvanceSearch = true;
+            $scope.showFilterBox = true;
+        }
+        // Get results when date filter selected
+        $scope.getResultsFromDate = function(time){
+            $scope.selectedPublishTime = time;
+            if(time != 'custom'){
+                $scope.disableDatePicker = true;
+                $scope.getSearchResults();
+            }
+            else{
+                $scope.disableDatePicker = false;
+            }
+        };
+        $scope.closePopup = function(){
+            $scope.showFilterBox = false;
+        }
+        $scope.sortingChanged = function(sort){
+            $scope.sortSelect = sort;
+            $scope.getSearchResults();
+        }
+        $scope.sortingChangedUser = function(sort){
+            $scope.sortSelectUser = sort;
+            $scope.getSearchResults();
+        }
+        $scope.enableCustomDate = function(){
+            $scope.selectedPublishTime = 'custom';
+            $scope.disableDatePicker = false;
+        }
+        $scope.containerAdmin = function(){
+            //$scope.showContainer =  !$scope.showContainer;
+            //$scope.showContainer?angular.element(document.querySelector('.message-search')).hide():angular.element(document.querySelector('.message-search')).show();
+        }
+        $scope.splitUrl();
+    }]);
+    app.filter('isEmpty', function () {
+        var bar;
+        return function (obj) {
+            for (bar in obj) {
+                if (obj.hasOwnProperty(bar)) {
+                    return false;
+                }
+            }
+            return true;
+        };
+    });
+        app.directive("checkboxGroup", function () {
+            return {
+                restrict: "A",
+                link: function (scope, elem, attrs) {
+                    // Determine initial checked boxes
+                    if (scope.selectedCategories.indexOf(elem[0].id) !== -1) {
+                        elem[0].checked = true;
+                    }
+                
+                    // Update selectedCategories on click
+                    elem.bind('click', function () {
+                        var index = scope.selectedCategories.indexOf(elem[0].id);
+                        // Add if checked
+                        if (elem[0].checked) {
+                            if (index === -1) scope.selectedCategories.push(elem[0].id);
+                        }
+                        // Remove if unchecked
+                        else {
+                            if (index !== -1) scope.selectedCategories.splice(index, 1);
+                        }
+                    });
+                }
+            }
+        });
+    // Close autocomplete popup on outside click element
+    app.directive("outsideClick", ['$document', '$parse', function($document, $parse) {
+        return {
+            link: function($scope, $element, $attributes) {     
+                var scopeExpression = $attributes.outsideClick,
+                onDocumentClick = function(event) {          
+                    // check for flag
+                    if(!$scope.closeFlag) {
+                      $scope.closeFlag = true;
+                      return;
+                    }         
+                    var parent = event.target;
+                    while (parent && parent !== $element[0]) {
+                      parent = parent.parentNode;
+                    }
+                    if (!parent) {
+                      $scope.$apply(scopeExpression);
+                    }
+                }
+                $document.on("click", onDocumentClick);
+                $element.on('$destroy', function() {
+                    $document.off("click", onDocumentClick);
+                });
+            }
+        }
+    }]);
+</script>
