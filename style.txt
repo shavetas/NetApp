@@ -3097,6 +3097,9 @@ a.lia-quilt-column.category-card.category-card-4{
 }
 @media screen and (max-width:767px)
 {
+  .lia-body .lia-quilt-column-main-content .MessageView .lia-component-message-view-widget-tags .lia-message-tags .lia-form {
+    width: 50%;
+  }
   .ContactsList{
     .lia-list-wide{
       .lia-list-row{
@@ -3309,6 +3312,9 @@ a.lia-quilt-column.category-card.category-card-4{
       }
 }
 @media screen and (max-width:640px){
+  .lia-body .lia-quilt-column-main-content .MessageView .lia-component-message-view-widget-tags .lia-message-tags .lia-form {
+    width: 60%;
+  }
   .lia-form-feedback-entry{
     .lia-form-label{
       white-space: normal;
@@ -3556,6 +3562,9 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 @media screen and (max-width:420px){
+  .lia-body .lia-quilt-column-main-content .MessageView .lia-component-message-view-widget-tags .lia-message-tags .lia-form {
+    width: 80%;
+  }
   .lia-quilt-column-main-content{
     .MessageView .lia-quilt-row-header .lia-component-message-view-widget-subject .lia-message-subject{
       font-size: 16px;
