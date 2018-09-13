@@ -1614,10 +1614,10 @@ a.lia-quilt-column.category-card.category-card-4{
       height: 55px;
       font-size: 14px;
       .lia-quilt-column-cs-2{
-        max-width: 250px;
+        max-width: 230px;
         width: 100%;
         &.bigger-section{
-          max-width: calc(100% - 250px);
+          max-width: calc(100% - 230px);
         }
         .default-menu-option{
           padding-top: 0;
@@ -2347,11 +2347,13 @@ a.lia-quilt-column.category-card.category-card-4{
     font-size: 14px;
   }
 }
-.lia-note-header .lia-note-date{
-  vertical-align: middle;
-}
-.lia-note-header .lia-note-sent-date:before {
-  vertical-align: middle;
+.lia-note-header{ 
+  .lia-note-date, .lia-user-avatar{
+    vertical-align: middle;
+  }
+  .lia-note-sent-date:before {
+    vertical-align: middle;
+  }
 }
 .lia-quilt-notes-compose-page{
   .lia-note-content{
@@ -2933,6 +2935,9 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 @media screen and (max-width:991px){
+  .lia-panel.lia-component-custom-grz-blog-section .lia-quilt-column.blog-card .content-section-bottom.content-section .text-content-justify{
+    text-align: left;
+  }
   body {
     position: relative;
     width: 100%;
@@ -3306,9 +3311,6 @@ a.lia-quilt-column.category-card.category-card-4{
           text-align: left;
           margin-top:10px;
           max-width: 100%;
-          .lia-panel-heading-bar-page-option{
-            float: right;
-          }
         }
       }
 }
@@ -3383,6 +3385,12 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 @media screen and (max-width:480px){
+  #lia-body.ViewProfilePage .product-community-wrapper .links-wrapper .tablinks{
+    width:49.9%;
+    font-size: 15px;
+    padding: 13px 0px;
+    text-align: center;
+  }
   .lia-message-tags{
     .lia-form{
       width:100%;
@@ -3577,12 +3585,6 @@ a.lia-quilt-column.category-card.category-card-4{
   .lia-component-custom-grz-subcategory .lia-panel-content-wrapper .lia-panel-content .sub-category-wrapper .text-content-center.card-content .title.card-title{
     font-size: 14px;
     line-height: 18px;
-  }
-  #lia-body.ViewProfilePage .product-community-wrapper .links-wrapper .tablinks{
-    width:50%;
-    font-size: 15px;
-    padding: 13px 0px;
-    text-align: center;
   }
   .lia-body .lia-quilt-column-main-content .MessageView .lia-component-me-too{
     display: block;
@@ -4138,28 +4140,29 @@ border-left:1px solid #c1c1c1;
 }
 @media screen and (min-width:992px) and (max-width:1129px)
 {
-.filter-list .Filter-list-items a{
-padding-right:0;
-padding-left:0;
-}
-.filter-list .Filter-list-items:first-child,
-.filter-list .Filter-list-items:last-child,
-li#all
-{
- /*width:10%;*/
-}
-.filter-list .Filter-list-items:nth-child(4),
-li#tech-ontap{
-width:35%;
-}
-.filter-list .Filter-list-items:nth-child(2),
-li#forums{
-width:24%;
-}
-.filter-list .Filter-list-items a{
-font-size:16px;
-}
-
+  .SearchPage{
+    .filter-list .Filter-list-items a{
+    padding-right:0;
+    padding-left:0;
+    }
+    .filter-list .Filter-list-items:first-child,
+    .filter-list .Filter-list-items:last-child,
+    li#all
+    {
+     /*width:10%;*/
+    }
+    .filter-list .Filter-list-items:nth-child(4),
+    li#tech-ontap{
+    width:35%;
+    }
+    .filter-list .Filter-list-items:nth-child(2),
+    li#forums{
+    width:24%;
+    }
+    .filter-list .Filter-list-items a{
+    font-size:16px;
+    }
+  }  
 }
 @media screen and (min-width:768px) and (max-width:991px)
 {
@@ -4209,25 +4212,25 @@ padding: 20px;
 }
 @media screen and (max-width: 767px) and (min-width: 586px)
 {
+.SearchPage{
+  .filter-list .Filter-list-items{
+  float:left;
+  }
+  li#forums{
+  width:34.33%;
 
-.filter-list .Filter-list-items{
-float:left;
+  }
+  li#all{
+  border-left:1px solid #c1c1c1;
+  }
+  .tab-pane .filter-list .Filter-list-items{
+  float:none;
+  display:inline-block;
+  }
+  .header-suggest .col-xs-12{
+  width:93%; 
+  }
 }
-li#forums{
-width:34.33%;
-
-}
-li#all{
-border-left:1px solid #c1c1c1;
-}
-.tab-pane .filter-list .Filter-list-items{
-float:none;
-display:inline-block;
-}
-.header-suggest .col-xs-12{
-width:93%; 
-}
-
 }
 @media screen and (max-width: 991px) and (min-width: 768px){
 .tab-pane .filter-list .Filter-list-items a{
