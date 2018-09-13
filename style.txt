@@ -1916,9 +1916,8 @@ a.lia-quilt-column.category-card.category-card-4{
         font-size: 12px;
         line-height: 12px;
         letter-spacing: 1px;
-        vertical-align: middle;
+        vertical-align: baseline;
         padding-bottom: 0;
-
       }
     }
     .thread-wrapper.status-accepted:before{
@@ -2231,18 +2230,21 @@ a.lia-quilt-column.category-card.category-card-4{
 /* Custom Component Join the commuinty */
 .lia-panel.lia-component-custom-grz-join-community{
   .lia-panel-content-wrapper{
-      background-image: url(/html/assets/join-the-community.png);
-      color: $np-white;
+      /*background-image: url(/html/assets/join-the-community.png);*/
+      /*color: $np-white;*/
       background-position: center;
       background-size: cover; 
       background-repeat: no-repeat;
       a,
       &:hover,
       &:active{
-        color:$np-white;
+        /*color:$np-white;*/
+        outline:none;
       }
       .lia-panel-content{
-        padding: 20px;
+        /*padding: 20px;*/
+        margin-bottom: 0;
+        padding: 0;
         .content-heading{
           padding: 5px 0;
           border-top: 1px solid $np-white;
@@ -3401,6 +3403,9 @@ a.lia-quilt-column.category-card.category-card-4{
       display: inline-block;
       vertical-align: top;
       line-height: 0;
+      input[type="button"] {
+        line-height: normal;
+      }
     }
     .search-app label {
       font-size: 14px;
