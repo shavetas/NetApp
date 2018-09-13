@@ -244,6 +244,12 @@ a.header-right-link {
   display: none;
 }
 @media screen and (max-width: 1024px){
+  .lia-panel.lia-component-custom-grz-blog-section .lia-quilt-column.blog-card .content-section-bottom.content-section.text-content-justify{
+    text-align: left;
+  }
+  .lia-component-custom-grz-subcategory .lia-panel-content-wrapper .lia-panel-content .sub-category-wrapper .text-content-center.card-content .title.card-title{
+      font-size:12px;
+    }
   .mobile {
     display: block;
   }
@@ -251,7 +257,11 @@ a.header-right-link {
   display: none;
   }
 }
-
+@media screen and (min-width: 767px){
+.lia-body.MyProfilePage .newMessages.lia-data-cell-secondary{
+  left:10px;
+}
+}
 #lia-body .top-hat-wrapper .lia-quilt-column-alley.lia-quilt-column-alley-single {
   background-color: transparent;
 }
@@ -2490,6 +2500,9 @@ a.lia-quilt-column.category-card.category-card-4{
 .lia-component-message-view-widget-tags input.lia-form-tags-delimited-by-commas-input {
     font-size: 13px !important;
 }
+.lia-body .lia-quilt-column-main-content .MessageView .lia-component-message-view-widget-tags .lia-message-tags .lia-form{
+  width:180px;
+}
 /* TKB Article Page*/
 
 .TkbArticlePage{ 
@@ -2937,9 +2950,6 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 @media screen and (max-width:991px){
-  .lia-panel.lia-component-custom-grz-blog-section .lia-quilt-column.blog-card .content-section-bottom.content-section .text-content-justify{
-    text-align: left;
-  }
   body {
     position: relative;
     width: 100%;
@@ -2962,7 +2972,7 @@ a.lia-quilt-column.category-card.category-card-4{
       position: fixed;
       bottom: 0;
       width: 100%;
-      z-index: 999;
+      z-index: 1999;
   }
   .lia-body.ForumTopicPage .lia-menu-bar.lia-menu-bar-top.top-block {
     float: none;
@@ -3095,9 +3105,6 @@ a.lia-quilt-column.category-card.category-card-4{
         }
       }
     }
-    .lia-component-custom-grz-subcategory .lia-panel-content-wrapper .lia-panel-content .sub-category-wrapper .text-content-center.card-content .title.card-title{
-      font-size:13px;
-    }
   .external-header-wrppaer .lia-custom-component.lia-component-categoryPage-subCategory .lia-quilt-column.subcategory .cat-wrapper a{
     font-size: 12px;
     line-height: 14px;
@@ -3105,8 +3112,19 @@ a.lia-quilt-column.category-card.category-card-4{
 }
 @media screen and (max-width:767px)
 {
-  .lia-body .lia-quilt-column-main-content .MessageView .lia-component-message-view-widget-tags .lia-message-tags .lia-form {
-    width: 180px;
+  .PrivateNotesPage .lia-list-wide .UserProfileSummary{
+    .lia-user-attributes .lia-user-rank{
+      padding-left: 10px;
+    }
+  }
+  .ContactsList .lia-list-wide .lia-list-row{
+    padding-top: 0;
+  }
+  .lia-body.TkbArticlePage .lia-rating-enumeration-system-tkb_helpfulness{
+    text-align: left;
+    .lia-link-navigation{
+      display: inline-block;
+    }
   }
   .ContactsList{
     .lia-list-wide{
