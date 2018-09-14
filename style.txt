@@ -220,7 +220,7 @@ a.header-right-link {
     line-height: 16px;
   }
 }
-.ConfirmationPage .lia-content .lia-fieldset-title{
+.lia-body.ConfirmationPage .lia-content .lia-fieldset-title{
   font-size: 18px;
 }
 /* width */
@@ -249,8 +249,9 @@ a.header-right-link {
   .lia-panel.lia-component-custom-grz-blog-section .lia-quilt-column.blog-card .content-section-bottom.content-section.text-content-justify{
     text-align: left;
   }
-  .lia-component-custom-grz-subcategory .lia-panel-content-wrapper .lia-panel-content .sub-category-wrapper .text-content-center.card-content .title.card-title{
-      font-size:12px;
+  .lia-body .lia-component-custom-grz-subcategory .lia-panel-content-wrapper .lia-panel-content .sub-category-wrapper .text-content-center.card-content .title.card-title{
+      font-size:14px;
+      line-height: 18px;
     }
   .mobile {
     display: block;
@@ -2955,6 +2956,12 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 @media screen and (max-width:991px){
+  .lia-body .lia-top-quilt .lia-quilt-row-main .lia-quilt-column-side-content .lia-quilt-column-alley.lia-quilt-column-alley-right{
+    display: block;
+  }
+  .lia-paging-full-wrapper .lia-paging-full-left{
+    padding-top: 10px;
+  }
   body {
     position: relative;
     width: 100%;
@@ -2978,9 +2985,6 @@ a.lia-quilt-column.category-card.category-card-4{
       bottom: 0;
       width: 100%;
       z-index: 1999;
-  }
-  .lia-body.ForumTopicPage .lia-menu-bar.lia-menu-bar-top.top-block {
-    float: none;
   }
   .lia-quilt.header-wrapper .lia-quilt-header-content-wrapper{
     .lia-quilt-column-single.lia-quilt-column{
@@ -3410,6 +3414,9 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 @media screen and (max-width:480px){
+  #lia-body.ViewProfilePage .lia-quilt-view-profile-page .profile_header_wrap .banner_wrap .profile-info{
+    padding-left: 80px;
+  }
   #lia-body.ViewProfilePage .product-community-wrapper .links-wrapper .tablinks{
     width:49.9%;
     font-size: 15px;
@@ -3791,6 +3798,46 @@ a.lia-quilt-column.category-card.category-card-4{
 
 /* ProfilePage STARTS -- Tarun */
 #lia-body.ViewProfilePage{
+  .lia-content .ContactMeTaplet ul > li > a{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 16px;
+    line-height: 26px;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #fff;
+    background-color: $np-deep-blue;
+    border-color: $np-deep-blue;
+  }
+  .profile_header_wrap .banner_wrap .profile-info{
+    padding-left:135px;
+    margin-left:0;
+    .UserProfileSummary, .biograprhyHolder{
+      padding-left: 18px;
+      margin-left:0;
+    }
+    .UserProfileSummary{
+      padding-left: 0;
+    }
+    .profileInfoHolder{
+      margin-left:0;
+    }
+    .biograprhyHolder p{
+      margin-left:0;
+    }
+  }
   .add-friend-link.lia-button, .add-ignore-link.lia-button, .delete-friend-link.lia-button, .delete-ignore-link.lia-button{
     padding-left: 0;
   }
@@ -3804,6 +3851,7 @@ a.lia-quilt-column.category-card.category-card-4{
     }
     span:first-child:before{
       content:"";
+      padding:0;
     }
   }
    .admin-notes .lia-form-footer-outside-fieldset{
