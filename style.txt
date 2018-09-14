@@ -220,7 +220,9 @@ a.header-right-link {
     line-height: 16px;
   }
 }
-
+.lia-body.ConfirmationPage .lia-content .lia-fieldset-title{
+  font-size: 18px;
+}
 /* width */
 ::-webkit-scrollbar {
     width: 6px;
@@ -244,6 +246,13 @@ a.header-right-link {
   display: none;
 }
 @media screen and (max-width: 1024px){
+  .lia-panel.lia-component-custom-grz-blog-section .lia-quilt-column.blog-card .content-section-bottom.content-section.text-content-justify{
+    text-align: left;
+  }
+  .lia-body .lia-component-custom-grz-subcategory .lia-panel-content-wrapper .lia-panel-content .sub-category-wrapper .text-content-center.card-content .title.card-title{
+      font-size:14px;
+      line-height: 18px;
+    }
   .mobile {
     display: block;
   }
@@ -251,7 +260,11 @@ a.header-right-link {
   display: none;
   }
 }
-
+@media screen and (min-width: 767px){
+.lia-body.MyProfilePage .newMessages.lia-data-cell-secondary{
+  left:10px;
+}
+}
 #lia-body .top-hat-wrapper .lia-quilt-column-alley.lia-quilt-column-alley-single {
   background-color: transparent;
 }
@@ -951,7 +964,10 @@ a.lia-quilt-column.category-card.category-card-4{
       }
     }
     .lia-notify-title{
-      font-size: 18px;
+      font-size: 16px;
+    }
+    .lia-content label{
+      font-size: 16px;
     }
   }
 .MoveMessagesForm{
@@ -1614,10 +1630,10 @@ a.lia-quilt-column.category-card.category-card-4{
       height: 55px;
       font-size: 14px;
       .lia-quilt-column-cs-2{
-        max-width: 250px;
+        max-width: 230px;
         width: 100%;
         &.bigger-section{
-          max-width: calc(100% - 250px);
+          max-width: calc(100% - 230px);
         }
         .default-menu-option{
           padding-top: 0;
@@ -2366,11 +2382,13 @@ a.lia-quilt-column.category-card.category-card-4{
     font-size: 14px;
   }
 }
-.lia-note-header .lia-note-date{
-  vertical-align: middle;
-}
-.lia-note-header .lia-note-sent-date:before {
-  vertical-align: middle;
+.lia-note-header{ 
+  .lia-note-date, .lia-user-avatar{
+    vertical-align: middle;
+  }
+  .lia-note-sent-date:before {
+    vertical-align: middle;
+  }
 }
 .lia-quilt-notes-compose-page{
   .lia-note-content{
@@ -2504,6 +2522,9 @@ a.lia-quilt-column.category-card.category-card-4{
 }
 .lia-component-message-view-widget-tags input.lia-form-tags-delimited-by-commas-input {
     font-size: 13px !important;
+}
+.lia-body .lia-quilt-column-main-content .MessageView .lia-component-message-view-widget-tags .lia-message-tags .lia-form{
+  width:180px;
 }
 /* TKB Article Page*/
 
@@ -2952,6 +2973,12 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 @media screen and (max-width:991px){
+  .lia-body .lia-top-quilt .lia-quilt-row-main .lia-quilt-column-side-content .lia-quilt-column-alley.lia-quilt-column-alley-right{
+    display: block;
+  }
+  .lia-paging-full-wrapper .lia-paging-full-left{
+    padding-top: 10px;
+  }
   body {
     position: relative;
     width: 100%;
@@ -2974,10 +3001,7 @@ a.lia-quilt-column.category-card.category-card-4{
       position: fixed;
       bottom: 0;
       width: 100%;
-      z-index: 999;
-  }
-  .lia-body.ForumTopicPage .lia-menu-bar.lia-menu-bar-top.top-block {
-    float: none;
+      z-index: 1999;
   }
   .lia-quilt.header-wrapper .lia-quilt-header-content-wrapper{
     .lia-quilt-column-single.lia-quilt-column{
@@ -3107,9 +3131,6 @@ a.lia-quilt-column.category-card.category-card-4{
         }
       }
     }
-    .lia-component-custom-grz-subcategory .lia-panel-content-wrapper .lia-panel-content .sub-category-wrapper .text-content-center.card-content .title.card-title{
-      font-size:13px;
-    }
   .external-header-wrppaer .lia-custom-component.lia-component-categoryPage-subCategory .lia-quilt-column.subcategory .cat-wrapper a{
     font-size: 12px;
     line-height: 14px;
@@ -3117,8 +3138,19 @@ a.lia-quilt-column.category-card.category-card-4{
 }
 @media screen and (max-width:767px)
 {
-  .lia-body .lia-quilt-column-main-content .MessageView .lia-component-message-view-widget-tags .lia-message-tags .lia-form {
-    width: 180px;
+  .PrivateNotesPage .lia-list-wide .UserProfileSummary{
+    .lia-user-attributes .lia-user-rank{
+      padding-left: 10px;
+    }
+  }
+  .ContactsList .lia-list-wide .lia-list-row{
+    padding-top: 0;
+  }
+  .lia-body.TkbArticlePage .lia-rating-enumeration-system-tkb_helpfulness{
+    text-align: left;
+    .lia-link-navigation{
+      display: inline-block;
+    }
   }
   .ContactsList{
     .lia-list-wide{
@@ -3325,9 +3357,6 @@ a.lia-quilt-column.category-card.category-card-4{
           text-align: left;
           margin-top:10px;
           max-width: 100%;
-          .lia-panel-heading-bar-page-option{
-            float: right;
-          }
         }
       }
 }
@@ -3402,6 +3431,15 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 @media screen and (max-width:480px){
+  #lia-body.ViewProfilePage .lia-quilt-view-profile-page .profile_header_wrap .banner_wrap .profile-info{
+    padding-left: 80px;
+  }
+  #lia-body.ViewProfilePage .product-community-wrapper .links-wrapper .tablinks{
+    width:49.9%;
+    font-size: 15px;
+    padding: 13px 0px;
+    text-align: center;
+  }
   .lia-message-tags{
     .lia-form{
       width:100%;
@@ -3600,12 +3638,6 @@ a.lia-quilt-column.category-card.category-card-4{
     font-size: 14px;
     line-height: 18px;
   }
-  #lia-body.ViewProfilePage .product-community-wrapper .links-wrapper .tablinks{
-    width:50%;
-    font-size: 15px;
-    padding: 13px 0px;
-    text-align: center;
-  }
   .lia-body .lia-quilt-column-main-content .MessageView .lia-component-me-too{
     display: block;
     float:left;
@@ -3783,6 +3815,46 @@ a.lia-quilt-column.category-card.category-card-4{
 
 /* ProfilePage STARTS -- Tarun */
 #lia-body.ViewProfilePage{
+  .lia-content .ContactMeTaplet ul > li > a{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 16px;
+    line-height: 26px;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #fff;
+    background-color: $np-deep-blue;
+    border-color: $np-deep-blue;
+  }
+  .profile_header_wrap .banner_wrap .profile-info{
+    padding-left:135px;
+    margin-left:0;
+    .UserProfileSummary, .biograprhyHolder{
+      padding-left: 18px;
+      margin-left:0;
+    }
+    .UserProfileSummary{
+      padding-left: 0;
+    }
+    .profileInfoHolder{
+      margin-left:0;
+    }
+    .biograprhyHolder p{
+      margin-left:0;
+    }
+  }
   .add-friend-link.lia-button, .add-ignore-link.lia-button, .delete-friend-link.lia-button, .delete-ignore-link.lia-button{
     padding-left: 0;
   }
@@ -3796,6 +3868,7 @@ a.lia-quilt-column.category-card.category-card-4{
     }
     span:first-child:before{
       content:"";
+      padding:0;
     }
   }
    .admin-notes .lia-form-footer-outside-fieldset{
@@ -4160,28 +4233,29 @@ border-left:1px solid #c1c1c1;
 }
 @media screen and (min-width:992px) and (max-width:1129px)
 {
-.filter-list .Filter-list-items a{
-padding-right:0;
-padding-left:0;
-}
-.filter-list .Filter-list-items:first-child,
-.filter-list .Filter-list-items:last-child,
-li#all
-{
- /*width:10%;*/
-}
-.filter-list .Filter-list-items:nth-child(4),
-li#tech-ontap{
-width:35%;
-}
-.filter-list .Filter-list-items:nth-child(2),
-li#forums{
-width:24%;
-}
-.filter-list .Filter-list-items a{
-font-size:16px;
-}
-
+  .SearchPage{
+    .filter-list .Filter-list-items a{
+    padding-right:0;
+    padding-left:0;
+    }
+    .filter-list .Filter-list-items:first-child,
+    .filter-list .Filter-list-items:last-child,
+    li#all
+    {
+     /*width:10%;*/
+    }
+    .filter-list .Filter-list-items:nth-child(4),
+    li#tech-ontap{
+    width:35%;
+    }
+    .filter-list .Filter-list-items:nth-child(2),
+    li#forums{
+    width:24%;
+    }
+    .filter-list .Filter-list-items a{
+    font-size:16px;
+    }
+  }  
 }
 @media screen and (min-width:768px) and (max-width:991px)
 {
@@ -4231,25 +4305,25 @@ padding: 20px;
 }
 @media screen and (max-width: 767px) and (min-width: 586px)
 {
+.SearchPage{
+  .filter-list .Filter-list-items{
+  float:left;
+  }
+  li#forums{
+  width:34.33%;
 
-.filter-list .Filter-list-items{
-float:left;
+  }
+  li#all{
+  border-left:1px solid #c1c1c1;
+  }
+  .tab-pane .filter-list .Filter-list-items{
+  float:none;
+  display:inline-block;
+  }
+  .header-suggest .col-xs-12{
+  width:93%; 
+  }
 }
-li#forums{
-width:34.33%;
-
-}
-li#all{
-border-left:1px solid #c1c1c1;
-}
-.tab-pane .filter-list .Filter-list-items{
-float:none;
-display:inline-block;
-}
-.header-suggest .col-xs-12{
-width:93%; 
-}
-
 }
 @media screen and (max-width: 991px) and (min-width: 768px){
 .tab-pane .filter-list .Filter-list-items a{
