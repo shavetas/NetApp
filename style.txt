@@ -1886,8 +1886,25 @@ a.lia-quilt-column.category-card.category-card-4{
         border-bottom: 1px solid #c2c2c2;
       }
     }
-    .thread-wrapper-section .thread-wrapper:first-child {
-      border-top:none; 
+    .thread-wrapper-section{
+      .thread-wrapper{
+        &:first-child {
+          border-top:none; 
+        }
+        .thread-section{
+          max-width: 100%;
+          .thread-subject{
+            float: none;
+            width: 100%;
+          }
+          .replies-section{
+            clear: both;
+            width: 100%;
+            display: block;
+            float: left;
+          }
+        }
+      }      
     }
     .thread-detail-author-stats{
       .net-app-section{
