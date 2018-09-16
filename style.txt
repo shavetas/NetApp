@@ -1668,18 +1668,6 @@ a.lia-quilt-column.category-card.category-card-4{
         display: block;
       }
     }
-
-    // .filter-topic-pagination-wrapper-section{
-    //   padding: 10px  0;
-    //   a{
-    //     margin-left: 5px;
-    //     margin-right:5px;
-    //     &.active{
-    //       font-weight: 600;
-    //     }
-    //   }
-    // }
-
     &.loading {
       lia-panel-content {
         position: relative;
@@ -2069,7 +2057,19 @@ a.lia-quilt-column.category-card.category-card-4{
     }
   }
 }
-
+/* Profile Page Badges */
+.lia-component-badges-list{
+  .lia-panel-content-wrapper{
+    .lia-panel-content{
+      text-align: center;
+      .lia-user-badge-display-card {
+        .lia-badge-action-revoke-wrapper{
+          text-align: center;
+        }
+      }
+    }
+  }
+}
 .lia-component-custom-grz-subcategory{
   .title.card-title a:hover {
     color: $np-light-blue;
@@ -3271,7 +3271,11 @@ a.lia-quilt-column.category-card.category-card-4{
     float:none;
   }
     .lia-body.PostPage , .lia-body.ReplyPage , .lia-body.EditPage{
-      .lia-form-fieldset-wrapper.lia-form-post-fieldset-toggle, .lia-form-kudos-fieldset-toggle, .lia-form-tags-fieldset-toggle, .lia-form-attachments-fieldset-toggle, lia-form-labels-fieldset-toggle{
+      .lia-form-fieldset-wrapper.lia-form-post-fieldset-toggle,
+      .lia-form-kudos-fieldset-toggle,
+      .lia-form-tags-fieldset-toggle,
+      .lia-form-attachments-fieldset-toggle,
+      .lia-form-labels-fieldset-toggle{
         width:100%;
       }
       .lia-form-labels-fieldset-toggle{
