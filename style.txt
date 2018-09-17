@@ -4333,9 +4333,6 @@ clear: both;
 #lia-body .lia-content .lia-user-item-profile{
 display:block;
 }
-#lia-body .lia-content .UserAvatar .lia-link-navigation {
-padding-bottom:10px;
-}
 img.imgdoc.imgSales{
 float:left !important;
 }
