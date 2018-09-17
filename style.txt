@@ -306,7 +306,7 @@ Text Editor**/
     display: block;
 }
 .UserSignature.lia-message-signature {
-    display: none;
+    /*display: none;*/
 }
 .home-bottom-link-list li a:hover {
     color: white;
@@ -351,6 +351,9 @@ ul.home-bottom-link-list{
     white-space: normal;
   }
 }
+.slick-slide{
+  outline:none;
+}
 .TaggedMessagesTaplet {
   .lia-component-forums-widget-message-list{
     .single-message-list,
@@ -360,6 +363,11 @@ ul.home-bottom-link-list{
       }
     }
   }
+}
+.lia-message-signature{
+  border-top: 1px solid #eee;
+  padding-top: 5px;
+  margin-top: 15px;
 }
 .lia-tabs-standard-wrapper .t-data-grid{
   margin-left: 0;
@@ -373,7 +381,13 @@ ul.home-bottom-link-list{
 a.lia-quilt-column.category-card.category-card-4{
   margin-right: 0 !important;
 }
-
+.MyProfilePage .lia-component-tabs{
+  .PersonalProfile{
+    .lia-tabs.im-handles-tab{
+      display: none;
+    }
+  }
+} 
 /*.lia-panel-feedback-inline-alert,
 .lia-panel-feedback-inline-warning,
 .lia-panel-feedback-inline-note,
@@ -790,7 +804,7 @@ a.lia-quilt-column.category-card.category-card-4{
       padding: 10px 0;
       font-size: 35px;
       line-height: 50px;
-      text-transform: capitalize;
+      /*text-transform: capitalize;*/
   }
   .banner-sub-title{
     padding: 10px 0;
@@ -1264,7 +1278,7 @@ a.lia-quilt-column.category-card.category-card-4{
         width: 260px;
         max-width: 300px;
         height: auto;
-        top: 60px;
+        top: 55px;
         position: absolute;
         right: 0;
         z-index: 99;
@@ -2009,16 +2023,16 @@ a.lia-quilt-column.category-card.category-card-4{
       display: none;
     }
     .arrow1{
-       left:4%;
+       left:10%;
     }
     .arrow2{
-       left:30%;
+       left:36%;
     }
     .arrow3{
-       right:30%;
+       right:36%;
     }
     .arrow4{
-       right:4%;
+       right:10%;
     }
   }
   .top-card-wrapper.view-more-category{
@@ -2067,9 +2081,13 @@ a.lia-quilt-column.category-card.category-card-4{
           text-align: center;
         }
       }
+      .lia-badge-not-achieved img {
+        opacity: 0.2;
+      }
     }
   }
 }
+
 .lia-component-custom-grz-subcategory{
   .title.card-title a:hover {
     color: $np-light-blue;
@@ -2864,6 +2882,8 @@ a.lia-quilt-column.category-card.category-card-4{
     }
   .lia-quilt-row-footer{
     background-color:transparent;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
   }
   }
   .lia-discussion-page-sub-section-header{
@@ -3321,6 +3341,9 @@ a.lia-quilt-column.category-card.category-card-4{
       .profile-info, .contact-section{
         float: left;
         width: 100%;
+        max-width: 100%;
+        min-width: 100%
+
       }
       .contact-section{
         border-top: 1px solid #eee;
@@ -3729,9 +3752,9 @@ a.lia-quilt-column.category-card.category-card-4{
 .ReplyPage,
 .EditPage{
   .lia-form-fieldset-wrapper.lia-form-post-fieldset-toggle{
-    width:60%;
-    float:left;
-    margin-right: 10%;
+    /*width:60%;*/
+    /*float:left;*/
+    /*margin-right: 10%;*/
     .lia-fieldset-title{
       display:block;
     }
@@ -3749,8 +3772,8 @@ a.lia-quilt-column.category-card.category-card-4{
   }
   .lia-form-tags-fieldset-toggle,
   .lia-form-kudos-fieldset-toggle{
-    display: inline-block;
-    width: 30%;
+    /*display: inline-block;*/
+    /*width: 30%;*/
   }
   .MessageEditorForm .lia-form-buttons-empty-left-column,
   .lia-input-edit-form-row .lia-quilt-column-16{
@@ -3793,9 +3816,15 @@ a.lia-quilt-column.category-card.category-card-4{
   .profile_header_wrap .banner_wrap{
     float:left;
     width: 100%;
-    .profile-info, .contact-section{
+    .profile-info{
+      width: 80%;
       float: left;
-      width: 50%;
+      max-width: calc(100% - 225px);
+    }
+    .contact-section{
+      float: left;
+      width: 20%;
+      min-width: 225px;
     }
   }
   .lia-component-users-widget-contact-me{
@@ -4155,6 +4184,7 @@ a.lia-quilt-column.category-card.category-card-4{
   right: 0px;
   position: absolute;
   z-index:0;
+  outline: none;
 }
 
 .CommunityPage .lia-form-type-text.lia-autocomplete-input.search-input.lia-search-input-message{
