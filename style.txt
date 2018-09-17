@@ -102,6 +102,15 @@ a{
 .lia-quilt-blog-topic-message > .lia-quilt-row-header{
   padding: 0;
 }
+.lia-form-labels-fieldset-toggle li a, .LabelsForArticle .label-link{
+  display: inline-block;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap;
+    line-height: 16px;
+}
 .BlogArticlePage , .ForumTopicPage, .TkbArticlePage{
   .LabelsForArticle .label-link{
     font-weight: normal;
@@ -3158,6 +3167,17 @@ a.lia-quilt-column.category-card.category-card-4{
 }
 @media screen and (max-width:767px)
 {
+  .TagLeaderboardPage{
+    .MessageList .lia-list-wide .lia-list-row{
+      padding-left: 30.5px;
+      padding: 15px;
+      .messageStatusIconColumn{
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
   .PrivateNotesPage .lia-list-wide .UserProfileSummary{
     .lia-user-attributes .lia-user-rank{
       padding-left: 10px;
@@ -3297,9 +3317,6 @@ a.lia-quilt-column.category-card.category-card-4{
       .lia-form-attachments-fieldset-toggle,
       .lia-form-labels-fieldset-toggle{
         width:100%;
-      }
-      .lia-form-labels-fieldset-toggle{
-        float:left;
       }
       .lia-quilt-row-standard.lia-input-edit-form-row{
         float:left;
@@ -4383,6 +4400,9 @@ clear: both;
 @media screen and (max-width:585px){
 #lia-body .lia-content .lia-user-item-profile{
 display:block;
+}
+#lia-body .lia-content .UserAvatar .lia-link-navigation {
+padding-bottom:10px;
 }
 img.imgdoc.imgSales{
 float:left !important;
