@@ -1574,6 +1574,9 @@ a.lia-quilt-column.category-card.category-card-4{
       .lia-panel-content-wrapper .lia-panel-content{
         padding: 0;
       }
+      a{
+        color:#82c7f9;
+      }
   }
   .lia-panel-heading-bar-wrapper{
     font-size: 24px;
@@ -2724,8 +2727,8 @@ a.lia-quilt-column.category-card.category-card-4{
         }
       }
     }
-    .lia-message-body{
-      margin-bottom:0;
+    .lia-component-labels{
+      margin-top:5px;
     }
     .lia-component-message-view-widget-tags{
     margin-bottom: 10px;
@@ -3689,12 +3692,6 @@ a.lia-quilt-column.category-card.category-card-4{
     width: 100%;
     .lia-button-secondary:before{
       content:none;
-    }
-    .lia-rating-link-summary{
-      float:left;
-    }
-    .lia-rating-link-summary.lia-component-ratings-widget-rating-summary-link{
-      float:right;
     }
   }
   .lia-body .home-bottom-link-list li{
