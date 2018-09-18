@@ -766,7 +766,7 @@ a.lia-quilt-column.category-card.category-card-4{
             .cat-detail.cat-title{
               font-weight: 600;
               word-wrap: break-word;
-              color:$np-deep-blue;
+              color:$text-link-color;
             }
             &:after{
              content: "";
