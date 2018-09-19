@@ -29,9 +29,12 @@ a{
   }
 }
 .lia-quilt-column.lia-quilt-full-width {
-    margin: 0;
-    padding: 0;
-    width: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.width-full{
+  width: 100% !important;
 }
 .net-app-section{
   display: inline-block;
@@ -1669,7 +1672,10 @@ a.lia-quilt-column.category-card.category-card-4{
     overflow: visible;
     .lia-panel-heading-bar-wrapper{
       /* border-bottom:1px solid #c4c4c4;*/
-      /* height: 55px; */
+      height: 55px;
+      @media screen and (max-width:992px){ 
+        height: unset;
+      }
       font-size: 14px;
       .lia-quilt-column-cs-2{
         max-width: 230px;
@@ -1693,11 +1699,11 @@ a.lia-quilt-column.category-card.category-card-4{
       }
       span.lia-panel-heading-bar-subscribe{
         margin-left: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-decoration: none;
         a{
           color: $np-light-blue;
-          text-transform: uppercase;
-          font-weight: bold;
-          text-decoration: none;
         }
       }
       
@@ -3420,6 +3426,9 @@ a.lia-quilt-column.category-card.category-card-4{
           text-align: left;
           margin-top:10px;
           max-width: 100%;
+          .button-section-wrapper{
+            float: right;
+          }
         }
       }
 }
@@ -3656,7 +3665,9 @@ a.lia-quilt-column.category-card.category-card-4{
   }
     .lia-panel.lia-component-custom-grz-filterTopics .lia-panel-heading-bar-wrapper{
       /*height:110px;*/
-        .lia-panel-heading-bar-filter{
+
+        .lia-panel-heading-bar-filter,
+        .button-section-wrapper{
           width: 100%;
         }
         span.lia-panel-heading-bar-subscribe{
