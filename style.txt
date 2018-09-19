@@ -326,7 +326,16 @@ Text Editor**/
     color: white;
 }
 /* Css Issues Fixes */
-
+.CommunityPage{
+  .ActionLinksTaplet{
+    .lia-nav-list{
+      margin: 0;
+    }
+    .lia-panel-content{
+      padding-bottom: 0;
+    }
+  }
+}
 .lia-body{
   a{
     &:hover,
@@ -3261,10 +3270,6 @@ a.lia-quilt-column.category-card.category-card-4{
       text-align: left;
     }
   }
-  .lia-form-subscriptions-fieldset-toggle{
-    float:left;
-    width:100%;
-  }
   .lia-panel.lia-component-custom-grz-blog-section{
     margin-bottom: 30px;
     .lia-decoration-border-bottom{
@@ -3489,6 +3494,10 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 @media screen and (max-width:480px){
+  .lia-component-community-widget-page-options .lia-menu-navigation .dropdown-positioning .lia-menu-dropdown-item{
+    left: 0;
+    right: unset;
+  }
   #lia-body.ViewProfilePage .lia-quilt-view-profile-page .profile_header_wrap .banner_wrap .profile-info{
     padding-left: 80px;
   }
