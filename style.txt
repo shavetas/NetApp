@@ -799,7 +799,8 @@ a.lia-quilt-column.category-card.category-card-4{
 
 .lia-quilt.header-banner-cum-search{
   color:$np-white;
-  background-image: url("/html/assets/banner.png");
+  /*background-image: url("/html/assets/banner.png");*/
+  background-image: url("/html/assets/banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 
