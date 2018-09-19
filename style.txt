@@ -321,7 +321,16 @@ Text Editor**/
     color: white;
 }
 /* Css Issues Fixes */
-
+.CommunityPage{
+  .ActionLinksTaplet{
+    .lia-nav-list{
+      margin: 0;
+    }
+    .lia-panel-content{
+      padding-bottom: 0;
+    }
+  }
+}
 .lia-body{
   a{
     &:hover,
@@ -799,7 +808,7 @@ a.lia-quilt-column.category-card.category-card-4{
 
 .lia-quilt.header-banner-cum-search{
   color:$np-white;
-  background-image: url("/html/assets/banner.png");
+  background-image: url("/html/assets/banner_new.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -3480,6 +3489,10 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 @media screen and (max-width:480px){
+  .lia-component-community-widget-page-options .lia-menu-navigation .dropdown-positioning .lia-menu-dropdown-item{
+    left: 0;
+    right: unset;
+  }
   #lia-body.ViewProfilePage .lia-quilt-view-profile-page .profile_header_wrap .banner_wrap .profile-info{
     padding-left: 80px;
   }
