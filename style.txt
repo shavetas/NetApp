@@ -3416,6 +3416,9 @@ a.lia-quilt-column.category-card.category-card-4{
       }
 }
 @media screen and (max-width:640px){
+  #lia-body .lia-content .lia-note-header .UserAvatar .lia-link-navigation{
+    padding-bottom: 0;
+  }
   .lia-form-feedback-entry{
     .lia-form-label{
       white-space: normal;
@@ -4158,6 +4161,9 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 @media(max-width:991px){
+  .TagViewPageBanner .lia-list-standard-inline > li {
+    display: contents;
+  }
  .lia-component-message-view-widget-tags input#lia-tagsDelimitedByCommas{
   font-size: 13px !important;
  }
