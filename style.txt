@@ -3264,10 +3264,6 @@ a.lia-quilt-column.category-card.category-card-4{
       text-align: left;
     }
   }
-  .lia-form-subscriptions-fieldset-toggle{
-    float:left;
-    width:100%;
-  }
   .lia-panel.lia-component-custom-grz-blog-section{
     margin-bottom: 30px;
     .lia-decoration-border-bottom{
