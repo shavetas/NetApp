@@ -375,6 +375,10 @@ ul.home-bottom-link-list{
   .local-friendly-date,
   .local-time {
     white-space: normal;
+    /* Special tag for user having login name length &gt; 15 */
+    wbr{
+      display: none;
+    }
   }
 }
 .slick-slide{
@@ -2107,7 +2111,8 @@ a.lia-quilt-column.category-card.category-card-4{
   }
 }
 /* Profile Page Badges */
-.lia-component-badges-list{
+.lia-component-badges-list,
+.lia-component-badges-widget-user-badges-list{
   .lia-panel-content-wrapper{
     .lia-panel-content{
       text-align: center;
@@ -2116,10 +2121,10 @@ a.lia-quilt-column.category-card.category-card-4{
           text-align: center;
         }
       }
-      .lia-badge-not-achieved img {
-        opacity: 0.2;
-      }
     }
+  }
+  .lia-badge-not-achieved img {
+    opacity: 0.2;
   }
 }
 
